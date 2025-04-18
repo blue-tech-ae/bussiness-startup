@@ -1,0 +1,104 @@
+
+ 
+   <div class="p-6 space-y-6 bg-gray-100 min-h-screen business">
+    <section class="video-section">
+        <h2><i class="fas fa-video"></i> Introduction Video</h2>
+        <div class="vedio">
+          <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" autoplay></video>
+    
+      </div>
+        <p class="video-description">{{videoDescription}}</p>
+      </section>
+  
+      <div class="bg-white p-4 rounded-lg shadow space-y-4">
+        <h2 class="text-xl font-semibold">Desirability (Things to Consider)</h2>
+        
+        <label class="block">Does your solution solve a real problem?</label>
+        <div class="flex space-x-4">
+          <label class="flex items-center">
+            <input type="radio" name="problem" [(ngModel)]="desirability.solves_problem" value="No"> No - Go back and think of a different idea!
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="problem" [(ngModel)]="desirability.solves_problem" value="Yes"> Yes - Great, consider the below
+          </label>
+        </div>
+        
+        <label class="block">What problem are you solving?</label>
+        <textarea [(ngModel)]="desirability.problem_statement" class="w-full p-2 border rounded" placeholder="Define the exact problem you are trying to solve..."></textarea>
+        
+        <label class="block">Are your target customers currently using any other solutions?</label>
+        <div class="flex space-x-4">
+          <label class="flex items-center">
+            <input type="radio" name="current_solutions" [(ngModel)]="desirability.existing_solutions_used" value="No"> No - Find out why they are not using any solutions?
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="current_solutions" [(ngModel)]="desirability.existing_solutions_used" value="Yes"> Yes - Then, consider the below:
+          </label>
+        </div>
+        
+        <label class="block">What solution are they using now?</label>
+        <textarea [(ngModel)]="desirability.current_solutions_details" class="w-full p-2 border rounded" placeholder="List all the benefits, features, and advantages of their solution..."></textarea>
+        
+        <label class="block">Would your customers switch to your solution?</label>
+        <textarea [(ngModel)]="desirability.switch_reason" class="w-full p-2 custom-textarea" placeholder="Why would they choose your solution over others?"></textarea>
+        
+        <label class="block">Notes</label>
+        <textarea [(ngModel)]="desirability.notes" class="w-full p-2 border rounded" placeholder="Add any personal notes..."></textarea>
+      </div>
+      
+      <div class="bg-white p-4 rounded-lg shadow space-y-4">
+        <h2 class="text-xl font-semibold">Feasibility (Things to Consider)</h2>
+        
+        <label class="block">Do I (or my team) have the required skills for this business?</label>
+        <textarea [(ngModel)]="feasibility.required_skills" class="w-full p-2 border rounded" placeholder="What skills are needed for this business?"></textarea>
+        
+        <label class="block">Does this business require any qualifications/permits?</label>
+        <textarea [(ngModel)]="feasibility.qualifications_permits" class="w-full p-2 border rounded" placeholder="What qualifications/permits do we need? Can I get them?"></textarea>
+        
+        <label class="block">Notes</label>
+        <textarea [(ngModel)]="feasibility.notes" class="w-full p-2 border rounded" placeholder="Add any personal notes..."></textarea>
+      </div>
+      
+      <div class="bg-white p-4 rounded-lg shadow space-y-4">
+        <h2 class="text-xl font-semibold">Viability (Things to Consider)</h2>
+        
+        <label class="block">Will people pay for it?</label>
+        <textarea [(ngModel)]="viability.payment_possible" class="w-full p-2 border rounded" placeholder="Are they paying for other solutions? How much?"></textarea>
+        
+        <label class="block">How much would they pay?</label>
+        <textarea [(ngModel)]="viability.profitability" class="w-full p-2 border rounded" placeholder="Estimate the pricing based on customer ability and competitor pricing..."></textarea>
+        
+        <label class="block">What are the financial details?</label>
+        <textarea [(ngModel)]="viability.finances_details" class="w-full p-2 border rounded" placeholder="Provide financial details..."></textarea>
+        
+        <label class="block">Notes</label>
+        <textarea [(ngModel)]="viability.notes" class="w-full p-2 border rounded" placeholder="Add any personal notes..."></textarea>
+      </div>
+      
+      
+      
+        
+
+
+
+
+
+
+<div class="mt-4 ">
+  <button (click)="save()" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" *ngIf="isSaved">Save</button>
+</div>
+<div class="mt-4 update-section">
+  <button (click)="update()" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" *ngIf="!isSaved">Update</button>
+  <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" *ngIf="!isSaved" routerLink="/market-research">
+    Next
+  </button>
+</div>
+
+  </div>
+  <button *ngIf="showButton" class="go-up-btn" (click)="scrollToTop()">
+    ⬆
+  </button>
+
+   
+   
+  

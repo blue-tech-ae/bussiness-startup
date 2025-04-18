@@ -1,0 +1,21 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { NewSalesComponent } from './new-sales.component';
+
+describe('NewSalesComponent', () => {
+  let component: NewSalesComponent;
+  let fixture: ComponentFixture<NewSalesComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [NewSalesComponent]
+    });
+    fixture = TestBed.createComponent(NewSalesComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

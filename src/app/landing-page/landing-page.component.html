@@ -1,0 +1,23 @@
+<div class=" mt-5 min-h-screen bg-gray-100 flex flex-col items-center p-6">
+  <img src="assets\images\VN Logo Secondary Web.png" alt="Value Nation Logo" class="logo">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">📌 Business Plans</h1>
+  
+    <!-- Plans Section -->
+    <div class="bg-white shadow-lg rounded-xl p-6 w-full max-w-lg">
+      <ul>
+        <li *ngFor="let plan of businessPlans; let i = index" class="flex justify-between items-center bg-gray-200 p-3 mb-2 rounded-lg">
+          <span class="text-lg font-medium cursor-pointer"  (click)="saveBussinesId(plan.id)" >{{ plan.name }}</span>
+          <div>
+            <button (click)="editPlan(i)" class="bg-blue-500 text-white px-3 py-1 rounded-lg mr-2">✏ Edit</button>
+            <button (click)="deletePlan(plan.id)" class="bg-red-500 text-white px-3 py-1 rounded-lg">🗑 Delete</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  
+    <!-- Add Plan Button -->
+    <button (click)="addBusinessPlan()" class="mt-6 bg-green-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-600">
+      ➕ Add New Plan
+    </button>
+  </div>
+  

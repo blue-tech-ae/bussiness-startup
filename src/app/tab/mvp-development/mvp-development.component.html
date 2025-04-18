@@ -1,0 +1,384 @@
+<div class="mvp-container">
+  <section class="video-section">
+    <h2><i class="fas fa-video"></i> Introduction Video</h2>
+    <div class="vedio">
+      <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" autoplay></video>
+
+  </div>
+    <p class="video-description">{{videoDescription}}</p>
+  </section>
+  <!-- MVP Features Section -->
+  <section class="form-section">
+    <h2><i class="fas fa-list-check"></i> MVP Features</h2>
+    
+    <!-- Must-Have Features -->
+    <div class="features-section">
+      <h3><i class="fas fa-exclamation-circle"></i> Must-Have Features</h3>
+      <div class="features-list">
+        <div class="feature-item" *ngFor="let feature of features.MustHaveFeatures; let i = index; trackBy: trackByFn">
+          <input 
+            type="text" 
+            class="form-control" 
+            [ngModel]="features.MustHaveFeatures[i]"
+            (ngModelChange)="features.MustHaveFeatures[i] = $event"
+            placeholder="Enter must-have feature"
+          >
+          <button class="btn btn-danger remove-btn" (click)="removeFeature('must', i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <button class="btn btn-outline-primary add-btn" (click)="addFeature('must')">
+          <i class="fas fa-plus"></i> Add Must-Have Feature
+        </button>
+      </div>
+    </div>
+
+    <!-- Should-Have Features -->
+    <div class="features-section">
+      <h3><i class="fas fa-star-half-alt"></i> Should-Have Features</h3>
+      <div class="features-list">
+        <div class="feature-item" *ngFor="let feature of features.ShouldHaveFeatures; let i = index; trackBy: trackByFn">
+          <input 
+            type="text" 
+            class="form-control" 
+            [ngModel]="features.ShouldHaveFeatures[i]"
+            (ngModelChange)="features.ShouldHaveFeatures[i] = $event"
+            placeholder="Enter should-have feature"
+          >
+          <button class="btn btn-danger remove-btn" (click)="removeFeature('should', i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <button class="btn btn-outline-primary add-btn" (click)="addFeature('should')">
+          <i class="fas fa-plus"></i> Add Should-Have Feature
+        </button>
+      </div>
+    </div>
+
+    <!-- Nice-to-Have Features -->
+    <div class="features-section">
+      <h3><i class="fas fa-star"></i> Nice-to-Have Features</h3>
+      <div class="features-list">
+        <div class="feature-item" *ngFor="let feature of features.NiceToHaveFeatures; let i = index; trackBy: trackByFn">
+          <input 
+            type="text" 
+            class="form-control" 
+            [ngModel]="features.NiceToHaveFeatures[i]"
+            (ngModelChange)="features.NiceToHaveFeatures[i] = $event"
+            placeholder="Enter nice-to-have feature"
+          >
+          <button class="btn btn-danger remove-btn" (click)="removeFeature('nice', i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <button class="btn btn-outline-primary add-btn" (click)="addFeature('nice')">
+          <i class="fas fa-plus"></i> Add Nice-to-Have Feature
+        </button>
+      </div>
+    </div>
+    <section class="form-section">
+      <h2><i class="fas fa-chart-line"></i> Success Metrics</h2>
+      <div class="metrics-list">
+        <div class="metric-item" *ngFor="let metric of metrics1; let i = index">
+          <div class="metric-header">
+            <h3>Metric {{i + 1}}</h3>
+            <button class="btn btn-danger remove-btn" (click)="removeMetric1(i)">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="metric-inputs">
+            <div class="form-group">
+              <label>Metric Name</label>
+              <input 
+                type="text" 
+                class="form-control"
+                [(ngModel)]="metric.name"
+                placeholder="Enter metric name"
+              >
+            </div>
+            <div class="form-group">
+              <label>Target Value</label>
+              <input 
+                type="number" 
+                class="form-control"
+                [(ngModel)]="metric.targetValue"
+                placeholder="Enter target value"
+              >
+            </div>
+            <div class="form-group">
+              <label>Actual Value</label>
+              <input 
+                type="number" 
+                class="form-control"
+                [(ngModel)]="metric.actualValue"
+                placeholder="Enter actual value"
+              >
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-outline-primary add-btn" (click)="addMetric1()">
+          <i class="fas fa-plus"></i> Add Metric
+        </button>
+      </div>
+    </section>
+  </section>
+
+  <!-- Assumptions & Testing Section -->
+  <section class="form-section">
+    <h2><i class="fas fa-flask"></i> Assumptions & Testing</h2>
+    <div class="assumptions-list">
+      <div class="assumption-item" *ngFor="let assumption of assumptions; let i = index; trackBy: trackByFn">
+        <div class="assumption-header">
+          <h3>Assumption {{i + 1}}</h3>
+          <button class="btn btn-danger remove-btn" (click)="removeAssumption(i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="assumption-inputs">
+          <div class="form-group">
+            <label>Description</label>
+            <input 
+              type="text" 
+              class="form-control"
+              [(ngModel)]="assumption.description"
+              placeholder="Enter assumption description"
+            >
+          </div>
+          <div class="form-group">
+            <label>Test Method</label>
+            <input 
+              type="text" 
+              class="form-control"
+              [(ngModel)]="assumption.testMethod"
+              placeholder="Enter test method"
+            >
+          </div>
+          <div class="form-group">
+            <label>Success Criteria</label>
+            <input 
+              type="text" 
+              class="form-control"
+              [(ngModel)]="assumption.successCriteria"
+              placeholder="Enter success criteria"
+            >
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-outline-primary add-btn" (click)="addAssumption()">
+        <i class="fas fa-plus"></i> Add Assumption
+      </button>
+    </div>
+    <section class="form-section">
+      <h2><i class="fas fa-chart-line"></i> Success Metrics</h2>
+      <div class="metrics-list">
+        <div class="metric-item" *ngFor="let metric of metrics2; let i = index">
+          <div class="metric-header">
+            <h3>Metric {{i + 1}}</h3>
+            <button class="btn btn-danger remove-btn" (click)="removeMetric2(i)">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="metric-inputs">
+            <div class="form-group">
+              <label>Metric Name</label>
+              <input 
+                type="text" 
+                class="form-control"
+                [(ngModel)]="metric.name"
+                placeholder="Enter metric name"
+              >
+            </div>
+            <div class="form-group">
+              <label>Target Value</label>
+              <input 
+                type="number" 
+                class="form-control"
+                [(ngModel)]="metric.targetValue"
+                placeholder="Enter target value"
+              >
+            </div>
+            <div class="form-group">
+              <label>Actual Value</label>
+              <input 
+                type="number" 
+                class="form-control"
+                [(ngModel)]="metric.actualValue"
+                placeholder="Enter actual value"
+              >
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-outline-primary add-btn" (click)="addMetric2()">
+          <i class="fas fa-plus"></i> Add Metric
+        </button>
+      </div>
+    </section>
+  </section>
+
+  <!-- Development Timeline Section -->
+  <section class="form-section">
+    <h2><i class="fas fa-calendar-alt"></i> Development Timeline</h2>
+    <div class="timeline-list">
+      <div class="timeline-phase" *ngFor="let phase of timelinePhases; let i = index; trackBy: trackByFn">
+        <div class="phase-header">
+          <h3>Phase {{i + 1}}</h3>
+          <button class="btn btn-danger remove-btn" (click)="removeTimelinePhase(i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="phase-inputs">
+          <div class="form-group">
+            <label>Phase Name</label>
+            <input 
+              type="text" 
+              class="form-control"
+              [(ngModel)]="phase.name"
+              placeholder="Enter phase name"
+            >
+          </div>
+          <div class="form-group">
+            <label>Duration</label>
+            <input 
+              type="text" 
+              class="form-control"
+              [(ngModel)]="phase.duration"
+              placeholder="Enter duration"
+            >
+          </div>
+          <div class="milestones-section">
+            <h4>Milestones</h4>
+            <div class="milestone-list">
+              <div class="milestone-item" *ngFor="let milestone of phase.milestones; let j = index; trackBy: trackByFn">
+                <input 
+                  type="text" 
+                  class="form-control"
+                  [(ngModel)]="phase.milestones[j]"
+                  placeholder="Enter milestone"
+                >
+                <button class="btn btn-danger remove-btn" (click)="removeMilestone(i, j)">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <button class="btn btn-outline-secondary add-btn" (click)="addMilestone(i)">
+                <i class="fas fa-plus"></i> Add Milestone
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-outline-primary add-btn" (click)="addTimelinePhase()">
+        <i class="fas fa-plus"></i> Add Timeline Phase
+      </button>
+    </div>
+    <section class="form-section">
+      <h2><i class="fas fa-chart-line"></i> Success Metrics</h2>
+      <div class="metrics-list">
+        <div class="metric-item" *ngFor="let metric of metrics3; let i = index">
+          <div class="metric-header">
+            <h3>Metric {{i + 1}}</h3>
+            <button class="btn btn-danger remove-btn" (click)="removeMetric3(i)">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="metric-inputs">
+            <div class="form-group">
+              <label>Metric Name</label>
+              <input 
+                type="text" 
+                class="form-control"
+                [(ngModel)]="metric.name"
+                placeholder="Enter metric name"
+              >
+            </div>
+            <div class="form-group">
+              <label>Target Value</label>
+              <input 
+                type="number" 
+                class="form-control"
+                [(ngModel)]="metric.targetValue"
+                placeholder="Enter target value"
+              >
+            </div>
+            <div class="form-group">
+              <label>Actual Value</label>
+              <input 
+                type="number" 
+                class="form-control"
+                [(ngModel)]="metric.actualValue"
+                placeholder="Enter actual value"
+              >
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-outline-primary add-btn" (click)="addMetric3()">
+          <i class="fas fa-plus"></i> Add Metric
+        </button>
+      </div>
+    </section>
+  </section>
+
+  <!-- Success Metrics Section -->
+  <!-- <section class="form-section">
+    <h2><i class="fas fa-chart-line"></i> Success Metrics</h2>
+    <div class="metrics-list">
+      <div class="metric-item" *ngFor="let metric of metrics; let i = index">
+        <div class="metric-header">
+          <h3>Metric {{i + 1}}</h3>
+          <button class="btn btn-danger remove-btn" (click)="removeMetric(i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="metric-inputs">
+          <div class="form-group">
+            <label>Metric Name</label>
+            <input 
+              type="text" 
+              class="form-control"
+              [(ngModel)]="metric.name"
+              placeholder="Enter metric name"
+            >
+          </div>
+          <div class="form-group">
+            <label>Target Value</label>
+            <input 
+              type="number" 
+              class="form-control"
+              [(ngModel)]="metric.targetValue"
+              placeholder="Enter target value"
+            >
+          </div>
+          <div class="form-group">
+            <label>Actual Value</label>
+            <input 
+              type="number" 
+              class="form-control"
+              [(ngModel)]="metric.actualValue"
+              placeholder="Enter actual value"
+            >
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-outline-primary add-btn" (click)="addMetric()">
+        <i class="fas fa-plus"></i> Add Metric
+      </button>
+    </div>
+  </section> -->
+
+  <!-- Save Progress Button -->
+  <div class="save-section">
+    <button class="btn btn-primary save-progress" *ngIf="isSaved" (click)="saveProgress()">
+      <i class="fas fa-save"></i> Save Progress
+    </button>
+  </div> 
+  <div class="update-section">
+    <button class="btn btn-primary save-progress" *ngIf="!isSaved" (click)="updateProgress()">
+      <i class="fas fa-save"></i> Update Progress
+    </button>
+    <button class="btn btn-primary save-progress" *ngIf="!isSaved" routerLink="/marketing">
+      Next
+    </button>
+  </div>
+</div>
+<button *ngIf="showButton" class="go-up-btn" (click)="scrollToTop()">
+  ⬆
+</button>

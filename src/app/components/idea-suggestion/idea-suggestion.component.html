@@ -1,0 +1,27 @@
+<div class="suggestion-dialog">
+  <h2>AI Business Idea Suggestion</h2>
+  
+  <div class="content">
+    <div *ngIf="loading" class="loading">
+      <mat-spinner diameter="40"></mat-spinner>
+      <p>Generating suggestion...</p>
+    </div>
+
+    <div *ngIf="error" class="error">
+      <p>{{ error }}</p> 
+    </div>
+
+    <div *ngIf="!loading && !error" class="suggestion">
+      <p [innerHTML]="suggestion | nl2br"></p>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button mat-button (click)="generateSuggestion()">
+      ANOTHER IDEA
+    </button>
+    <button mat-raised-button color="primary" (click)="useThisIdea()">
+      USE THIS IDEA
+    </button>
+  </div>
+</div> 

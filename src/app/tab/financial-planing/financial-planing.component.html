@@ -1,0 +1,384 @@
+<div class="financial-planning-container">
+  <section class="video-section">
+    <h2><i class="fas fa-video"></i> Introduction Video</h2>
+    <div class="vedio">
+      <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" autoplay></video>
+
+  </div>
+    <p class="video-description">{{videoDescription}}</p>
+  </section>
+  <!-- Startup Costs Section -->
+  <section class="form-section">
+    <h2>Startup Costs</h2>
+    <div class="costs-list">
+      <div class="cost-item" *ngFor="let cost of startupCosts; let i = index">
+        <div class="field-row">
+          <div class="input-group">
+            <label class="field-label">Item</label>
+            <input 
+              type="text" 
+              class="form-control"
+              [(ngModel)]="cost.item"
+              placeholder="Enter item description"
+            >
+          </div>
+          <div class="input-group">
+            <label class="field-label">Amount</label>
+            <input 
+              type="number" 
+              class="form-control"
+              [(ngModel)]="cost.amount"
+              placeholder="0"
+            >
+          </div>
+          <button class="btn btn-danger remove-btn" (click)="removeStartupCost(i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="field-row">
+          <div class="input-group">
+            <label class="field-label">Category</label>
+            <select 
+              class="form-control"
+              [(ngModel)]="cost.category"
+            >
+              <option *ngFor="let category of costCategories" [value]="category">
+                {{category}}
+              </option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label class="field-label">Timing</label>
+            <input 
+              type="text" 
+              class="form-control"
+              [(ngModel)]="cost.timing"
+              placeholder="When is this cost expected?"
+            >
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="field-label">Notes</label>
+          <textarea 
+            class="form-control notes-input"
+            rows="2"
+            [(ngModel)]="cost.notes"
+            placeholder="Additional notes"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-link add-btn" (click)="addStartupCost()">
+      <i class="fas fa-plus"></i> ADD STARTUP COST
+    </button>
+  </section>
+
+  <!-- Funding Sources Section -->
+  <section class="form-section">
+    <h2>Funding Sources</h2>
+    <div class="funding-list">
+      <div class="funding-item" *ngFor="let source of fundingSources; let i = index">
+        <div class="field-row">
+          <div class="input-group">
+            <label class="field-label">Source</label>
+            <input 
+              type="text" 
+              class="form-control"
+              [(ngModel)]="source.source"
+              placeholder="Enter funding source"
+            >
+          </div>
+          <div class="input-group amount">
+            <label class="field-label">Amount</label>
+            <input 
+              type="number" 
+              class="form-control amount-input"
+              [(ngModel)]="source.amount"
+              placeholder="0"
+            >
+          </div>
+          <button class="btn btn-danger remove-btn" (click)="removeFundingSource(i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="field-row">
+          <div class="input-group">
+            <label class="field-label">Type</label>
+            <select 
+              class="form-control"
+              [(ngModel)]="source.type"
+            >
+              <option *ngFor="let type of fundingTypes" [value]="type">
+                {{type}}
+              </option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label class="field-label">Status</label>
+            <select 
+              class="form-control"
+              [(ngModel)]="source.status"
+            >
+              <option *ngFor="let status of statusOptions" [value]="status">
+                {{status}}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="field-label">Terms</label>
+          <textarea 
+            class="form-control notes-input"
+            rows="2"
+            [(ngModel)]="source.terms"
+            placeholder="Enter terms and conditions"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-link add-btn" (click)="addFundingSource()">
+      <i class="fas fa-plus"></i> ADD FUNDING SOURCE
+    </button>
+  </section>
+
+  <!-- Financial Projections Section -->
+  <section class="form-section">
+    <h2>Financial Projections</h2>
+    
+    <!-- Revenue Projections -->
+    <h3>Revenue Projections</h3>
+    <div class="projections-list">
+      <div class="revenue-item" *ngFor="let projection of revenueProjections; let i = index">
+        <div class="field-row">
+          <div class="input-group">
+            <label class="field-label">Month</label>
+            <input 
+              type="text" 
+              class="form-control"
+              [(ngModel)]="projection.month"
+              placeholder="Enter month"
+            >
+          </div>
+          <div class="input-group">
+            <label class="field-label">Amount</label>
+            <input 
+              type="number" 
+              class="form-control"
+              [(ngModel)]="projection.amount"
+              placeholder="0"
+            >
+          </div>
+          <button class="btn btn-danger remove-btn" (click)="removeRevenueProjection(i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="assumptions-list">
+          <label class="field-label">Assumptions</label>
+          <div class="assumption-item" *ngFor="let assumption of projection.assumptions; let j = index">
+            <input 
+              type="text" 
+              class="form-control"
+              [(ngModel)]="assumption.text"
+              placeholder="Enter assumption"
+            >
+            <button class="btn btn-danger remove-btn" (click)="removeRevenueAssumption(i, j)">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <button class="btn btn-link add-btn" (click)="addRevenueAssumption(i)">
+            <i class="fas fa-plus"></i> ADD ASSUMPTION
+          </button>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-link add-btn" (click)="addRevenueProjection()">
+      <i class="fas fa-plus"></i> ADD REVENUE PROJECTION
+    </button>
+
+    <!-- Expense Projections -->
+    <h3>Expense Projections</h3>
+    <div class="projections-list">
+      <div class="expense-item" *ngFor="let expense of expenseProjections; let i = index">
+        <div class="field-row">
+          <div class="input-group">
+            <label class="field-label">Month</label>
+            <input 
+              type="text" 
+              class="form-control"
+              [(ngModel)]="expense.month"
+              placeholder="Enter month"
+            >
+          </div>
+          <div class="input-group">
+            <label class="field-label">Fixed Expenses</label>
+            <input 
+              type="number" 
+              class="form-control"
+              [(ngModel)]="expense.fixedExpenses"
+              placeholder="0"
+            >
+          </div>
+          <div class="input-group">
+            <label class="field-label">Variable Expenses</label>
+            <input 
+              type="number" 
+              class="form-control"
+              [(ngModel)]="expense.variableExpenses"
+              placeholder="0"
+            >
+          </div>
+          <button class="btn btn-danger remove-btn" (click)="removeExpenseProjection(i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="assumptions-list">
+          <label class="field-label">Assumptions</label>
+          <div class="assumption-item" *ngFor="let assumption of expense.assumptions; let j = index">
+            <input 
+              type="text" 
+              class="form-control"
+              [(ngModel)]="assumption.text"
+              placeholder="Enter assumption"
+            >
+            <button class="btn btn-danger remove-btn" (click)="removeExpenseAssumption(i, j)">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <button class="btn btn-link add-btn" (click)="addExpenseAssumption(i)">
+            <i class="fas fa-plus"></i> ADD ASSUMPTION
+          </button>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-link add-btn" (click)="addExpenseProjection()">
+      <i class="fas fa-plus"></i> ADD EXPENSE PROJECTION
+    </button>
+  </section>
+
+  <!-- Breakeven Analysis Section -->
+  <section class="form-section">
+    <h2>Breakeven Analysis</h2>
+    <div class="breakeven-inputs">
+      <div class="field-row">
+        <div class="input-group">
+          <label class="field-label">Breakeven Point</label>
+          <input 
+            type="number" 
+            class="form-control"
+            [(ngModel)]="breakevenAnalysis.point"
+            placeholder="Enter breakeven point"
+          >
+        </div>
+        <div class="input-group">
+          <label class="field-label">Timeline</label>
+          <input 
+            type="text" 
+            class="form-control"
+            [(ngModel)]="breakevenAnalysis.timeline"
+            placeholder="Enter timeline"
+          >
+        </div>
+      </div> 
+      <div class="assumptions-list">
+        <label class="field-label">Assumptions</label>
+        <div class="assumption-item" *ngFor="let assumption of breakevenAnalysis.assumptions; let i = index ; trackBy: trackByIndex">
+          <input 
+            type="text" 
+            class="form-control"
+            [(ngModel)]="breakevenAnalysis.assumptions[i]"
+            placeholder="Enter assumption"
+          >
+          <button class="btn btn-danger remove-btn" (click)="removeBreakevenAssumption(i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <button class="btn btn-link add-btn" (click)="addBreakevenAssumption()">
+          <i class="fas fa-plus"></i> ADD ASSUMPTION
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cash Flow Projections Section -->
+  <section class="form-section">
+    <h2>Cash Flow Projections</h2>
+    <div class="cash-flow-list">
+      <div class="cash-flow-item" *ngFor="let entry of cashFlowEntries; let i = index">
+        <div class="field-row">
+          <div class="input-group">
+            <label class="field-label">Month</label>
+            <input 
+              type="text" 
+              class="form-control"
+              [(ngModel)]="entry.month"
+              placeholder="Select month"
+            >
+          </div>
+          <div class="input-group">
+            <label class="field-label">Cash Inflow</label>
+            <input 
+              type="number" 
+              class="form-control amount-input"
+              [(ngModel)]="entry.cashInflow"
+              placeholder="0"
+              (ngModelChange)="calculateBalance(entry)"
+            >
+          </div>
+          <div class="input-group">
+            <label class="field-label">Cash Outflow</label>
+            <input 
+              type="number" 
+              class="form-control amount-input"
+              [(ngModel)]="entry.cashOutflow"
+              placeholder="0"
+              (ngModelChange)="calculateBalance(entry)"
+            >
+          </div>
+          <div class="input-group">
+            <label class="field-label">Balance</label>
+            <input 
+              type="number" 
+              class="form-control amount-input"
+              [(ngModel)]="entry.balance"
+              placeholder="0"
+              readonly
+            >
+          </div>
+          <button class="btn btn-danger remove-btn" (click)="removeCashFlowEntry(i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="input-group">
+          <label class="field-label">Notes</label>
+          <textarea 
+            class="form-control notes-input"
+            rows="2"
+            [(ngModel)]="entry.notes"
+            placeholder="Additional notes"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-link add-btn" (click)="addCashFlowEntry()">
+      <i class="fas fa-plus"></i> ADD CASH FLOW ENTRY
+    </button>
+  </section>
+
+  <!-- Save Progress Button -->
+  <div class="save-section">
+    <button class="btn btn-primary save-progress" *ngIf="isSaved" (click)="saveProgress()">
+      <i class="fas fa-save"></i> Save Progress
+    </button>
+  </div>
+  <div class="update-section">
+    <button class="btn btn-primary save-progress"*ngIf="!isSaved" (click)="updateProgress()">
+      <i class="fas fa-save"></i> update Progress
+    </button>
+    <button class="btn btn-primary save-progress"*ngIf="!isSaved" routerLink="/launch-preparation">
+      Next
+    </button>
+  </div>
+</div>
+<button *ngIf="showButton" class="go-up-btn" (click)="scrollToTop()">
+  ⬆
+</button>

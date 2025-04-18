@@ -1,0 +1,75 @@
+<div class="sales-strategy-container">
+    <section class="video-section">
+      <h2><i class="fas fa-video"></i> Introduction Video</h2>
+      <div class="vedio">
+        <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" autoplay></video>
+  
+    </div>
+      <p class="video-description">{{videoDescription}}</p>
+    </section>
+    <div class="p-6 max-w-4xl mx-auto">
+        <h1 class="text-2xl font-bold mb-4">Sales Funnel Calculator</h1>
+    
+       
+      
+        <!-- Video 2 Section -->
+        <section class="video-section">
+            <h2><i class="fas fa-video"></i> Introduction Video</h2>
+            <div class="vedio">
+              <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" autoplay></video>
+        
+          </div>
+            <p class="video-description">{{videoDescription}}</p>
+          </section>
+    
+        <!-- Inputs Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div>
+            <label class="block font-medium mb-1">Target Monthly Revenue ($)</label>
+            <input type="number" [(ngModel)]="targetRevenue" class="w-full border rounded p-2" placeholder="Enter revenue goal">
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Unit Sale Price ($)</label>
+            <input type="number" [(ngModel)]="unitPrice" class="w-full border rounded p-2" placeholder="Enter sale price">
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Interactions Needed per Sale</label>
+            <input type="number" [(ngModel)]="interactionsPerSale" class="w-full border rounded p-2" placeholder="How many engagements to sell">
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Reach Needed per Interaction</label>
+            <input type="number" [(ngModel)]="reachPerInteraction" class="w-full border rounded p-2" placeholder="How many reaches per engagement">
+          </div>
+        </div>
+    
+          <!-- Results Section -->
+          <div *ngIf="calculated" class="bg-gray-100 p-4 rounded">
+            <h3 class="text-lg font-semibold mb-2">Results:</h3>
+            <p><strong>Sales Needed:</strong> {{ unitsToSell }}</p>
+            <p><strong>Total Interactions:</strong> {{ interactionsNeeded }}</p>
+            <p><strong>Total Reach:</strong> {{ reachNeeded }}</p> 
+          </div>
+        <!-- Calculate Button -->
+        <!-- <div class="mb-6">
+          <button (click)="save()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save</button>
+        </div> -->
+        <div class="save-section text-center mt-2">
+          <button class="btn btn-primary save-progress" *ngIf="isSaved" (click)="saveProgress()">
+            <i class="fas fa-save"></i> Save Progress
+          </button>
+        </div>
+        <div class="update-section d-flex justify-content-around">
+          <button class="btn btn-primary save-progress"*ngIf="!isSaved" (click)="updateProgress()">
+            <i class="fas fa-save"></i> update Progress
+          </button>
+          <button class="btn btn-primary save-progress"*ngIf="!isSaved" routerLink="/sales-strategy">
+            Next
+          </button>
+        </div>
+    
+      
+      </div>
+    </div>
+    <button *ngIf="showButton" class="go-up-btn" (click)="scrollToTop()">
+      ⬆
+    </button>

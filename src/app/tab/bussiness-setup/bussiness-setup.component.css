@@ -1,0 +1,221 @@
+.video-section {
+  text-align: center;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+}
+
+.video-section h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.video-section video {
+  width: 100%;
+  max-width: 750px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+}
+
+.video-description {
+  font-size: 16px;
+  color: #555;
+  margin-top: 10px;
+  padding: 0 15px;
+  line-height: 1.5;
+  word-wrap: break-word;  /* يسمح بكسر الكلمات الطويلة */
+  overflow-wrap: break-word; /* يضمن كسر الكلمات الطويلة داخل المحتوى */
+  white-space: normal; /* يضمن التفاف النص */
+  max-width: 100%; /* يمنع الخروج عن الشاشة */
+}
+.business-setup-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.form-section {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.form-section:hover {
+  transform: translateY(-2px);
+}
+
+h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+h2 i {
+  margin-right: 0.5rem;
+  color: #3498db;
+}
+
+h3 {
+  color: #34495e;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.section-description {
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.form-control {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.requirements-section,
+.license-item,
+.location-item,
+.insurance-item {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.requirement-item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.license-header,
+.location-header,
+.insurance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5rem;
+}
+
+.col-md-6 {
+  flex: 0 0 50%;
+  padding: 0.5rem;
+}
+
+.remove-btn {
+  padding: 0.375rem 0.75rem;
+  border-radius: 5px;
+}
+
+.add-btn {
+  margin-top: 1rem;
+  width: fit-content;
+}
+
+.save-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.update-section {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3rem;
+}
+
+.save-progress {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  background-color: #3498db;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.save-progress:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.save-progress i {
+  margin-right: 0.5rem;
+}
+
+.text-muted {
+  color: #6c757d;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .form-section {
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .col-md-6 {
+    flex: 0 0 100%;
+  }
+ 
+}
+.go-up-btn {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.go-up-btn:hover {
+  background-color: #0056b3;
+}

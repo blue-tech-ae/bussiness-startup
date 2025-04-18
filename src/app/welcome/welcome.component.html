@@ -1,0 +1,18 @@
+<div class="welcome-container">
+  <div class="welcome-header">
+    <h1>Welcome back, admin!</h1>
+    <p class="subtitle">Continue your business development journey by exploring the following sections:</p>
+  </div>
+
+  <div class="sections-grid">
+    <a class="section-card" *ngFor="let section of sections" [routerLink]="section.link">
+      <div class="card-icon">
+        <i class="fas {{section.icon}}"></i>
+      </div>
+      <div class="card-content">
+        <h3>{{section.title}}</h3>
+        <p>{{section.description}}</p>
+      </div>
+    </a>
+  </div>
+</div> 

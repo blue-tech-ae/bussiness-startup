@@ -1,0 +1,319 @@
+.video-section {
+  text-align: center;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+}
+
+.video-section h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.video-section video {
+  width: 100%;
+  max-width: 750px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+}
+
+.video-description {
+  font-size: 16px;
+  color: #555;
+  margin-top: 10px;
+  padding: 0 15px;
+  line-height: 1.5;
+  word-wrap: break-word;  /* يسمح بكسر الكلمات الطويلة */
+  overflow-wrap: break-word; /* يضمن كسر الكلمات الطويلة داخل المحتوى */
+  white-space: normal; /* يضمن التفاف النص */
+  max-width: 100%; /* يمنع الخروج عن الشاشة */
+}
+.financial-planning-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #f8fafc;
+  min-height: calc(100vh - 80px);
+}
+
+.form-section {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.form-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(45deg, #2563eb, #3b82f6);
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #1e293b;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-bottom: 2px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+h2 i {
+  color: #3b82f6;
+  font-size: 2rem;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.field-label {
+  font-size: 0.95rem;
+  color: #475569;
+  font-weight: 600;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background-color: #ffffff;
+}
+
+.form-control:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  outline: none;
+}
+
+.amount-input {
+  font-family: 'SF Mono', monospace;
+  text-align: right;
+  font-weight: 600;
+  color: #1e293b;
+  letter-spacing: 1px;
+}
+
+select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.5rem;
+  padding-right: 2.5rem;
+}
+
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.cost-item,
+.funding-item,
+.revenue-item,
+.expense-item,
+.breakeven-item,
+.cash-flow-item {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.remove-btn {
+  background: transparent;
+  color: #dc2626;
+  border: none;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.remove-btn:hover {
+  background: rgba(220, 38, 38, 0.1);
+  transform: translateY(-1px);
+}
+
+.add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: #3b82f6;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none !important;
+}
+
+.add-btn:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 8px;
+  transform: translateY(-1px);
+}
+
+.add-btn i {
+  font-size: 1rem;
+}
+
+.save-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  width: 100%;
+}
+.update-section {
+  display: flex;
+  justify-content:space-around;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.save-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(45deg, #2563eb, #3b82f6);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 1.25rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+}
+
+.save-progress:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+.save-progress i {
+  font-size: 1.2rem;
+}
+
+.assumptions-list {
+  margin: 1.5rem 0 0 2.5rem;
+  padding-left: 1.5rem;
+  border-left: 3px solid #e2e8f0;
+}
+
+.assumption-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .financial-planning-container {
+    padding: 1rem;
+  }
+
+  .form-section {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .cost-item,
+  .funding-item,
+  .revenue-item,
+  .expense-item,
+  .breakeven-item,
+  .cash-flow-item {
+    padding: 1.5rem;
+  }
+
+  .save-progress {
+    width: 100%;
+    padding: 1rem;
+    justify-content: center;
+  }
+}
+
+.cost-item:hover,
+.funding-item:hover,
+.revenue-item:hover,
+.expense-item:hover,
+.breakeven-item:hover,
+.cash-flow-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border-color: #3b82f6;
+}
+.go-up-btn {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.go-up-btn:hover {
+  background-color: #0056b3;
+}

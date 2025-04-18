@@ -1,0 +1,62 @@
+.video-section {
+    text-align: center;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+  }
+  
+  .video-section h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  .video-section video {
+    width: 100%;
+    max-width: 750px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+  }
+  
+  .video-description {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+    padding: 0 15px;
+    line-height: 1.5;
+    word-wrap: break-word;  /* يسمح بكسر الكلمات الطويلة */
+    overflow-wrap: break-word; /* يضمن كسر الكلمات الطويلة داخل المحتوى */
+    white-space: normal; /* يضمن التفاف النص */
+    max-width: 100%; /* يمنع الخروج عن الشاشة */
+  }
+  .mvp-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  .go-up-btn {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .go-up-btn:hover {
+    background-color: #0056b3;
+  }

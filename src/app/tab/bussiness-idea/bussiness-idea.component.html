@@ -1,0 +1,193 @@
+<div class="business-idea-container">
+  <section class="video-section">
+    <h2><i class="fas fa-video"></i> Introduction Video</h2>
+    <div class="vedio">
+      <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" ></video>
+
+  </div>
+   
+    <p class="video-description">{{videoDescription}}</p>
+    
+  </section>
+  <!-- Skills & Experience Section -->
+  <section class="form-section">
+    <h2><i class="fas fa-tools"></i> Skills & Experience</h2>
+    <!-- List your relevant skills and experience that could contribute to your business. -->
+    <p class="section-description">list the skills and expertise you have<br>
+      -jobs you have done in the past<br>
+      - things you are really good at  
+      <i class="fas fa-question-circle" (click)="openDialog1()" style="color: #007bff; font-size: 24px; cursor: pointer;"></i></p>
+    
+
+    <div class="form-group">
+      <textarea 
+        class="form-control custom-textarea"
+        [(ngModel)]="businessData.Skills_Experience"
+        placeholder=" "				
+        rows="4"
+      ></textarea>
+      <small class="form-text text-muted">Enter each skill on a new line</small>
+    </div>
+  </section>
+
+  <!-- Passions & Interests Section -->
+  <section class="form-section">
+    <h2><i class="fas fa-heart"></i> Passions & Interests</h2>
+    <!-- What are you passionate about? This could inspire your business direction. -->
+    <p class="section-description">list top of: <br>
+      - your hobbies and passions? <br>
+      - things you enjoy doing the most?
+      <i class="fas fa-question-circle" (click)="openDialog2()" style="color: #007bff; font-size: 24px; cursor: pointer;"></i></p>
+    
+    <div class="form-group">
+      <textarea
+        class="form-control custom-textarea"
+        [(ngModel)]="businessData.Passions_Interests"
+        placeholder="list top of: 
+        - your hobbies and passions?
+        - things you enjoy doing the most?"				
+         rows="4"
+      ></textarea>
+      <small class="form-text text-muted">Enter each passion/interest on a new line</small>
+    </div>
+  </section>
+
+  <!-- Values & Goals Section -->
+  <section class="form-section">
+    <h2><i class="fas fa-star"></i> Values & Goals</h2>
+    <!-- Define your core values and business goals. -->
+    <p class="section-description">List topics or issues you care about
+      <i class="fas fa-question-circle" (click)="openDialog3()" style="color: #007bff; font-size: 24px; cursor: pointer;"></i></p>
+    
+   
+    <div class="form-group">
+      <textarea
+        class="form-control custom-textarea"
+        [(ngModel)]="businessData.Values_Goals"
+        placeholder=""
+        rows="4"
+      ></textarea>
+      <small class="form-text text-muted">Enter each value/goal on a new line</small>
+    </div>
+  </section>
+
+  <!-- Business Ideas Section -->
+  <section class="form-section">
+    <h2><i class="fas fa-lightbulb"></i> Business Ideas</h2>
+    <p class="section-description">List your potential business ideas, considering your skills, passions, and values.</p>
+    <div class="business-ideas-container">
+      <!-- Idea 1 -->
+      <div class="form-group">
+        <div class="idea-input-group">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="businessIdeas['idea1']"
+            placeholder="Idea 1"
+          >
+          <button class="btn btn-link edit-btn" (click)="openSuggestionDialog(0)">
+            <i class="fas fa-robot"></i>
+          </button>
+        </div>
+        <small class="form-text text-muted">Describe your business idea 1</small>
+      </div>
+
+      <!-- Idea 2 -->
+      <div class="form-group">
+        <div class="idea-input-group">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="businessIdeas['idea2']"
+            placeholder="Idea 2"
+          >
+          <button class="btn btn-link edit-btn" (click)="openSuggestionDialog(1)">
+            <i class="fas fa-robot"></i>
+          </button>
+        </div>
+        <small class="form-text text-muted">Describe your business idea 2</small>
+      </div>
+
+      <!-- Idea 3 -->
+      <div class="form-group">
+        <div class="idea-input-group">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="businessIdeas['idea3']"
+            placeholder="Idea 3"
+          >
+          <button class="btn btn-link edit-btn" (click)="openSuggestionDialog(2)">
+            <i class="fas fa-robot"></i>
+          </button>
+        </div>
+        <small class="form-text text-muted">Describe your business idea 3</small>
+      </div>
+
+      <!-- Idea 4 -->
+      <div class="form-group">
+        <div class="idea-input-group">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="businessIdeas['idea4']"
+            placeholder="Idea 4"
+          >
+          <button class="btn btn-link edit-btn" (click)="openSuggestionDialog(3)">
+            <i class="fas fa-robot"></i>
+          </button>
+        </div>
+        <small class="form-text text-muted">Describe your business idea 4</small>
+      </div>
+
+      <!-- Idea 5 -->
+      <div class="form-group">
+        <div class="idea-input-group">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="businessIdeas['idea5']"
+            placeholder="Idea 5"
+          >
+          <button class="btn btn-link edit-btn" (click)="openSuggestionDialog(4)">
+            <i class="fas fa-robot"></i>
+          </button>
+        </div>
+        <small class="form-text text-muted">Describe your business idea 5</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <h2><i class="fas fa-heart"></i> Personal Notes</h2>
+   
+    <div class="form-group">
+      <textarea
+        class="form-control custom-textarea"
+        [(ngModel)]="businessData.Personal_notes"
+        placeholder=""				
+         rows="4"
+      ></textarea>
+      <small class="form-text text-muted">Enter each note on a new line</small>
+    </div>
+  </section>
+
+  <!-- Save Progress Button -->
+  <div class="save-section">
+    <button class="btn btn-primary save-progress" *ngIf="isSaved" (click)="saveProgress()">
+      <i class="fas fa-save"></i> Save Progress
+    </button>
+     
+  </div>
+  <div class="update-section">
+    <button class="btn btn-primary save-progress" *ngIf="!isSaved" (click)="updateProgress()">
+      <i class="fas fa-save"></i> Update Progress
+    </button>
+    <button class="btn btn-primary save-progress" *ngIf="!isSaved" routerLink="/test-your-idea">
+      Next
+    </button>
+  </div>
+</div>
+<button *ngIf="showButton" class="go-up-btn" (click)="scrollToTop()">
+  ⬆
+</button>

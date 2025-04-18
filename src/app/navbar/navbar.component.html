@@ -1,0 +1,50 @@
+<nav class="navbar">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/landing-page">
+      <i class="fas fa-desktop"></i>
+
+Landing Page
+    </a>
+
+    <button class="menu-toggle" (click)="toggleNavbar()" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="nav-links" [class.active]="!isNavbarCollapsed">  
+      <ul>
+        <li class="nav-link">
+          <a routerLink="/bussiness-idea" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Business Idea</a>
+        </li>
+        <li class="nav-link">
+          <a routerLink="/test-your-idea" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Test Your Idea</a>
+        </li>
+        <li class="nav-link">
+          <a routerLink="/market-research" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Market Research</a>
+        </li>
+        <li class="nav-link">
+          <a routerLink="/start-simple" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Start Simple</a>
+        </li>
+        <li class="nav-link">
+          <a  routerLink="/marketing" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Marketing</a> 
+        </li>
+        <li class="nav-link">
+          <a routerLink="/sales-strategy" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Sales Strategy</a>
+        </li>
+        <li class="nav-link">
+          <a routerLink="/business-setup" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Business Setup</a>
+        </li>
+        <li class="nav-link">
+          <a  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Financial Planning</a>
+        </li>
+        <li class="nav-link">
+          <a  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Launch Preparation</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- 
+
+routerLink="/financial-planning"
+routerLink="/launch-preparation" -->

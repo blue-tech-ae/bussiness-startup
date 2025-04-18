@@ -1,0 +1,254 @@
+<div class="market-research-container">
+  <section class="video-section">
+    <h2><i class="fas fa-video"></i> Introduction Video</h2>
+    <div class="vedio">
+      <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" autoplay></video>
+
+  </div>
+    <p class="video-description">{{videoDescription}}</p>
+  </section>
+  <!-- Target Customer Persona Section -->
+  <section class="form-section">
+    <h2><i class="fas fa-user-circle"></i> Target Customer Persona</h2>
+    <p class="section-description">Define your ideal customer profile</p>
+    
+    <div class="persona-grid">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input 
+          type="text" 
+          id="name"
+          class="form-control" 
+          [(ngModel)]="customerPersona.name"
+          placeholder="Customer name"
+        >
+      </div>
+
+    
+      <div class="form-group">
+        <label for="ageGroup">Age Group</label>
+        <select 
+          id="ageGroup" 
+          class="form-control" 
+          [(ngModel)]="customerPersona.age"
+        >
+          <option value="">Select Age Group</option> 
+          <option value="Young">Young</option>
+          <option value="Middle age">Middle age</option>
+          <option value="Old">Old</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select 
+          id="gender" 
+          class="form-control" 
+          [(ngModel)]="customerPersona.gender"
+        >
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <!-- <div class="form-group">
+        <label for="socialStatus">Social Status</label>
+        <select 
+          id="socialStatus" 
+          class="form-control" 
+          [(ngModel)]="customerPersona.socialStatus"
+        >
+          <option value="">Select Social Status</option>
+          <option value="single">Single</option>
+          <option value="married">Married</option>
+          <option value="other">Other</option>
+        </select>
+      </div> -->
+      
+
+      <div class="form-group">
+        <label for="income">Income</label>
+        <select 
+          id="income" 
+          class="form-control" 
+          [(ngModel)]="customerPersona.income"
+        >
+          <option value="">Select Income Level</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="education">Education</label>
+        <input 
+          type="text" 
+          id="education"
+          class="form-control" 
+          [(ngModel)]="customerPersona.education"
+          placeholder="Education level"
+        >
+      </div> -->
+      <div class="form-group">
+        <label for="employment">Employment</label>
+        <select 
+          id="employment" 
+          class="form-control" 
+          [(ngModel)]="customerPersona.employment"
+        >
+          <option value="">Select Employment Status</option>
+          <option value="Unemployed">Unemployed</option>
+          <option value="Full-time">Full-time</option>
+          <option value="Part-time">Part-time</option>
+          <option value="Self-employed">Self-employed</option>
+          <option value="Casual">Casual</option>
+        </select>
+      </div>
+      
+    </div>
+    <h2> Other</h2>
+   
+    <div class="form-group">
+      <textarea
+        class="form-control custom-textarea"
+        [(ngModel)]="customerPersona.other"
+        placeholder="Add more Persona Information (Eduvation, interests, social media favorite etc.) "				
+         rows="4"
+      ></textarea>
+      <small class="form-text text-muted">Enter each note on a new line</small>
+    </div>
+  </section>
+
+  <!-- Customer Challenges Section -->
+  <section class="form-section">
+    <h2><i class="fas fa-tasks"></i> Customer Challenges</h2>
+    <p class="section-description">Identify and prioritize customer pain points</p>
+
+    <!-- Must-Have Solutions -->
+    <div class="challenges-section">
+      <h3><i class="fas fa-exclamation-circle"></i> Must-Have Solutions</h3>
+      <div class="challenges-list">
+        <div class="challenge-item" *ngFor="let solution of customerChallenges.MustHaveSolutions; let i = index">
+          <input 
+            type="text" 
+            class="form-control" 
+            [(ngModel)]="solution.text"
+            placeholder="Enter must-have solution"
+          >
+          <button class="btn btn-danger remove-btn" (click)="removeChallenge('must', i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <button class="btn btn-outline-primary add-btn" (click)="addChallenge('must')">
+          <i class="fas fa-plus"></i> Add Must-Have Challenge
+        </button>
+      </div>
+    </div>
+
+    <!-- Should-Have Solutions -->
+    <div class="challenges-section">
+      <h3><i class="fas fa-star-half-alt"></i> Should-Have Solutions</h3>
+      <div class="challenges-list">
+        <div class="challenge-item" *ngFor="let solution of customerChallenges.ShouldHaveSolutions; let i = index">
+          <input 
+            type="text" 
+            class="form-control" 
+            [(ngModel)]="solution.text"
+            placeholder="Enter should-have solution"
+          >
+          <button class="btn btn-danger remove-btn" (click)="removeChallenge('should', i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <button class="btn btn-outline-primary add-btn" (click)="addChallenge('should')">
+          <i class="fas fa-plus"></i> Add Should-Have Challenge
+        </button>
+      </div>
+    </div>
+
+    <!-- Nice-to-Have Solutions -->
+    <div class="challenges-section">
+      <h3><i class="fas fa-star"></i> Nice-to-Have Solutions</h3>
+      <div class="challenges-list">
+        <div class="challenge-item" *ngFor="let solution of customerChallenges.NiceToHaveSolutions; let i = index">
+          <input 
+            type="text" 
+            class="form-control" 
+            [(ngModel)]="solution.text"
+            placeholder="Enter nice-to-have solution"
+          >
+          <button class="btn btn-danger remove-btn" (click)="removeChallenge('nice', i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <button class="btn btn-outline-primary add-btn" (click)="addChallenge('nice')">
+          <i class="fas fa-plus"></i> Add Nice-to-Have Challenge
+        </button>
+      </div>
+    </div>
+  </section>
+  <section class="form-section">
+    <h2><i class="fas fa-heart"></i> Describe Your Business</h2>
+  
+    <div class="form-group">
+      <label for="businessDescription">I help 
+        <input 
+          type="text" 
+          class="form-control mt-2" 
+          id="defineClients" 
+          placeholder="Define your clients/persona" 
+          [(ngModel)]="customerPersona.defineClients"
+        > 
+        who has 
+        <input 
+          type="text" 
+          class="form-control mt-2" 
+          id="defineProblem" 
+          placeholder="Define their problem" 
+          [(ngModel)]="customerPersona.defineProblem"
+        > 
+        by providing them with 
+        <input 
+          type="text" 
+          class="form-control mt-2" 
+          id="defineSolution" 
+          placeholder="Define your solution" 
+          [(ngModel)]="customerPersona.defineSolution"
+        >.
+      </label>
+    </div>
+  </section>
+  
+  <section class="form-section">
+    <h2><i class="fas fa-heart"></i> Notes</h2>
+  
+    <div class="form-group">
+      <textarea
+        class="form-control custom-textarea"
+        [(ngModel)]="customerPersona.Personal_notes"
+        placeholder="Empty space for users to add any personal notes."				
+        rows="4"
+      ></textarea>
+      <small class="form-text text-muted">Enter each note on a new line</small>
+    </div>
+  </section>
+  
+
+  <!-- Save Progress Button -->
+  <div class="save-section">
+    <button class="btn btn-primary save-progress" *ngIf="isSaved"  (click)="saveProgress()">
+      <i class="fas fa-save"></i> Save Progress
+    </button>
+  </div>
+  <div class="update-section">
+    <button class="btn btn-primary save-progress" *ngIf="!isSaved" (click)="updateProgress()">
+      <i class="fas fa-save"></i> update Progress
+    </button>
+    <button class="btn btn-primary save-progress" *ngIf="!isSaved" routerLink="/start-simple">
+       Next
+    </button> 
+  </div>
+</div>
+<button *ngIf="showButton" class="go-up-btn" (click)="scrollToTop()">
+  ⬆
+</button>

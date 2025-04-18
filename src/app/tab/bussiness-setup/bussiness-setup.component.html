@@ -1,0 +1,288 @@
+<div class="business-setup-container">
+  <section class="video-section">
+    <h2><i class="fas fa-video"></i> Introduction Video</h2>
+    <div class="vedio">
+      <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" autoplay></video>
+
+  </div>
+    <p class="video-description">{{videoDescription}}</p>
+  </section>
+  <!-- Legal Structure Section -->
+  <section class="form-section">
+    <h2><i class="fas fa-building"></i> Legal Structure</h2>
+    <p class="section-description">Define your business's legal structure and requirements.</p>
+
+    <div class="form-group">
+      <label>Business Type</label>
+      <select 
+        class="form-control" 
+        [(ngModel)]="legalStructure.businessType"
+      >
+        <option value="">Select business type</option>
+        <option *ngFor="let type of businessTypes" [value]="type">
+          {{type}}
+        </option>
+      </select>
+      <small class="text-muted">Choose the legal structure that best fits your business</small>
+    </div>
+
+    <div class="requirements-section">
+      <h3>Legal Requirements</h3>
+      <div class="requirements-list">
+        <div class="requirement-item" *ngFor="let req of legalStructure.requirements; let i = index ; trackBy: trackByIndex">
+          <input 
+            type="text" 
+            class="form-control"
+            [(ngModel)]="legalStructure.requirements[i]"
+            placeholder="Enter legal requirement"
+          >
+          <button class="btn btn-danger remove-btn" (click)="removeRequirement(i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <button class="btn btn-outline-secondary add-btn" (click)="addRequirement()">
+          <i class="fas fa-plus"></i> Add Requirement
+        </button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Timeline</label>
+          <input 
+            type="text" 
+            class="form-control"
+            [(ngModel)]="legalStructure.timeline"
+            placeholder="Estimated timeline for setup"
+          >
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Setup Costs</label>
+          <input 
+            type="number" 
+            class="form-control"
+            [(ngModel)]="legalStructure.setupCosts"
+            placeholder="Estimated setup costs"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Licenses and Permits Section -->
+  <section class="form-section">
+    <h2><i class="fas fa-certificate"></i> Required Licenses and Permits</h2>
+    <p class="section-description">List all required licenses and permits for your business.</p>
+
+    <div class="licenses-list">
+      <div class="license-item" *ngFor="let license of licenses; let i = index">
+        <div class="license-header">
+          <h3>License {{i + 1}}</h3>
+          <button class="btn btn-danger remove-btn" (click)="removeLicense(i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="license-inputs">
+          <div class="form-group">
+            <label>License Name</label>
+            <input 
+              type="text" 
+              class="form-control"
+              [(ngModel)]="license.name"
+              placeholder="Enter license name"
+            >
+          </div>
+          <div class="requirements-section">
+            <label>Requirements</label>
+            <div class="requirements-list">
+              <div class="requirement-item" *ngFor="let req of license.requirements; let j = index ; trackBy: trackByIndex">
+                <input 
+                  type="text" 
+                  class="form-control"
+                  [(ngModel)]="license.requirements[j]"
+                  placeholder="Enter requirement"
+                >
+                <button class="btn btn-danger remove-btn" (click)="removeLicenseRequirement(i, j)">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <button class="btn btn-outline-secondary add-btn" (click)="addLicenseRequirement(i)">
+                <i class="fas fa-plus"></i> Add Requirement
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Status</label>
+                <select 
+                  class="form-control"
+                  [(ngModel)]="license.status"
+                >
+                  <option *ngFor="let status of statusOptions" [value]="status">
+                    {{status}}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Deadline</label>
+                <input 
+                  type="date" 
+                  class="form-control"
+                  [(ngModel)]="license.deadline"
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-outline-primary add-btn" (click)="addLicense()">
+        <i class="fas fa-plus"></i> Add License/Permit
+      </button>
+    </div>
+  </section>
+
+  <!-- Location Section -->
+  <section class="form-section">
+    <h2><i class="fas fa-map-marker-alt"></i> Business Location</h2>
+    <p class="section-description">Define your business locations and facilities.</p>
+
+    <div class="locations-list">
+      <div class="location-item" *ngFor="let location of locations; let i = index">
+        <div class="location-header">
+          <h3>Location {{i + 1}}</h3>
+          <button class="btn btn-danger remove-btn" (click)="removeLocation(i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="location-inputs">
+          <div class="form-group">
+            <label>Location Type</label>
+            <input 
+              type="text" 
+              class="form-control"
+              [(ngModel)]="location.type"
+              placeholder="e.g., Office, Warehouse, Retail"
+            >
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <textarea 
+              class="form-control"
+              rows="2"
+              [(ngModel)]="location.address"
+              placeholder="Full address"
+            ></textarea>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Size (sq ft)</label>
+                <input 
+                  type="number" 
+                  class="form-control"
+                  [(ngModel)]="location.size"
+                  placeholder="Space size"
+                >
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Monthly Cost</label>
+                <input 
+                  type="number" 
+                  class="form-control"
+                  [(ngModel)]="location.monthlyCost"
+                  placeholder="Monthly rent/cost"
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-outline-primary add-btn" (click)="addLocation()">
+        <i class="fas fa-plus"></i> Add Location
+      </button>
+    </div>
+  </section>
+
+  <!-- Insurance Section -->
+  <section class="form-section">
+    <h2><i class="fas fa-shield-alt"></i> Business Insurance</h2>
+    <p class="section-description">Define required insurance coverage for your business.</p>
+
+    <div class="insurance-list">
+      <div class="insurance-item" *ngFor="let insurance of insurances; let i = index">
+        <div class="insurance-header">
+          <h3>Insurance {{i + 1}}</h3>
+          <button class="btn btn-danger remove-btn" (click)="removeInsurance(i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="insurance-inputs">
+          <div class="form-group">
+            <label>Insurance Type</label>
+            <input 
+              type="text" 
+              class="form-control"
+              [(ngModel)]="insurance.type"
+              placeholder="e.g., Liability, Property, Workers Comp"
+            >
+          </div>
+          <div class="form-group">
+            <label>Provider</label>
+            <input 
+              type="text" 
+              class="form-control"
+              [(ngModel)]="insurance.provider"
+              placeholder="Insurance provider name"
+            >
+          </div>
+          <div class="form-group">
+            <label>Coverage Details</label>
+            <textarea 
+              class="form-control"
+              rows="2"
+              [(ngModel)]="insurance.coverage"
+              placeholder="Describe coverage details"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label>Annual Cost</label>
+            <input 
+              type="number" 
+              class="form-control"
+              [(ngModel)]="insurance.annualCost"
+              placeholder="Annual premium"
+            >
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-outline-primary add-btn" (click)="addInsurance()">
+        <i class="fas fa-plus"></i> Add Insurance
+      </button>
+    </div>
+  </section>
+
+  <!-- Save Progress Button -->
+  <div class="save-section">
+    <button class="btn btn-primary save-progress" *ngIf="isSaved" (click)="saveProgress()">
+      <i class="fas fa-save"></i> Save Progress
+    </button>
+  </div>
+  <div class="update-section" >
+    <button class="btn btn-primary save-progress" *ngIf="!isSaved"  (click)="updateProgress()" >
+      <i class="fas fa-save"></i> Update Progress
+    </button>
+    <button class="btn btn-primary save-progress" *ngIf="!isSaved"  routerLink="/financial-planning" >
+      Next
+    </button>
+  </div><button *ngIf="showButton" class="go-up-btn" (click)="scrollToTop()">
+    ⬆
+  </button>
+</div>

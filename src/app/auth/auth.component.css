@@ -1,0 +1,226 @@
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7fafc;
+  padding: 2rem;
+}
+
+.auth-card {
+  background: white;
+  border-radius: 24px;
+  padding: 3rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.logo {
+  width: 200px;
+  margin-bottom: 2rem;
+}
+
+.form-container {
+  text-align: left;
+  direction: ltr;
+}
+
+h2 {
+  color: #2B6CB0;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+label {
+  display: block;
+  color: #4A5568;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #E2E8F0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #3182CE;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+  outline: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #3182CE;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  background: #2C5282;
+  transform: translateY(-2px);
+}
+
+.toggle-text {
+  margin-top: 1.5rem;
+  color: #4A5568;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #3182CE;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 0.5rem;
+}
+
+.toggle-btn:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .auth-card {
+    padding: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.error-message {
+  background-color: #FED7D7;
+  color: #C53030;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.submit-btn:disabled {
+  background-color: #CBD5E0;
+  cursor: not-allowed;
+  transform: none;
+}
+/* تظليل الخلفية عند ظهور النافذة */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* تأثير التعتيم */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* تصميم النافذة المنبثقة */
+.popup {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* العنوان */
+.popup h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #333;
+}
+
+/* النص التوضيحي */
+.popup p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* حقل الإدخال */
+.popup input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* أزرار الإجراء */
+.popup-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup-actions button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.popup-actions button:first-child {
+  background: #007bff;
+  color: #fff;
+  margin-right: 5px;
+}
+
+.popup-actions button:first-child:hover {
+  background: #0056b3;
+}
+
+.popup-actions button:last-child {
+  background: #ccc;
+  color: #333;
+}
+
+.popup-actions button:last-child:hover {
+  background: #999;
+}
+
+/* تأثير الظهور */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.reset{
+  cursor: pointer;
+}

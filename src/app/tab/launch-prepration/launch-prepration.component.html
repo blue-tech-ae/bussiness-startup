@@ -1,0 +1,342 @@
+<div class="launch-preparation-container">
+  <section class="video-section">
+    <h2><i class="fas fa-video"></i> Introduction Video</h2>
+    <div class="vedio">
+      <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" autoplay></video>
+
+  </div>
+    <p class="video-description">{{videoDescription}}</p>
+  </section>
+  <!-- Launch Checklist Section -->
+  <section class="form-section">
+    <h2><i class="fas fa-tasks"></i> Launch Checklist</h2>
+    <p class="section-description">Track all tasks required for successful launch.</p>
+
+    <div class="tasks-list">
+      <div class="task-item" *ngFor="let task of tasks; let i = index">
+        <div class="task-header">
+          <h3>Task {{i + 1}}</h3>
+          <button class="btn btn-danger remove-btn" (click)="removeTask(i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="task-inputs">
+          <div class="field-row">
+            <div class="input-group">
+              <label class="field-label">Category</label>
+              <input 
+                type="text" 
+                class="form-control"
+                [(ngModel)]="task.category"
+                placeholder="Enter task category"
+              >
+            </div>
+            <div class="input-group">
+              <label class="field-label">Task</label>
+              <input 
+                type="text" 
+                class="form-control"
+                [(ngModel)]="task.task"
+                placeholder="Enter task description"
+              >
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="input-group">
+              <label class="field-label">Due Date</label>
+              <input 
+                type="date" 
+                class="form-control"
+                [(ngModel)]="task.dueDate"
+              >
+            </div>
+            <div class="input-group">
+              <label class="field-label">Status</label>
+              <select 
+                class="form-control"
+                [(ngModel)]="task.status"
+              >
+                <option *ngFor="let status of statusOptions" [value]="status">
+                  {{status}}
+                </option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label class="field-label">Assignee</label>
+              <input 
+                type="text" 
+                class="form-control"
+                [(ngModel)]="task.assignee"
+                placeholder="Who is responsible?"
+              >
+            </div>
+          </div>
+          <div class="input-group">
+            <label class="field-label">Notes</label>
+            <textarea 
+              class="form-control notes-input"
+              rows="2"
+              [(ngModel)]="task.notes"
+              placeholder="Additional notes"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-outline-primary add-btn" (click)="addTask()">
+      <i class="fas fa-plus"></i> Add Task
+    </button>
+  </section>
+
+  <!-- Marketing Activities Section -->
+  <section class="form-section">
+    <h2><i class="fas fa-bullhorn"></i> Marketing Activities</h2>
+    <p class="section-description">Plan and track your launch marketing activities.</p>
+
+    <div class="activities-list">
+      <div class="activity-item" *ngFor="let activity of marketingActivities; let i = index">
+        <div class="activity-header">
+          <h3>Activity {{i + 1}}</h3>
+          <button class="btn btn-danger remove-btn" (click)="removeMarketingActivity(i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="activity-inputs">
+          <div class="field-row">
+            <div class="input-group">
+              <label class="field-label">Activity</label>
+              <input 
+                type="text" 
+                class="form-control"
+                [(ngModel)]="activity.activity"
+                placeholder="Enter activity description"
+              >
+            </div>
+            <div class="input-group">
+              <label class="field-label">Timeline</label>
+              <input 
+                type="text" 
+                class="form-control"
+                [(ngModel)]="activity.timeline"
+                placeholder="Activity timeline"
+              >
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="input-group">
+              <label class="field-label">Budget</label>
+              <input 
+                type="number" 
+                class="form-control amount-input"
+                [(ngModel)]="activity.budget"
+                placeholder="0"
+              >
+            </div>
+            <div class="input-group">
+              <label class="field-label">Status</label>
+              <select 
+                class="form-control"
+                [(ngModel)]="activity.status"
+              >
+                <option *ngFor="let status of marketingStatusOptions" [value]="status">
+                  {{status}}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="metrics-section">
+            <label class="field-label">Success Metrics</label>
+            <div class="metrics-list">
+              <div class="metric-item" *ngFor="let metric of activity.metrics; let j = index ;trackBy: trackByIndex">
+                <input 
+                  type="text" 
+                  class="form-control"
+                  [(ngModel)]="activity.metrics[j]"
+                  placeholder="Enter success metric"
+                >
+                <button class="btn btn-danger remove-btn" (click)="removeMetric(i, j)">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <button class="btn btn-outline-secondary add-btn" (click)="addMetric(i)">
+                <i class="fas fa-plus"></i> Add Metric
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-outline-primary add-btn" (click)="addMarketingActivity()">
+      <i class="fas fa-plus"></i> Add Marketing Activity
+    </button>
+  </section>
+
+  <!-- Risk Assessment Section -->
+  <section class="form-section">
+    <h2><i class="fas fa-exclamation-triangle"></i> Risk Assessment</h2>
+    <p class="section-description">Identify and plan for potential risks during launch.</p>
+
+    <div class="risks-list">
+      <div class="risk-item" *ngFor="let risk of risks; let i = index">
+        <div class="risk-header">
+          <h3>Risk {{i + 1}}</h3>
+          <button class="btn btn-danger remove-btn" (click)="removeRisk(i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="risk-inputs">
+          <div class="input-group">
+            <label class="field-label">Description</label>
+            <textarea 
+              class="form-control"
+              rows="2"
+              [(ngModel)]="risk.description"
+              placeholder="Describe the potential risk"
+            ></textarea>
+          </div>
+          <div class="field-row">
+            <div class="input-group">
+              <label class="field-label">Impact</label>
+              <select 
+                class="form-control"
+                [(ngModel)]="risk.impact"
+              >
+                <option *ngFor="let level of impactOptions" [value]="level">
+                  {{level}}
+                </option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label class="field-label">Probability</label>
+              <select 
+                class="form-control"
+                [(ngModel)]="risk.probability"
+              >
+                <option *ngFor="let level of probabilityOptions" [value]="level">
+                  {{level}}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="mitigation-section">
+            <label class="field-label">Mitigation Strategies</label>
+            <div class="strategies-list">
+              <div class="strategy-item" *ngFor="let strategy of risk.mitigationStrategies; let j = index; trackBy: trackByIndex">
+                <input 
+                  type="text" 
+                  class="form-control"
+                  [(ngModel)]="risk.mitigationStrategies[j]"
+                  placeholder="Enter mitigation strategy"
+                >
+                <button class="btn btn-danger remove-btn" (click)="removeMitigationStrategy(i, j)">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <button class="btn btn-outline-secondary add-btn" (click)="addMitigationStrategy(i)">
+                <i class="fas fa-plus"></i> Add Strategy
+              </button>
+            </div>
+          </div>
+          <div class="input-group">
+            <label class="field-label">Contingency Plan</label>
+            <textarea 
+              class="form-control"
+              rows="2"
+              [(ngModel)]="risk.contingencyPlan"
+              placeholder="Describe the backup plan"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-outline-primary add-btn" (click)="addRisk()">
+      <i class="fas fa-plus"></i> Add Risk
+    </button>
+  </section>
+
+  <!-- Launch Milestones Section -->
+  <section class="form-section">
+    <h2><i class="fas fa-flag-checkered"></i> Launch Milestones</h2>
+    <p class="section-description">Define key milestones for your launch plan.</p>
+
+    <div class="milestones-list">
+      <div class="milestone-item" *ngFor="let milestone of milestones; let i = index ">
+        <div class="milestone-header">
+          <h3>Milestone {{i + 1}}</h3>
+          <button class="btn btn-danger remove-btn" (click)="removeMilestone(i)">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="milestone-inputs">
+          <div class="field-row">
+            <div class="input-group">
+              <label class="field-label">Description</label>
+              <input 
+                type="text" 
+                class="form-control"
+                [(ngModel)]="milestone.description"
+                placeholder="Describe the milestone"
+              >
+            </div>
+            <div class="input-group">
+              <label class="field-label">Due Date</label>
+              <input 
+                type="date" 
+                class="form-control"
+                [(ngModel)]="milestone.dueDate"
+              >
+            </div>
+          </div>
+          <div class="input-group">
+            <label class="field-label">Status</label>
+            <select 
+              class="form-control"
+              [(ngModel)]="milestone.status"
+            >
+              <option *ngFor="let status of statusOptions" [value]="status">
+                {{status}}
+              </option>
+            </select>
+          </div>
+          <div class="dependencies-section">
+            <label class="field-label">Dependencies</label>
+            <div class="dependencies-list">
+              <div class="dependency-item" *ngFor="let dependency of milestone.dependencies; let j = index; trackBy: trackByIndex">
+                <input 
+                  type="text" 
+                  class="form-control"
+                  [(ngModel)]="milestone.dependencies[j]"
+                  placeholder="Enter dependency"
+                >
+                <button class="btn btn-danger remove-btn" (click)="removeDependency(i, j)">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+              <button class="btn btn-outline-secondary add-btn" (click)="addDependency(i)">
+                <i class="fas fa-plus"></i> Add Dependency
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-outline-primary add-btn" (click)="addMilestone()">
+      <i class="fas fa-plus"></i> Add Milestone
+    </button>
+  </section>
+
+  <!-- Save Progress Button -->
+  <div class="save-section">
+    <button class="btn btn-primary save-progress" *ngIf="isSaved" (click)="saveProgress()">
+      <i class="fas fa-save"></i> Save Progress
+    </button>
+  </div>
+  <div class="save-section">
+    <button class="btn btn-primary save-progress" *ngIf="!isSaved" (click)="updateProgress()">
+      <i class="fas fa-save"></i> Update Progress
+    </button>
+  </div>
+</div>
+<button *ngIf="showButton" class="go-up-btn" (click)="scrollToTop()">
+  ⬆
+</button>

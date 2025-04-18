@@ -1,0 +1,36 @@
+<nav class="navbar">
+  <div class="navbar-brand">Value Nation Business Startup Tool</div>
+  <div class="navbar-menu"> 
+    <div class="dropdown">
+      <button class="dropdown-toggle" (click)="toggleDropdown($event)">
+        <i class="fas fa-download"></i> Export Business Plan
+      </button>
+      <div class="dropdown-menu" [class.show]="dropdownOpen">
+        <!-- <a class="dropdown-item" href="#" (click)="exportBusinessPlan('md', $event)">
+          <i class="fas fa-file-code"></i> Markdown
+        </a> -->
+        <a class="dropdown-item" href="#" (click)="exportBusinessPlan('pdf', $event)" [class.disabled]="isLoading">
+          <i class="fas fa-file-pdf"></i> 
+          <span *ngIf="!isLoading">PDF</span>
+          <span *ngIf="isLoading">Generating PDF...</span>
+        </a>
+        <!-- <a class="dropdown-item" href="#" (click)="exportBusinessPlan('docx', $event)">
+          <i class="fas fa-file-word"></i> Word
+        </a>  -->
+        <!-- <a class="dropdown-item" href="#" (click)="exportBusinessPlan('html', $event)">
+          <i class="fas fa-file-code"></i> HTML
+        </a> -->
+      </div>
+    </div>
+    <button class="sign-out" (click)="logout()" [disabled]="isLoading">
+      <i class="fas fa-sign-out-alt"></i>
+      <span *ngIf="!isLoading">SIGN OUT</span>
+      <span *ngIf="isLoading">LOADING...</span>
+    </button>
+   
+  </div>
+</nav>
+
+<!-- <div class="container">
+  <ng-content></ng-content>
+</div> -->
