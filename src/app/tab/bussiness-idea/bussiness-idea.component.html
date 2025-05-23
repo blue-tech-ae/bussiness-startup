@@ -7,7 +7,11 @@
   </div>
    
     <p class="video-description">{{videoDescription}}</p>
-    
+    <div class="mt-4">
+      <button (click)="generatePDF()" class="btn btn-primary">
+        <i class="fas fa-file-download"></i> PDF
+      </button>
+    </div>
   </section>
   <!-- Skills & Experience Section -->
   <section class="form-section">
@@ -43,9 +47,7 @@
       <textarea
         class="form-control custom-textarea"
         [(ngModel)]="businessData.Passions_Interests"
-        placeholder="list top of: 
-        - your hobbies and passions?
-        - things you enjoy doing the most?"				
+        placeholder=""				
          rows="4"
       ></textarea>
       <small class="form-text text-muted">Enter each passion/interest on a new line</small>

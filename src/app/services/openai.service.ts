@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class OpenAIService {
   private apiUrl = 'https://api.openai.com/v1/chat/completions';
-  private apiKey = '';
+ 
 
   constructor(private http: HttpClient) {}
 
@@ -81,7 +81,7 @@ export class OpenAIService {
     return this.http.post(this.apiUrl, body, { headers });
   }
 
-  generatemvp(question: string,big_solution:string,entry_strategy:string): Observable<any> {
+  generatemvp(question: string,big_solution:string,entry_strategy:string,things_have:string,things_need:string,answer_questions:string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${this.apiKey}`
@@ -94,6 +94,9 @@ export class OpenAIService {
   Big Solution: ${big_solution}
 
 Entry Strategy: ${entry_strategy}
+things_have:${things_have}
+things_need:${things_need}
+answer_questions:${answer_questions}
     `.trim(); // النص الجديد الذي سيتم إرساله إلى OpenAI
   
     const body = {
@@ -111,6 +114,7 @@ Entry Strategy: ${entry_strategy}
     return this.http.post(this.apiUrl, body, { headers });
   }
   generatemarketing(question: string,option1:string,option2:string): Observable<any> {
+    console.log(option1)
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${this.apiKey}`
@@ -120,6 +124,7 @@ Entry Strategy: ${entry_strategy}
   Answer the following question in 20 words only:
   
   Question: ${question}
+ Give a new and different option that is not similar to the ones provided below:
  option1: ${option1}
 
 option2: ${option2}

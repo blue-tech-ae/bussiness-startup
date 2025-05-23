@@ -15,7 +15,8 @@ suggestion: string = '';
   constructor(
     private openAIService: OpenAIService,
     public dialogRef: MatDialogRef<MvpSuggestionComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { question: string,big_solution:string,entry_strategy:string,option1:string,option2:string }
+    @Inject(MAT_DIALOG_DATA) public data: { question: string,big_solution:string,entry_strategy:string,
+      option1:string,option2:string,things_need:string,things_have:string,answer_questions:string}
   ) {
     this.generateSuggestion();
   }
@@ -25,7 +26,8 @@ suggestion: string = '';
     this.error = '';
     
     this.openAIService.generatemvp(  
-      this.data.question,this.data.big_solution,this.data.entry_strategy
+      this.data.question,this.data.big_solution,this.data.entry_strategy,this.data.things_need,
+      this.data.things_have,this.data.answer_questions
      
     ).subscribe({
       next: (response) => {

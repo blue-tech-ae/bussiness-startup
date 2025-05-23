@@ -2,7 +2,7 @@
     <section class="video-section">
       <h2><i class="fas fa-video"></i> Introduction Video</h2>
       <div class="vedio">
-        <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" autoplay></video>
+        <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" ></video>
       </div>
       <p class="video-description">{{videoDescription}}</p>
     </section>
@@ -15,32 +15,42 @@
             can make your solution unique in the market?</strong>
           </label>
   
-          <div class="flex items-start space-x-2 mb-4 mt-3">
-            <textarea [(ngModel)]="product_feature.options[0]" name="entry_strategy_0"
-              class="form-control custom-textarea mt-0 flex-1" rows="3"
-              placeholder="Option 1 (AI Suggestions)"></textarea>
-            <button class="btn btn-link edit-btn" (click)="openSuggestionDialog()">
-              <i class="fas fa-robot"></i>
-            </button>
+          <div class="flex flex-col mb-4 mt-3 space-y-1">
+            <label for="">Option 1 (AI Suggestions)</label>
+            <div class="flex items-start space-x-2">
+              <textarea [(ngModel)]="product_feature.options[0]" name="entry_strategy_0"
+                class="form-control custom-textarea flex-1" rows="3"
+                placeholder=""></textarea>
+              <button class="btn btn-link edit-btn" (click)="openSuggestionDialog()">
+                <i class="fas fa-robot"></i>
+              </button>
+            </div>
           </div>
-  
-          <div class="flex items-start space-x-2 mb-4">
-            <textarea [(ngModel)]="product_feature.options[1]" name="entry_strategy_1"
-              class="form-control custom-textarea mt-0 flex-1" rows="3"
-              placeholder="Option 2 (AI Suggestions)"></textarea>
-            <button class="btn btn-link edit-btn" (click)="openSuggestionDialog1()">
-              <i class="fas fa-robot"></i>
-            </button>
+          
+          <div class="flex flex-col mb-4 space-y-1">
+            <label for="">Option 2 (AI Suggestions)</label>
+            <div class="flex items-start space-x-2">
+              <textarea [(ngModel)]="product_feature.options[1]" name="entry_strategy_1"
+                class="form-control custom-textarea flex-1" rows="3"
+                placeholder=""></textarea>
+              <button class="btn btn-link edit-btn" (click)="openSuggestionDialog1()">
+                <i class="fas fa-robot"></i>
+              </button>
+            </div>
           </div>
-  
-          <div class="flex items-start space-x-2 mb-4">
-            <textarea [(ngModel)]="product_feature.options[2]" name="entry_strategy_2"
-              class="form-control custom-textarea mt-0 flex-1" rows="3"
-              placeholder="Option 3 (AI Suggestions)"></textarea>
-            <button class="btn btn-link edit-btn" (click)="openSuggestionDialog2()">
-              <i class="fas fa-robot"></i>
-            </button>
+          
+          <div class="flex flex-col mb-4 space-y-1">
+            <label for="">Option 3 (AI Suggestions)</label>
+            <div class="flex items-start space-x-2">
+              <textarea [(ngModel)]="product_feature.options[2]" name="entry_strategy_2"
+                class="form-control custom-textarea flex-1" rows="3"
+                placeholder=""></textarea>
+              <button class="btn btn-link edit-btn" (click)="openSuggestionDialog2()">
+                <i class="fas fa-robot"></i>
+              </button>
+            </div>
           </div>
+          
         </div>
   
         <div class="form-group mb-4">
@@ -54,9 +64,9 @@
     <section class="video-section">
         <h2><i class="fas fa-video"></i> Marketing Campaign Video</h2>
         <div class="vedio">
-          <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" autoplay></video>
+          <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl2}}" ></video>
         </div>
-        <p class="video-description">{{videoDescription}}</p>
+        <p class="video-description">{{videoDescription2}}</p>
       </section>
     
       <div class="business bg-white p-4 rounded-lg shadow space-y-4">

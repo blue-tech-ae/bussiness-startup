@@ -1139,7 +1139,100 @@ const id= localStorage.getItem("idlaunch")
       this.getHttpOptions2()
     );
   }
+  saveNewbusines(data:any):Observable<any>{
+    return this.http.post(
+      `${this.baseUrl}/businesses`, data,
+       
+      this.getHttpOptions()
+    );
+  }
+  updatenewbusiness(data:any):Observable<any>{
 
+    const id=localStorage.getItem("bid")
+    return this.http.put(
+      `${this.baseUrl}/businesses/${id}`,data,
+        
+      this.getHttpOptions()
+    );
+  }
+  getbussinesform(): Observable<any>{
+    return this.http.get(
+      `${this.baseUrl}/businesses`,
+       
+      this.getHttpOptions()
+    );
+  }
+  saveNewsetup(data:any):Observable<any>{
+    return this.http.post(
+      `${this.baseUrl}/business-setups`, data,
+       
+      this.getHttpOptions2()
+    );
+  }
+  updateNewSetup(data:any):Observable<any>{
+
+    const id=localStorage.getItem("idsetup")
+    return this.http.put(
+      `${this.baseUrl}/business-setups/${id}`,data,
+       
+      this.getHttpOptions2()
+    );
+  }
+  getNewSetup(): Observable<any>{
+    return this.http.get(
+      `${this.baseUrl}/business-setups`,
+       
+      this.getHttpOptions2()
+    );
+  }
+
+  saveNewfinnancial(data:any):Observable<any>{
+    return this.http.post(
+      `${this.baseUrl}/financial-planner`, data,
+       
+      this.getHttpOptions2()
+    );
+  }
+  updatenewfinnancial(data:any):Observable<any>{
+
+    const id=localStorage.getItem("idfann")
+    return this.http.put(
+      `${this.baseUrl}/financial-planner/${id}`,data,
+        
+      this.getHttpOptions2()
+    );
+  }
+  getfinnancial(): Observable<any>{
+    return this.http.get(
+      `${this.baseUrl}/financial-planner`,
+       
+      this.getHttpOptions2()
+    );
+  }
+
+  savewebsite(data:any):Observable<any>{
+    return this.http.post(
+      `${this.baseUrl}/websites`, data,
+       
+      this.getHttpOptions2()
+    );
+  }
+  updatewebsite(data:any):Observable<any>{
+
+    const id=localStorage.getItem("idweb")
+    return this.http.put(
+      `${this.baseUrl}/websites/${id}`,data,
+        
+      this.getHttpOptions2()
+    );
+  }
+  getwebsite(): Observable<any>{
+    return this.http.get(
+      `${this.baseUrl}/websites`,
+       
+      this.getHttpOptions2()
+    );
+  }
 
   }
   

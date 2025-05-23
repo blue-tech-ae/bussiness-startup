@@ -11,6 +11,8 @@ import { ApisService } from 'src/app/services/apis.service';
 export class NewMarketingComponent implements OnInit {
   videoUrl:any=""
  videoDescription=""
+  videoUrl2:any=""
+ videoDescription2=""
  isSaved=true
 
 
@@ -46,6 +48,8 @@ removeCampaign(index: number) {
  }
  ngOnInit(): void {
   this.getVedio("Marketing")
+  this.getVedio2("Marketing2")
+
   //this.getMarketing()
   this.getnewmarketing()
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -67,6 +71,15 @@ removeCampaign(index: number) {
   
     this.videoUrl=response.data[0].video_path
     this.videoDescription=response.data[0].description
+
+    
+  })
+}
+getVedio2(title:any){
+  this.apisService.GetVedio(title).subscribe((response)=>{
+  
+    this.videoUrl2=response.data[0].video_path
+    this.videoDescription2=response.data[0].description
 
     
   })
@@ -93,7 +106,7 @@ openSuggestionDialog1(){
   const dialogRef = this.dialog.open(MvpSuggestionComponent, {
         data: {
          
-           question:"Considering the discussion we had, list three features that can make your solution unique in the market? "
+           question:"Considering the discussion we had, list three features that can make your solution unique in the market? Please avoid repeating the following options:"
          , option1: this.product_feature.options[0],
          option2: ""
 
@@ -111,7 +124,7 @@ openSuggestionDialog2(){
   const dialogRef = this.dialog.open(MvpSuggestionComponent, {
         data: {
          
-           question:"Considering the discussion we had, list three features that can make your solution unique in the market? "
+           question:"Considering the discussion we had, list three features that can make your solution unique in the market? Please avoid repeating the following options:"
          , option1: this.product_feature.options[0],
          option2: this.product_feature.options[1]
 

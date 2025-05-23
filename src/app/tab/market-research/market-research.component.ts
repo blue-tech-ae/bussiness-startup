@@ -48,7 +48,7 @@ export class MarketResearchComponent implements OnInit {
   showButton: boolean = false;
   constructor(private apisService: ApisService) {}
   ngOnInit(): void {
-    this.getVedio("Market Research")
+    this.getVedio("Market_Research")
     this.getmarketresearch()
     window.scrollTo({ top: 0, behavior: "smooth" });
   }

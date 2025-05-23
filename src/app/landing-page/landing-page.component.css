@@ -1,4 +1,133 @@
+/* landing-page.component.css */
+.landing-page-container {
+  display: grid;
+  grid-template-columns:  1fr;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+
+
+/* أنماط قسم الخطط */
+.plans-section {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.plan-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 .logo {
-    width: 200px;
-    margin-bottom: 2rem;
+  width: 180px;
+  margin-bottom: 1.5rem;
+}
+
+.plans-list {
+  background: #f7fafc;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.plan-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.plan-name {
+  cursor: pointer;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-btn {
+  background: #4299e1;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+}
+
+.delete-btn {
+  background: #f56565;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+}
+
+.add-plan-btn {
+  width: 50%;
+  margin-top: 1.5rem;
+  
+  background: #48bb78;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.add-plan-btn:hover {
+  background: #38a169;
+}
+.clickable-plan {
+  display: inline-block;
+  color: #1d4ed8; /* أزرق جميل */
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.clickable-plan:hover {
+  background-color: #e0e7ff; /* خلفية خفيفة عند التحويم */
+  color: #1e40af; /* لون أزرق أدكن عند التحويم */
+  text-decoration: none;
+  transform: scale(1.05); /* تكبير خفيف */
+}
+
+.clickable-plan:active {
+  transform: scale(0.95); /* لما يضغط عليه يقل الحجم قليلاً */
+}
+
+.clickable-plan:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5); /* لمعة حول العنصر عند التركيز */
+}
+
+
+/* تصميم متجاوب */
+@media (max-width: 768px) {
+  .landing-page-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
   }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  .disabled-btn {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+ 
+  
+}

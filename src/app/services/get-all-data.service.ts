@@ -10,10 +10,11 @@ export class GetAllDataService{
  
   private getHttpOptions(): { headers: HttpHeaders } {
     const token = localStorage.getItem('token'); // جلب التوكن
-    const businessId = this.apiService.getBusinessId();
+   // const businessId = this.apiService.getBusinessId();
+   const businessId=localStorage.getItem("business-id") || ""
 
 
-    return {
+    return { 
       headers: new HttpHeaders({
       'Content-Type': 'application/json',
         'Accept': 'application/json',

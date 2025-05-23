@@ -18,6 +18,10 @@ import { MvpComponent } from './tab/mvp/mvp.component';
 import { NewMarketingComponent } from './tab/new-marketing/new-marketing.component';
 import { NewSalesComponent } from './tab/new-sales/new-sales.component';
 import { authGuard } from './auth.guard';
+import { NewBusinessSetupComponent } from './tab/new-business-setup/new-business-setup.component';
+import { AddPlansComponent } from './add-plans/add-plans.component';
+import { NewFinancialComponent } from './tab/new-financial/new-financial.component';
+import { WebsiteComponent } from './tab/website/website.component';
 
 // const routes: Routes = [
 //   { path: '', component: GetStartedComponent },
@@ -42,13 +46,15 @@ const routes: Routes = [
   { path: 'start-simple', component: MvpComponent, canActivate: [authGuard] },
   { path: 'marketing', component: NewMarketingComponent, canActivate: [authGuard] },
   { path: 'sales-strategy', component: NewSalesComponent, canActivate: [authGuard] },
-  { path: 'business-setup', component: BussinessSetupComponent, canActivate: [authGuard] },
-  { path: 'financial-planning', component: FinancialPlaningComponent, canActivate: [authGuard] },
-  { path: 'launch-preparation', component: LaunchPreprationComponent, canActivate: [authGuard] },
+  { path: 'business-setup', component: NewBusinessSetupComponent, canActivate: [authGuard] },
+  { path: 'financial-planning', component: NewFinancialComponent, canActivate: [authGuard] },
+  { path: 'website-requirements', component: WebsiteComponent, canActivate: [authGuard] },
   { path: "welcome", component: WelcomeComponent },
+  { path: "test", component: BussinessSetupComponent },
   { path: "landing-page", component: LandingPageComponent },
   { path: "test-your-idea", component: TestingYourIdeaComponent, canActivate: [authGuard] },
-  { path: "auth", component: AuthComponent }
+  { path: "auth", component: AuthComponent },
+  { path: "add", component: AddPlansComponent }
 ];
 
 @NgModule({

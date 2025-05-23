@@ -36,6 +36,10 @@ import { MvpComponent } from './tab/mvp/mvp.component';
 import { MvpSuggestionComponent } from './components/mvp-suggestion/mvp-suggestion.component';
 import { NewMarketingComponent } from './tab/new-marketing/new-marketing.component';
 import { NewSalesComponent } from './tab/new-sales/new-sales.component';
+import { NewBusinessSetupComponent } from './tab/new-business-setup/new-business-setup.component';
+import { AddPlansComponent } from './add-plans/add-plans.component';
+import { NewFinancialComponent } from './tab/new-financial/new-financial.component';
+import { WebsiteComponent } from './tab/website/website.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +66,11 @@ import { NewSalesComponent } from './tab/new-sales/new-sales.component';
     MvpComponent,
     MvpSuggestionComponent,
     NewMarketingComponent,
-    NewSalesComponent
+    NewSalesComponent,
+    NewBusinessSetupComponent,
+    AddPlansComponent,
+    NewFinancialComponent,
+    WebsiteComponent
   ],
   imports: [
     BrowserModule,

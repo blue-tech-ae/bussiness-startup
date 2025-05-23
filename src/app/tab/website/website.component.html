@@ -1,0 +1,203 @@
+<div class="web-container">
+    <div class="max-w-2xl mx-auto p-6 bg-white shadow-lg rounded-xl">
+        <h1 class="text-2xl font-bold mb-2">Your Business Website Details</h1>
+      
+        <div class="space-y-6">
+          <div>
+            <label class="block font-semibold mb-1">What is my (Business Name)?</label>
+            <input [(ngModel)]="businessName" name="businessName" type="text" class="w-full p-2 border border-gray-300 rounded" />
+          </div>
+      
+          <div>
+            <label class="block font-semibold mb-1">How can I describe my business in one sentence?</label>
+            <textarea
+              [(ngModel)]="businessDescription"
+              name="businessDescription"
+              rows="3"
+              class="w-full p-2 border border-gray-300 rounded text-sm italic text-gray-600"
+              placeholder="e.g. I do (this=my offer) for (those=customers) to get (this=value or outcome)"
+            ></textarea>
+          </div>
+      
+          <div>
+            <label class="block font-semibold mb-1">What colours represent my business best?(Type your favourite choice number)</label>
+            <div class="flex items-center space-x-2">
+              <span>My colour choice is:</span>
+              <input
+                [(ngModel)]="colourChoice"
+                name="colourChoice"
+                type="text"
+                maxlength="1"
+                class="w-12 p-1 border border-gray-300 rounded text-center"
+              />
+            </div>
+      
+            <div class="grid grid-cols-3 gap-4 mt-4">
+              <div *ngFor="let image of imageList" class="flex flex-col items-center">
+                <span class="mb-1 font-medium">{{ image.id }}</span>
+                <img
+                  [src]="'../assets/images/' + image.name"
+                  [alt]="'Color Scheme ' + image.id"
+                  class="w-full h-16 object-cover rounded border cursor-pointer hover:opacity-80 transition"
+                  (click)="colourChoice = image.id"
+                />
+              </div>
+            </div>
+            
+            
+          </div>
+          <div class="mt-6">
+            <label class="block font-semibold mb-1">
+              What Logo Style represents my business best (Type your favourite choice number)?
+            </label>
+            <div class="flex items-center space-x-2">
+              <span>My Logo Style choice is:</span>
+              <input
+                [(ngModel)]="logoStyleChoice"
+                name="logoStyleChoice"
+                type="text"
+                maxlength="1"
+                class="w-12 p-1 border border-gray-300 rounded text-center"
+              />
+            </div>
+          
+            <div class="mt-4 border border-gray-300 rounded p-4 bg-pink-50">
+              <h3 class="text-center font-medium mb-4">Choose Logo Type</h3>
+              <div class="grid grid-cols-2 gap-4">
+                <div
+                  *ngFor="let logo of logoTypes"
+                  (click)="logoStyleChoice = logo.id"
+                  class="flex flex-col items-center justify-center border rounded px-3 py-4 bg-white shadow-sm hover:shadow-md transition cursor-pointer"
+                >
+                  <!-- ID فوق الصورة -->
+                  <span class="font-semibold text-gray-600 mb-1">#{{ logo.id }}</span>
+          
+                  <img
+                    [src]="'../assets/images/' + logo.name + '.png'"
+                    [alt]="logo.name"
+                    class="h-16 object-contain mb-2"
+                  />
+                  <span class="text-sm font-medium text-center">{{ logo.name }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+          <div class="mt-8">
+            <h2 class="text-xl font-semibold mb-4">My Services / Products</h2>
+          
+            <div *ngFor="let service of services; let i = index" class="mb-6 p-4 border border-gray-200 rounded shadow-sm bg-white">
+              <h3 class="font-semibold mb-2 text-gray-700">Service {{ i + 1 }}</h3>
+          
+              <div class="mb-3">
+                <label class="block text-sm font-medium mb-1 text-gray-600">Name of Service/Product</label>
+                <input
+                  [(ngModel)]="service.name"
+                  name="serviceName{{i}}"
+                  type="text"
+                  class="w-full p-2 border border-gray-300 rounded"
+                />
+              </div>
+          
+              <div>
+                <label class="block text-sm font-medium mb-1 text-gray-600">Explain your service/product (optional)</label>
+                <textarea
+                  [(ngModel)]="service.description"
+                  name="serviceDesc{{i}}"
+                  rows="2"
+                  class="w-full p-2 border border-gray-300 rounded text-sm"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- About Us Section -->
+<div class="mt-10">
+    <h2 class="text-xl font-semibold mb-2">About Us</h2>
+    <p class="text-sm text-gray-600 mb-2">
+      Simple paragraph about the business, partners, your expertise, history of your trade, etc.
+    </p>
+    <textarea
+      [(ngModel)]="aboutUs"
+      name="aboutUs"
+      rows="4"
+      class="w-full p-3 border border-gray-300 rounded"
+      placeholder="Write about your business, team, and experience..."
+    ></textarea>
+  </div>
+  
+  <!-- Social Proof Section -->
+  <div class="mt-8">
+    <h2 class="text-xl font-semibold mb-2">Social Proof</h2>
+    <p class="text-sm text-gray-600 mb-2">
+      Provide some client testimonials, reviews, or notable past work.
+    </p>
+    <textarea
+      [(ngModel)]="socialProof"
+      name="socialProof"
+      rows="4"
+      class="w-full p-3 border border-gray-300 rounded"
+      placeholder="e.g., We've served 150+ clients across 12 countries..."
+    ></textarea>
+  </div>
+  
+  <!-- Contact Us Section -->
+  <div class="mt-8">
+    <h2 class="text-xl font-semibold mb-2">Contact Us</h2>
+    <p class="text-sm text-gray-600 mb-2">
+      Add your phone number, email, and social media accounts.
+    </p>
+    <textarea
+      [(ngModel)]="contactInfo"
+      name="contactInfo"
+      rows="3"
+      class="w-full p-3 border border-gray-300 rounded"
+      placeholder="Phone: ..., Email: ..., Instagram: ..., etc."
+    ></textarea>
+  </div>
+  
+  <!-- Business URL Section -->
+  <div class="mt-10 p-4 border border-dashed border-gray-400 rounded bg-gray-50">
+    <h2 class="text-xl font-semibold mb-2">Your Business URL</h2>
+    <p class="text-sm mb-2 text-gray-700">
+      You can have your own business URL, so check if your business name is available.
+      <br />
+      🔗 <a href="https://www.godaddy.com/en-au" target="_blank" class="text-blue-600 underline">Check availability on GoDaddy</a>
+    </p>
+    <p class="text-sm mb-2 text-gray-700">
+      Try to aim for <strong>yourbusinessname.com</strong> availability and book the name.
+    </p>
+    <p class="text-sm mb-2 text-gray-700">
+      Or we can host your business URL on our hosting (Value Nation) so you can start doing business and test your performance right away.
+    </p>
+    <p class="text-sm mb-1 font-medium">Just fill up your business name again below:</p>
+    <input
+      [(ngModel)]="businessName"
+      name="businessNameUrlCheck"
+      type="text"
+      class="w-full p-2 border border-gray-300 rounded"
+      placeholder="Enter your business name"
+    />
+  </div>
+  
+  <div class="save-section text-center mt-2">
+    <button class="btn btn-primary save-progress" *ngIf="isSaved" (click)="saveProgress()">
+      <i class="fas fa-save"></i> Save Progress
+    </button>
+  </div>
+  <div class="update-section d-flex justify-content-around">
+    <button class="btn btn-primary save-progress"*ngIf="!isSaved" (click)="updateProgress()">
+      <i class="fas fa-save"></i> update Progress
+    </button>
+    <!-- <button class="btn btn-primary save-progress"*ngIf="!isSaved" routerLink="/business-setup">
+      Next
+    </button> -->
+  </div>
+        </div>
+      </div>
+      
+</div>
+<button *ngIf="showButton" class="go-up-btn" (click)="scrollToTop()">
+  ⬆
+</button>

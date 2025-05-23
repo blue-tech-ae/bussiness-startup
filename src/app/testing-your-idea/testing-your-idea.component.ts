@@ -11,6 +11,7 @@ import { ApisService } from '../services/apis.service';
 
 export class TestingYourIdeaComponent implements OnInit {
  isSaved:boolean=true
+ your_idea = ""
   desirability= {
     solves_problem: "",
     problem_statement: "",  // <-- String
@@ -41,7 +42,7 @@ export class TestingYourIdeaComponent implements OnInit {
   ngOnInit(): void {
     window.scrollTo({ top: 0, behavior: "smooth" });
     this.gettestIdea()
-    this.getVedio("Business Setup")
+    this.getVedio("Testing_Your_Idea")
    
     }
 
@@ -78,6 +79,7 @@ export class TestingYourIdeaComponent implements OnInit {
     // }
     save() {
       const formData = {
+        your_idea:[this.your_idea],
         desirability: {
           solves_problem: this.desirability.solves_problem === 'Yes' ? true : false,
           problem_statement: this.desirability.problem_statement
@@ -139,6 +141,7 @@ export class TestingYourIdeaComponent implements OnInit {
 
     update() {
       const formData = {
+        your_idea:[this.your_idea],
         desirability: {
           solves_problem: this.desirability.solves_problem === 'Yes' ? true : false,
           problem_statement: this.desirability.problem_statement
@@ -192,12 +195,13 @@ export class TestingYourIdeaComponent implements OnInit {
     }
     gettestIdea() {
       this.apisService.getTestIdea().subscribe((res) => {
-        if (res.data && res.data.length > 0) {
+        console.log(res)
+        if (res && Object.keys(res).length > 0 ) {
           this.isSaved=false
-          localStorage.setItem("testideaid",res.data[0].id)
-          const idea = res.data[0];
+          localStorage.setItem("testideaid",res.data.id)
+          const idea = res.data;
 
-    
+          this.your_idea=res.data.your_idea,
           // ربط البيانات وتحويلها للشكل المناسب
           this.desirability = {
             solves_problem: idea.desirability.solves_problem === 1 ? 'Yes' : 'No',

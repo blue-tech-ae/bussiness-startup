@@ -2,7 +2,7 @@
   <section class="video-section">
     <h2><i class="fas fa-video"></i> Introduction Video</h2>
     <div class="vedio">
-      <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" autoplay></video>
+      <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" ></video>
 
   </div>
     <p class="video-description">{{videoDescription}}</p>
@@ -109,10 +109,11 @@
     <h2> Other</h2>
    
     <div class="form-group">
+      <label for=""> Add more Persona Information (Eduvation, interests, social media favorite etc.)</label>
       <textarea
         class="form-control custom-textarea"
         [(ngModel)]="customerPersona.other"
-        placeholder="Add more Persona Information (Eduvation, interests, social media favorite etc.) "				
+        placeholder=" "				
          rows="4"
       ></textarea>
       <small class="form-text text-muted">Enter each note on a new line</small>
@@ -216,6 +217,14 @@
           [(ngModel)]="customerPersona.defineSolution"
         >.
       </label>
+    </div>
+    <div class="mt-4">
+      <h4 class="text-muted">Examples:</h4>
+      <ul class="list-disc ml-6 text-sm text-gray-700">
+        <li><strong>Example 1:</strong> I help <strong>working mothers</strong> who <strong>do not have time to cook cupcakes</strong> by <strong>creating fast, nicely designed, and healthy cupcakes</strong>.</li>
+        <li><strong>Example 2:</strong> I help <strong>students with low English level</strong> who <strong>are struggling to learn the language fast</strong> by <strong>providing personalised practical lessons in a flexible manner</strong>.</li>
+        <li><strong>Example 3:</strong> I help <strong>business owners</strong> who <strong>need logo designs</strong> by <strong>offering fast logo design services that suit their budget</strong>.</li>
+      </ul>
     </div>
   </section>
   

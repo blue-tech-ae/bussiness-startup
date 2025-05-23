@@ -5,6 +5,21 @@ import { ApisService } from '../../services/apis.service';
 import { ActivatedRoute } from '@angular/router';
 import { HelpDialogComponent } from 'src/app/help-dialog/help-dialog.component';
 
+import { jsPDF } from 'jspdf';
+import 'jspdf-autotable';
+import { Document, Packer, Paragraph, TextRun, HeadingLevel, Table, TableRow, TableCell, BorderStyle } from 'docx';
+import { GetAllDataService } from 'src/app/services/get-all-data.service';
+
+interface ApiData {
+
+  latest_business_idea: {
+    passions_interests: string[];
+    business_ideas: string[];
+    skills_experience:string[];
+    values_goals:string[];
+    personal_notes:string[]
+  };
+}
 interface BusinessIdeas {
   [key: string]: string;
 }
@@ -37,19 +52,12 @@ isupdate=false
 
   constructor(
     private dialog: MatDialog,
-    private apisService: ApisService, private route: ActivatedRoute
+    private apisService: ApisService, private route: ActivatedRoute,private getAllData:GetAllDataService
   ) {}
   ngOnInit(): void {
-    // this.route.paramMap.subscribe(params => {
-    //   const id = params.get('id');
-    //   if (id) {
-    //     this.apisService.setBusinessId(id); // نرسل id للسرفس فورًا
-    //     localStorage.setItem('business-id', id); // (اختياري) لو تبغى تخزنه محلياً
-        
-    //   }
-    // });
+  
     window.scrollTo({ top: 0, behavior: "smooth" });
-    this.getVedio("Business Idea")
+    this.getVedio("Business_Idea")
     this.getBussinesIdea()
     
   }
@@ -391,6 +399,86 @@ getBussinesIdea() {
 
   }, (error) => {
     console.error("Error fetching business idea:", error);
+  });
+}
+generatePDF() {
+  this.getAllData.getAllDataForPDF().subscribe({
+    next: (response: any) => {
+      try {
+        const apiData = response as ApiData;
+        const doc = new jsPDF();
+        let finalY = 10;
+
+        const addPageIfNeeded = () => {
+          if (finalY > 270) {
+            doc.addPage();
+            finalY = 10;
+          }
+        };
+
+        const addSectionTitle = (title: string) => {
+          doc.setTextColor(255, 0, 0); // تعيين اللون الأحمر
+          doc.setFontSize(16);
+          doc.text(`** ${title}`, 10, finalY);
+          doc.setTextColor(0, 0, 0); // إعادة اللون إلى الأسود
+          finalY += 10;
+          addPageIfNeeded();
+        };
+
+        const addSubTitle = (subtitle: string) => {
+          doc.setTextColor(0, 0, 139); // أزرق غامق
+          doc.setFontSize(12);
+          doc.text(`* ${subtitle}`, 10, finalY);
+          doc.setTextColor(0, 0, 0);
+          finalY += 10;
+          addPageIfNeeded();
+        };
+
+        const addListItems = (items: string[], indent = 20) => {
+          items.forEach((item) => {
+            addPageIfNeeded();
+            const wrappedText = doc.splitTextToSize(`- ${item}`, 180);
+            doc.text(wrappedText, indent, finalY);
+            finalY += wrappedText.length * 7;
+          });
+        };
+
+        doc.setFontSize(20);
+        doc.text('Business Idea', 75, finalY);
+        finalY += 10;
+
+        // 📌 القسم الأول: Latest Business Idea  
+        addSectionTitle(' Business Idea');
+
+        addSubTitle('Business Idea');
+        addListItems(apiData?.latest_business_idea?.business_ideas || ['N/A']);
+
+        addSubTitle('Passions & Interests');
+        addListItems(apiData?.latest_business_idea?.passions_interests || ['N/A']);
+
+        addSubTitle('Skills & Experience');
+        addListItems(apiData?.latest_business_idea?.skills_experience || ['N/A']);
+
+        addSubTitle('Values & Goals');
+        addListItems(apiData?.latest_business_idea?.values_goals || ['N/A']);
+
+        addSubTitle('Personal Notes');
+        addListItems(apiData?.latest_business_idea?.personal_notes || ['N/A']);
+
+        // ✅ هذا السطر يجب أن يكون داخل الـ try
+        doc.save('Business_Idea.pdf');
+
+      } catch (error) {
+        console.error('Error generating PDF:', error);
+       
+      } finally {
+        
+      }
+    },
+    error: (error) => {
+      console.error('Error fetching data for PDF:', error);
+     
+    }
   });
 }
 

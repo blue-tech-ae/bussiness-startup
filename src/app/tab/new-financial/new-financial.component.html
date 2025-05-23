@@ -1,0 +1,74 @@
+<div class="financial-planning-container">
+    <section class="video-section">
+      <h2><i class="fas fa-video"></i> Introduction Video</h2>
+      <div class="vedio">
+        <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" ></video>
+  
+    </div>
+      <p class="video-description">{{videoDescription}}</p>
+    </section>
+
+    <div class="max-w-2xl mx-auto p-6 bg-white rounded-2xl shadow-lg space-y-6">
+
+        <!-- رسالة التواصل -->
+        <p class="italic text-sm text-blue-500 text-center">
+          If you need further help with this concept contact 
+        </p>
+      
+        <!-- عنوان الصفحة -->
+        <h1 class="text-xl font-bold text-gray-800">Financial Planning</h1>
+      
+        <!-- شرح المستخدم -->
+        <p class="text-gray-700">
+          Please download your financial planner below, and fill up your monthly operational details
+        </p>
+      
+       
+      <!-- زر تحميل ملف الإكسل -->
+<div class="flex justify-center mb-8">
+  <a 
+    href="https://docs.google.com/spreadsheets/d/1EvrjUWERw0QiXeobhJQ59AjuBWhvXVO3gKaZD1rnQDE/export?format=xlsx" 
+    class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-xl hover:bg-blue-700 transition">
+    Download Excel Financial Planner
+  </a>
+</div>
+
+      
+        <!-- قسم الملاحظات -->
+        <div>
+          <label class="block font-semibold mb-2">Notes</label>
+          <textarea 
+            [(ngModel)]="notes"
+            rows="6" 
+            placeholder="Add notes here"
+            class="w-full p-3 border border-blue-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300 resize-none">
+          </textarea>
+        </div>
+      
+        <!-- زر حفظ -->
+
+        <div class="save-section d-flex justify-content-center mt-3">
+          <button class="btn btn-primary save-progress" *ngIf="isSaved"  (click)="saveProgress()">
+            <i class="fas fa-save"></i> Save Progress
+          </button>
+        </div>
+        <div class="update-section d-flex justify-content-around mt-3">
+          <button class="btn btn-primary save-progress" *ngIf="!isSaved" (click)="updateProgress()">
+            <i class="fas fa-save"></i> update Progress
+          </button>
+          <button routerLink="/website-requirements" class="btn btn-primary save-progress"  *ngIf="!isSaved" >
+             Next
+          </button> 
+        </div>
+        <!-- <div class="flex justify-center">
+          <button 
+            (click)="saveProgress()"
+            class="bg-blue-600 text-white font-semibold py-2 px-8 rounded-lg hover:bg-blue-700 transition">
+            Save Progress
+          </button>
+        </div> -->
+      
+      </div>
+      
+      
+    </div>

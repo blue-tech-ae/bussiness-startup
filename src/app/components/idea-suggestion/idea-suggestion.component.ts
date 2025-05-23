@@ -21,7 +21,7 @@ export class IdeaSuggestionComponent {
   }
 
   generateSuggestion() {
-    this.loading = true;
+    this.loading = true; 
     this.error = '';
     
     this.openAIService.generateBusinessIdea(  

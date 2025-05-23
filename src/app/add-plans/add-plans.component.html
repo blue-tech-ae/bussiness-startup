@@ -1,0 +1,112 @@
+<!-- حاوية الديالوج -->
+<div class="p-4 sm:p-6 bg-gray-50 rounded-xl shadow-lg w-full max-w-lg mx-auto overflow-auto max-h-[80vh]">
+  <h1 class="text-2xl sm:text-3xl font-bold mb-6 text-center text-blue-700">
+    Business Onboarding Questionnaire
+  </h1>
+
+  <!-- Full Name Section -->
+  <div class="mb-6">
+    <label class="block text-base sm:text-lg font-semibold mb-2">Plan Name</label>
+    <input type="text" [(ngModel)]="firstName" 
+           placeholder="Enter Bussines Plan Name " 
+           class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none">
+  </div>
+
+  <!-- Migrant/Refugee Question -->
+  <div class="mb-6">
+    <label class="block text-base sm:text-lg font-semibold mb-2">Are you a migrant or a refugee?</label>
+    <div class="flex gap-4 flex-wrap">
+      <button 
+        (click)="toggleMigrantStatus(true)" 
+        [ngClass]="{
+          'bg-blue-700 text-white': isMigrant, 
+          'border-blue-500 hover:bg-blue-500 hover:text-white': !isMigrant
+        }"
+        class="px-4 py-2 border rounded-md transition w-full sm:w-auto">
+        Yes
+      </button>
+      <button 
+        (click)="toggleMigrantStatus(false)" 
+        [ngClass]="{
+          'bg-blue-700 text-white': !isMigrant, 
+          'border-blue-500 hover:bg-blue-500 hover:text-white': isMigrant
+        }"
+        class="px-4 py-2 border rounded-md transition w-full sm:w-auto">
+        No
+      </button>
+    </div>
+
+    <div *ngIf="isMigrant" class="mt-4">
+      <label for="" class="block text-base sm:text-lg font-semibold mb-2">How long you have been here?</label>
+      <input type="number" [(ngModel)]="yearsInCountry" 
+             placeholder="Insert years in country" 
+             class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none">
+    </div>
+  </div>
+
+  <!-- English Level -->
+  <div class="mb-6">
+    <label class="block text-base sm:text-lg font-semibold mb-2">English Level</label>
+    <select [(ngModel)]="selectedEnglishLevel" 
+            class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none">
+      <option *ngFor="let level of englishLevels" [value]="level">{{ level }}</option>
+    </select>
+  </div>
+
+  <!-- Business Ownership -->
+  <div class="mb-6">
+    <label class="block text-base sm:text-lg font-semibold mb-2">Have you owned a business before?</label>
+    <div class="flex gap-4 flex-wrap">
+      <button 
+        (click)="toggleBusinessOwnership(true)" 
+        [ngClass]="{
+          'bg-blue-700 text-white': hasBusiness, 
+          'border-blue-500 hover:bg-blue-500 hover:text-white': !hasBusiness
+        }"
+        class="px-4 py-2 border rounded-md transition w-full sm:w-auto">
+        Yes
+      </button>
+      <button 
+        (click)="toggleBusinessOwnership(false)" 
+        [ngClass]="{
+          'bg-blue-700 text-white': !hasBusiness, 
+          'border-blue-500 hover:bg-blue-500 hover:text-white': hasBusiness
+        }"
+        class="px-4 py-2 border rounded-md transition w-full sm:w-auto">
+        No
+      </button>
+    </div>
+
+    <div *ngIf="hasBusiness" class="mt-4">
+      <textarea [(ngModel)]="businessDescription" 
+                placeholder="Describe your business (type, services/products, years managed, financial size)" 
+                rows="4"
+                class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none">
+      </textarea>
+    </div>
+  </div>
+
+  <!-- About Me -->
+  <div class="mb-6">
+    <label class="block text-base sm:text-lg font-semibold mb-2">About Me</label>
+    <textarea [(ngModel)]="aboutme" 
+              class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none" 
+              rows="3" 
+              placeholder="Any extra notes">
+    </textarea>
+  </div>
+
+  <!-- Save / Update Buttons -->
+  <div class="flex justify-center gap-4 mt-8 flex-wrap">
+    <button *ngIf="!isSaved" 
+            (click)="submitForm()" 
+            class="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition w-full sm:w-auto">
+      <i class="fas fa-save"></i> Save
+    </button>
+    <button *ngIf="isSaved" 
+            (click)="updateForm()" 
+            class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition w-full sm:w-auto">
+      <i class="fas fa-save"></i> Update
+    </button>
+  </div>
+</div>

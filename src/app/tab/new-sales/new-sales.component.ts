@@ -9,11 +9,14 @@ import { ApisService } from 'src/app/services/apis.service';
 export class NewSalesComponent implements OnInit {
   videoUrl:any=""
   videoDescription=""
+  videoUrl2:any=""
+  videoDescription2=""
    isSaved=true 
 constructor(private apisService: ApisService){}
   ngOnInit(): void {
     
-    this.getVedio("Sales Strategy")
+    this.getVedio("Sales_Strategy")
+    this.getVedio2("Sales_Strategy2")
     window.scrollTo({ top: 0, behavior: "smooth" });
     this.getsales()
     
@@ -21,7 +24,7 @@ constructor(private apisService: ApisService){}
     showButton: boolean = false;
    
      // استماع لأحداث التمرير Scroll
-     @HostListener("window:scroll", [])
+     @HostListener("window:scroll", []) 
      onScroll(): void {
        this.showButton = window.scrollY > 200; // إظهار الزر عند التمرير أكثر من 200px
      }
@@ -40,6 +43,16 @@ constructor(private apisService: ApisService){}
       
     })
   }
+  getVedio2(title:any){
+    this.apisService.GetVedio(title).subscribe((response)=>{
+   // console.log(response)
+      this.videoUrl2=response.data[0].video_path
+      this.videoDescription2=response.data[0].description
+
+      
+    })
+  }
+
   video1Questions = '';
   video2Explanation = '';
 
@@ -54,6 +67,40 @@ constructor(private apisService: ApisService){}
 
   calculated = false;
 
+  
+  target_revenue!: number;
+  unit_price!: number;
+  interactions_needed!: number;
+  reach_to_interaction_percentage!: number;
+
+    reachError: boolean = false;
+    targetRevenueError: boolean = false;
+unitPriceError: boolean = false;
+interactionsNeededError: boolean = false;
+
+   
+validatePositive(field: string) {
+  if (field === 'target_revenue') {
+    this.targetRevenueError = this.target_revenue !== null && this.target_revenue <= 0;
+  }
+  else if (field === 'unit_price') {
+    this.unitPriceError = this.unit_price !== null && this.unit_price <= 0;
+  }
+  else if (field === 'interactions_needed') {
+    this.interactionsNeededError = this.interactions_needed !== null && this.interactions_needed <= 0;
+  }
+}
+
+    
+    // تحقق من reach to interaction
+    validateReachToInteraction() {
+      if (this.reach_to_interaction_percentage !== null && 
+        (this.reach_to_interaction_percentage < 1 || this.reach_to_interaction_percentage > 100)) {
+        this.reachError = true;
+      } else {
+        this.reachError = false;
+      }
+    }
   calculateFunnel() {
     if (this.targetRevenue > 0 && this.unitPrice > 0 && this.interactionsPerSale > 0 && this.reachPerInteraction > 0) {
       this.unitsToSell = this.targetRevenue / this.unitPrice;
@@ -66,11 +113,11 @@ constructor(private apisService: ApisService){}
   }
   saveProgress(){
     const formdata={ 
-      target_revenue: this.targetRevenue ,
-      unit_price: this.unitPrice,
-      interactions_needed: this.interactionsPerSale,
-      engagement_needed: 0 ,
-      reach_needed: this.reachPerInteraction
+      target_revenue: this.target_revenue ,
+      unit_price: this.unit_price,
+      interactions_needed: this.interactions_needed,
+    
+      reach_to_interaction_percentage: this.reach_to_interaction_percentage
     }
     this.apisService.saveNewSales(formdata).subscribe({
       next: (res) => {
@@ -93,12 +140,12 @@ constructor(private apisService: ApisService){}
 
   }
   updateProgress(){
-     const formdata={ 
-      target_revenue: this.targetRevenue ,
-      unit_price: this.unitPrice,
-      interactions_needed: this.interactionsPerSale,
-      engagement_needed: 0 ,
-      reach_needed: this.reachPerInteraction
+    const formdata={ 
+      target_revenue: this.target_revenue ,
+      unit_price: this.unit_price,
+      interactions_needed: this.interactions_needed,
+    
+      reach_to_interaction_percentage: this.reach_to_interaction_percentage
     }
     this.apisService.updateNewSales(formdata).subscribe({
       next: (res) => {
@@ -123,15 +170,16 @@ constructor(private apisService: ApisService){}
   getsales(){
     this.apisService.getNewSales().subscribe({
       next: (res) => {
-         console.log("aaa" + res.data[0]);
+         console.log("aaa"  + res);
          if (res && res.data && Object.keys(res.data).length > 0) {
           this.isSaved=false
           this.calculated=true
           localStorage.setItem("slsid",res.data[0].id)
-        this.targetRevenue=res.data[0].target_revenue
-        this.unitPrice=res.data[0].unit_price
-        this.interactionsPerSale=res.data[0].interactions_needed
-        this.reachPerInteraction=res.data[0].reach_needed
+          this.target_revenue=res.data[0].target_revenue
+          this.unit_price=res.data[0].unit_price
+          this.interactions_needed=res.data[0].interactions_needed
+          this.reach_to_interaction_percentage=res.data[0].reach_to_interaction_percentage
+         // this.reach_to_interaction_percentage=res.data[0].reach_needed
 
           this.interactionsNeeded= res.data[0].total_interactions
     this. unitsToSell=res.data[0].sales_needed

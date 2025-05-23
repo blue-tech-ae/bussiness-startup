@@ -79,11 +79,11 @@ export class BussinessSetupComponent implements OnInit {
   statusOptions = ['Pending', 'In Progress', 'Completed'];
 isSaved=true;
 isUpdate=false;
-
+ 
   constructor(private apisService: ApisService) {}
   ngOnInit(): void {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    this.getVedio("Business Setup")
+    this.getVedio("Business_Setup")
     this.getBussinessSetup()
     }
   getVedio(title:any){

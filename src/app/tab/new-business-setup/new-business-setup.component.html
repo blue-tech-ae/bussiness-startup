@@ -1,0 +1,167 @@
+<div class="business-setup-container">
+    <section class="video-section">
+      <h2><i class="fas fa-video"></i> Introduction Video</h2>
+      <div class="vedio">
+        <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" ></video>
+  
+    </div>
+      <p class="video-description">{{videoDescription}}</p>
+    </section>
+
+    <!-- Legal Structure Section -->
+<!-- Legal Structure Section -->
+<section class="form-section">
+    <h2 class="text-xl font-semibold mb-2">
+      <i class="fas fa-building mr-2"></i> Legal Structure
+    </h2>
+    <p class="section-description mb-4">
+      Define your business's legal structure and requirements.
+    </p>
+  
+    <!-- Business Type Dropdown -->
+    <div class="form-group mb-4">
+      <label class="block mb-1 font-medium">Business Type</label>
+      <select 
+        class="form-control w-full p-2 border rounded" 
+        [(ngModel)]="legalStructure.businessType"
+      >
+        <option value="">Select business type</option>
+        <option *ngFor="let type of businessTypes" [value]="type">
+          {{ type }}
+        </option>
+      </select>
+    </div>
+  
+    <!-- Legal Requirements Message -->
+    <div class="requirements-section mt-4" *ngIf="legalStructure.businessType">
+      <div *ngIf="legalStructure.businessType === 'Sole trader'">
+        <p>
+          👉 <a 
+                href="https://business.gov.au/planning/business-structures-and-types/business-structures/sole-trader" 
+                target="_blank" 
+                class="text-blue-600 underline hover:text-blue-800"
+             >
+            Learn more about Sole Trader
+          </a>
+        </p>
+      </div>
+  
+      <div *ngIf="legalStructure.businessType === 'Partnership'">
+        <p>
+          👉 <a 
+                href="https://business.gov.au/planning/business-structures-and-types/business-structures/partnership" 
+                target="_blank" 
+                class="text-blue-600 underline hover:text-blue-800"
+             >
+            Learn more about Partnership
+          </a>
+        </p>
+      </div>
+  
+      <div *ngIf="legalStructure.businessType === 'Company'">
+        <p>
+          👉 <a 
+                href="https://business.gov.au/planning/business-structures-and-types/business-structures/company" 
+                target="_blank" 
+                class="text-blue-600 underline hover:text-blue-800"
+             >
+            Learn more about Company
+          </a>
+        </p>
+      </div>
+  
+      <div *ngIf="legalStructure.businessType === 'Not-for-Profit'">
+        <p>
+          👉 <a 
+                href="https://www.ato.gov.au/businesses-and-organisations/not-for-profit-organisations" 
+                target="_blank" 
+                class="text-blue-600 underline hover:text-blue-800"
+             >
+            Learn more about Not-for-Profit
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- Legal Requirements Tasks Section -->
+<section class="form-section mt-8">
+    <h2 class="text-xl font-semibold mb-4">
+      <i class="fas fa-tasks mr-2"></i> Legal Requirements Tasks
+    </h2>
+  
+    <div *ngFor="let task of legalStructure.requirements; let i = index" class="mb-6 p-4 border rounded bg-gray-50 relative">
+        <h3 class="font-medium mb-2">Task {{ i + 1 }}</h3>
+      
+        <!-- Delete Icon -->
+        <button 
+          class="absolute top-2 right-2 text-red-500 hover:text-red-700" 
+          (click)="removeRequirementTask(i)"
+          title="Delete Task"
+        >
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      
+        <div class="form-group mb-3">
+          <label class="block mb-1">Requirement Description</label>
+          <input 
+            type="text" 
+            class="form-control w-full p-2 border rounded" 
+            placeholder="Fill up the first requirement of your legal choice" 
+            [(ngModel)]="task.description"
+          />
+        </div>
+      
+        <div class="flex flex-wrap gap-4">
+          <div class="form-group">
+            <label class="block mb-1">Status</label>
+            <select 
+              class="form-control p-2 border rounded" 
+              [(ngModel)]="task.status"
+            >
+              <option value="">Select status</option>
+              <option value="Not yet">Not yet</option>
+              <option value="In progress">In progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+      
+          <div class="form-group">
+            <label class="block mb-1">Deadline</label>
+            <input 
+              type="date" 
+              class="form-control p-2 border rounded" 
+              [(ngModel)]="task.deadline"
+            />
+          </div>
+        </div>
+      </div>
+      
+  
+    <!-- Add Task Button -->
+    <button 
+      class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center gap-2"
+      (click)="addRequirementTask()"
+    >
+      <i class="fas fa-plus"></i> Add Task
+    </button>
+  </section>
+  <div class="form-group mt-4">
+    <label><strong>Notes</strong></label>
+    <textarea [(ngModel)]="notes" name="notes" class="form-control custom-textarea" rows="3" placeholder="Any extra notes"></textarea>
+  </div>
+  
+  <div class="save-section d-flex justify-content-center mt-3">
+    <button class="btn btn-primary save-progress" *ngIf="isSaved"  (click)="save()">
+      <i class="fas fa-save"></i> Save Progress
+    </button>
+  </div>
+  <div class="update-section d-flex justify-content-around mt-3">
+    <button class="btn btn-primary save-progress" *ngIf="!isSaved" (click)="update()">
+      <i class="fas fa-save"></i> update Progress
+    </button>
+    <button routerLink="/financial-planning" class="btn btn-primary save-progress"  *ngIf="!isSaved" >
+       Next
+    </button> 
+  </div>
+  
+</div>

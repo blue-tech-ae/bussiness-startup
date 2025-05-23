@@ -2,52 +2,13 @@
     <section class="video-section">
       <h2><i class="fas fa-video"></i> Introduction Video</h2>
       <div class="vedio">
-        <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" autoplay></video>
+        <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" ></video>
   
     </div>
       <p class="video-description">{{videoDescription}}</p>
     </section>
-    <!-- MVP Features Section -->
-    <!-- <div class="p-6 space-y-6 bg-gray-100 min-h-screen business">
-  
-      <div class="bg-white p-4 rounded-lg shadow space-y-4">
-        <h2 class="text-xl font-semibold">Start Simple (Your Solution Development)</h2>
-        <p class="italic">(things to consider)</p>
-    
-        <label class="block font-semibold">What is my business big Solution?</label>
-        <textarea class="w-full p-2 border rounded" placeholder="Describe the big vision of your future business!"></textarea>
-    
-        <label class="block font-semibold">How can I enter the market in the most simple way?</label>
-        <div class="text-sm text-gray-600 mb-2">
-          <strong>Features:</strong><br>
-          - lowest cost<br>
-          - fastest delivery<br>
-          - most reward (profitable)<br>
-          - lowest risk<br>
-          - most feedback generating<br>
-          - ability to enhance, change the solution
-        </div>
-        <textarea class="w-full p-2 border rounded"></textarea>
-    
-        <label class="block font-semibold">To create this simple solution I will need:</label>
-        <textarea class="w-full p-2 border rounded" placeholder="Things I have (   )&#10;Things I need to get (   )"></textarea>
-    
-        <label class="block font-semibold">Questions you need to be answered to prove your solution works? and how will you find answers</label>
-        
-        <textarea class="w-full p-2 border rounded" placeholder="(example: you need to know the best price: use multiple prices, ask how much people are willing to pay)"></textarea>
-    
-        <label class="block font-semibold">What is your plan to move forward towards the (Big Solution) using the same framework?</label>
-        
-        <textarea class="w-full p-2 border rounded" placeholder=" How would you imagine your business pathway to the bigger plan..."></textarea>
-    
-        <label class="block font-semibold">Notes</label>
-        <p class="text-sm text-gray-600 mb-2">Empty space add any personal notes.</p>
-        <textarea class="w-full p-2 border rounded"></textarea>
-    
-      </div>
-    
-    </div> -->
-    <div class="business bg-white p-4 rounded-lg shadow space-y-4">
+   
+    <!-- <div class="business bg-white p-4 rounded-lg shadow space-y-4">
       <section class="form-section">
         <h2 class="mb-3"><i class="fas fa-lightbulb text-primary"></i> Start Simple (Your Solution Development)</h2>
     
@@ -90,16 +51,7 @@
           <textarea [(ngModel)]="mvp.notes" name="notes" class="form-control custom-textarea" rows="3" placeholder="Any extra notes"></textarea>
         </div>
     
-        <!-- <button (click)="saveMVP()" class="btn btn-primary" *ngIf="isSaved" >
-          Save</button>
-        
-          <div class="mt-4 update-section d-flex justify-content-between" *ngIf="!isSaved">
-            <button (click)="updatemvp()" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" >
-              Update</button>
-            <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"  >
-              Next
-            </button>
-          </div> -->
+       
         
       </section>
       <div class="save-section d-flex justify-content-center">
@@ -115,9 +67,122 @@
            Next
         </button> 
       </div>
+    </div> -->
+    
+    
+    <div class="business bg-white p-4 rounded-lg shadow space-y-4">
+      <section class="form-section">
+        <h2 class="mb-3">
+          <i class="fas fa-lightbulb text-primary"></i>
+          Start Simple (Your Solution Development)
+          <small class="d-block text-muted">(things to consider)</small>
+        </h2>
+    
+        <!-- Big Solution -->
+        <div class="form-group mb-4">
+          <label><strong>What is my business big Solution?</strong></label>
+          <textarea [(ngModel)]="mvp.big_solution" name="big_solution" class="form-control custom-textarea" rows="3" placeholder="Describe the big vision of your future business!"></textarea>
+        </div>
+    
+        <!-- Entry Strategy -->
+        <div class="form-group mb-4">
+          <label><strong>How can I enter the market in the most simple way?</strong>
+            <button class="btn btn-link edit-btn" (click)="openSuggestionDialog1()">
+              <i class="fas fa-robot"></i>
+            </button>
+         </label>
+         <div>
+          <label for="">Features:<br>
+            - Lowest cost<br>
+            - Fastest delivery<br>
+            - Most reward (profitable)<br>
+            - Lowest risk<br>
+            - Most feedback generating<br>
+            - Ability to enhance, change the solution</label>
+         </div>
+          
+          <textarea [(ngModel)]="mvp.entry_strategy" name="entry_strategy" class="form-control custom-textarea"
+           rows="5" placeholder=""></textarea>
+        </div>
+    
+        <!-- Things to Use/Get -->
+        <div class="form-group mb-4">
+          <label><strong>To create this simple solution I will use what I have:</strong>
+            <button class="btn btn-link edit-btn" (click)="openSuggestionDialog2()">
+              <i class="fas fa-robot"></i>
+            </button>
+          </label>
+          <textarea [(ngModel)]="mvp.things_have" name="things_have" class="form-control custom-textarea" rows="3" placeholder="List things you already have"></textarea>
+        </div>
+    
+        <div class="form-group mb-4">
+          <label><strong>...and I will get what I need:</strong>
+            <button class="btn btn-link edit-btn" (click)="openSuggestionDialog3()">
+              <i class="fas fa-robot"></i>
+            </button></label>
+          <textarea [(ngModel)]="mvp.things_need" name="things_need" class="form-control custom-textarea" rows="3" placeholder="List things you must get to start"></textarea>
+        </div>
+    
+        <!-- Validation Questions -->
+        <div class="form-group mb-4">
+          <label><strong>Questions you need to be answered to prove your solution works?</strong>
+            <button class="btn btn-link edit-btn" (click)="openValidationSuggestions()">
+              <i class="fas fa-robot"></i>
+            </button>
+          </label>
+          <div>
+            <label for="">
+Example:<br>
+    - Would people pay for it?<br>
+    - How much are people willing to pay?<br>
+    - What feature, size, color, format matters most?<br>
+    - When do they need it most (day/week/month/year)?<br>
+    - Where would they prefer to buy it?<br>
+    - What are their biggest frustrations with current options?
+            </label>
+          </div>
+          <textarea [(ngModel)]="mvp.questions" name="validation_questions" class="form-control custom-textarea"
+           rows="5" placeholder=""></textarea>
+    
+          <!-- Top 3 Questions + Notes -->
+          <div class="mt-3">
+            <label><strong> how will you find answers to those questions?</strong>
+              <button class="btn btn-link edit-btn" (click)="openSuggestionDialog4()">
+                <i class="fas fa-robot"></i>
+              </button></label>
+           
+            <textarea [(ngModel)]="mvp.answer_questions" class="form-control mt-2" rows="5" placeholder=""></textarea>
+          </div>
+        </div>
+    
+        <!-- Future Plan -->
+        <div class="form-group mb-4">
+          <label><strong>What is your plan to move forward towards the (Big Solution) using the same framework above?</strong></label>
+          <textarea [(ngModel)]="mvp.future_plan" name="future_plan" class="form-control custom-textarea" rows="3" placeholder="How would you imagine your business next few steps to grow and reach the bigger plan?"></textarea>
+        </div>
+    
+        <!-- Notes -->
+        <div class="form-group mb-4">
+          <label><strong>Notes</strong></label>
+          <textarea [(ngModel)]="mvp.notes" name="notes" class="form-control custom-textarea" rows="3" placeholder="Any extra notes"></textarea>
+        </div>
+      </section>
+    
+      <!-- Buttons -->
+      <div class="save-section d-flex justify-content-center">
+        <button class="btn btn-primary save-progress" *ngIf="isSaved" (click)="saveMVP()">
+          <i class="fas fa-save"></i> Save Progress
+        </button>
+      </div>
+      <div class="update-section d-flex justify-content-around">
+        <button class="btn btn-primary save-progress" *ngIf="!isSaved" (click)="updatemvp()">
+          <i class="fas fa-save"></i> Update Progress
+        </button>
+        <button class="btn btn-primary save-progress" *ngIf="!isSaved" routerLink="/marketing">
+          Next
+        </button>
+      </div>
     </div>
-    
-    
     
     
      

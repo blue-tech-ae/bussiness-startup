@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { AddBusinessComponent } from '../add-business/add-business.component';
 import { ApisService } from '../services/apis.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AddPlansComponent } from '../add-plans/add-plans.component';
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
@@ -21,12 +22,46 @@ ngOnInit(): void {
   //   localStorage.setItem("businnes-id", id);
     
   // }
-  this.getbusinnis();
+  //this.getbusinesform()
+  this.getbusinnis()
+ 
 }
+firstName: string = '';
+isMigrant: boolean = false;
+yearsInCountry!: number ;
+englishLevels: string[] = [
+  'No English',
+  'Low level',
+  'Intermediate',
+  'Great',
+  'Academic'
+];
+  selectedEnglishLevel!: string;
+hasBusiness: boolean = false;
+businessDescription: string='';
+aboutme:string=""
+isSaved : boolean =false
+ 
+toggleMigrantStatus(status: boolean): void {
+  this.isMigrant = status;
+  if (!status) this.yearsInCountry = 0;
+}
+
+toggleBusinessOwnership(status: boolean): void {
+  this.hasBusiness = status;
+  if (!status) this.businessDescription = '';
+}
+
+
+
+
+
   addBusinessPlan() {
-    const dialogRef = this.dialog.open(AddBusinessComponent);
+    const dialogRef = this.dialog.open(AddPlansComponent);
 
     dialogRef.afterClosed().subscribe(result => {
+      this.getbusinnis()
+
       if (result) {
         this.getbusinnis()
       //  this.businessPlans.push(result);
@@ -45,22 +80,23 @@ ngOnInit(): void {
   }
 
   editPlan(index: number) {
-    const dialogRef = this.dialog.open(AddBusinessComponent, {
-      data:{name:this.businessPlans[index].name, id:this.businessPlans[index].id} 
+    const dialogRef = this.dialog.open(AddPlansComponent, {
+      data:{bussinesPlan: this.businessPlans[index]} 
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      
       if (result) {
         this.getbusinnis()
-        this.businessPlans[index] = result;
+       // this.businessPlans[index] = result;getbusinnes()
         this.snackBar.open('Plan updated successfully!', 'Close', { duration: 2000 });
-      }
+      } 
     });
   }
   getbusinnis(){
-return this.serv.getbusinnes().subscribe((res)=>{
+return this.serv.getbussinesform().subscribe((res)=>{
   this.businessPlans=res.data
-  console.log(res)
+  console.log( res.data)
 })
   }
   saveBussinesId(id:any){
