@@ -27,7 +27,19 @@
       <span *ngIf="!isLoading">SIGN OUT</span>
       <span *ngIf="isLoading">LOADING...</span>
     </button>
-   
+    <select (change)="changeLang($event.target.value)" [value]="currentLang" class="lang-select">
+      <option value="en">EN</option>
+      <option value="ar">AR</option>
+      <option value="es">ES</option>
+      <option value="de">DE</option>
+      <option value="fr">FR</option>
+      <option value="zh">ZH</option>
+      <option value="hi">HI</option>
+      <option value="pt">PT</option>
+      <option value="ru">RU</option>
+      <option value="bn">BN</option>
+    </select>
+
   </div>
 </nav>
 

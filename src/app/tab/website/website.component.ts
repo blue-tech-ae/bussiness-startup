@@ -177,6 +177,21 @@ services = [
       }
     });
   }
+
+  fillDemoData() {
+    this.businessName = 'Demo Bakery';
+    this.businessDescription = 'We make the best cupcakes in town.';
+    this.colourChoice = 1;
+    this.logoStyleChoice = 5;
+    this.aboutUs = 'Family-run bakery with a passion for sweets.';
+    this.socialProof = 'Over 1,000 satisfied customers.';
+    this.contactInfo = 'email@example.com\n+123456789';
+    this.services = [
+      { name: 'Cupcake orders', description: 'Fresh cupcakes baked daily.' },
+      { name: 'Custom cakes', description: 'Made to order for any event.' },
+      { name: 'Baking classes', description: 'Learn how to bake like a pro.' }
+    ];
+  }
   
 
 }

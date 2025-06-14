@@ -26,6 +26,7 @@ import { GetStartedComponent } from './get-started/get-started.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { IdeaSuggestionComponent } from './components/idea-suggestion/idea-suggestion.component';
 import { Nl2brPipe } from './pipes/nl2br.pipe';
+import { TranslatePipe } from './pipes/translate.pipe';
 import { ApisService } from './services/apis.service';
 import { AuthComponent } from './auth/auth.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -58,6 +59,7 @@ import { WebsiteComponent } from './tab/website/website.component';
     WelcomeComponent,
     IdeaSuggestionComponent,
     Nl2brPipe,
+    TranslatePipe,
     AuthComponent,
     LandingPageComponent,
     AddBusinessComponent,

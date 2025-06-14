@@ -1,6 +1,7 @@
 <div class="web-container">
     <div class="max-w-2xl mx-auto p-6 bg-white shadow-lg rounded-xl">
-        <h1 class="text-2xl font-bold mb-2">Your Business Website Details</h1>
+        <h1 class="text-2xl font-bold mb-2">{{ 'businessUrl' | translate }}</h1>
+        <button (click)="fillDemoData()" class="btn btn-secondary mb-2">{{ 'showDemoData' | translate }}</button>
       
         <div class="space-y-6">
           <div>
@@ -183,7 +184,7 @@
   
   <div class="save-section text-center mt-2">
     <button class="btn btn-primary save-progress" *ngIf="isSaved" (click)="saveProgress()">
-      <i class="fas fa-save"></i> Save Progress
+      <i class="fas fa-save"></i> {{ 'saveProgress' | translate }}
     </button>
   </div>
   <div class="update-section d-flex justify-content-around">
@@ -191,7 +192,7 @@
       <i class="fas fa-save"></i> update Progress
     </button>
     <!-- <button class="btn btn-primary save-progress"*ngIf="!isSaved" routerLink="/business-setup">
-      Next
+      {{ 'next' | translate }}
     </button> -->
   </div>
         </div>

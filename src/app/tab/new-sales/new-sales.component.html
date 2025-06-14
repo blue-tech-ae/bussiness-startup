@@ -1,11 +1,14 @@
 <div class="sales-strategy-container">
     <section class="video-section">
-      <h2><i class="fas fa-video"></i> Introduction Video</h2>
+      <h2><i class="fas fa-video"></i> {{ 'introductionVideo' | translate }}</h2>
       <div class="vedio">
         <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" ></video>
   
     </div>
       <p class="video-description">{{videoDescription}}</p>
+      <div class="mt-2">
+        <button (click)="fillDemoData()" class="btn btn-secondary">{{ 'showDemoData' | translate }}</button>
+      </div>
     </section>
     <div class="p-6 max-w-4xl mx-auto">
         <h1 class="text-2xl font-bold mb-4">Sales Funnel Calculator</h1>
@@ -14,7 +17,7 @@
       
         <!-- Video 2 Section -->
         <section class="video-section">
-            <h2><i class="fas fa-video"></i> Introduction Video</h2>
+            <h2><i class="fas fa-video"></i> {{ 'introductionVideo' | translate }}</h2>
             <div class="vedio">
               <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl2}}" ></video>
         
@@ -104,7 +107,7 @@
         </div> -->
         <div class="save-section text-center mt-2">
           <button class="btn btn-primary save-progress" *ngIf="isSaved" (click)="saveProgress()">
-            <i class="fas fa-save"></i> Save Progress
+            <i class="fas fa-save"></i> {{ 'saveProgress' | translate }}
           </button>
         </div>
         <div class="update-section d-flex justify-content-around">
@@ -112,7 +115,7 @@
             <i class="fas fa-save"></i> update Progress
           </button>
           <button class="btn btn-primary save-progress"*ngIf="!isSaved" routerLink="/business-setup">
-            Next
+            {{ 'next' | translate }}
           </button>
         </div>
     

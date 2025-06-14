@@ -196,6 +196,13 @@ validatePositive(field: string) {
         // console.error('Error updating ', error);
          // التعامل مع الخطأ مثل إظهار رسالة للمستخدم
        }
-    })
+  })
+  }
+
+  fillDemoData() {
+    this.target_revenue = 10000;
+    this.unit_price = 50;
+    this.interactions_needed = 200;
+    this.reach_to_interaction_percentage = 10;
   }
 }
