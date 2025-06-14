@@ -349,4 +349,26 @@ saveProgress() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
+  fillDemoData() {
+    this.customerPersona = {
+      name: 'Sarah',
+      age: 'Young',
+      gender: 'Female',
+      socialStatus: 'Single',
+      income: 'Medium',
+      employment: 'Full-time',
+      other: 'Lives in city',
+      Personal_notes: 'Likes eco friendly products',
+      defineClients: 'Young professionals',
+      defineProblem: 'Limited healthy lunch options',
+      defineSolution: 'Affordable healthy meal delivery'
+    };
+
+    this.customerChallenges = {
+      MustHaveSolutions: [{ id: 0, text: 'Affordable price' }],
+      ShouldHaveSolutions: [{ id: 0, text: 'Fast delivery' }],
+      NiceToHaveSolutions: [{ id: 0, text: 'Vegan options' }]
+    };
+  }
+
 }
