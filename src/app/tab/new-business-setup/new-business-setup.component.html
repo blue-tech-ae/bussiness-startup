@@ -1,13 +1,13 @@
 <div class="business-setup-container">
     <section class="video-section">
-      <h2><i class="fas fa-video"></i> Introduction Video</h2>
+      <h2><i class="fas fa-video"></i> {{ 'introductionVideo' | translate }}</h2>
       <div class="vedio">
         <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" ></video>
   
     </div>
       <p class="video-description">{{videoDescription}}</p>
       <div class="mt-2">
-        <button (click)="fillDemoData()" class="btn btn-secondary">Show Demo Data</button>
+        <button (click)="fillDemoData()" class="btn btn-secondary">{{ 'showDemoData' | translate }}</button>
       </div>
     </section>
 
@@ -155,7 +155,7 @@
   
   <div class="save-section d-flex justify-content-center mt-3">
     <button class="btn btn-primary save-progress" *ngIf="isSaved"  (click)="save()">
-      <i class="fas fa-save"></i> Save Progress
+      <i class="fas fa-save"></i> {{ 'saveProgress' | translate }}
     </button>
   </div>
   <div class="update-section d-flex justify-content-around mt-3">
@@ -163,7 +163,7 @@
       <i class="fas fa-save"></i> update Progress
     </button>
     <button routerLink="/financial-planning" class="btn btn-primary save-progress"  *ngIf="!isSaved" >
-       Next
+       {{ 'next' | translate }}
     </button> 
   </div>
   
