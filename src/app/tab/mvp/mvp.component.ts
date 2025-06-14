@@ -234,7 +234,7 @@ isSaved=true
     
 }
 
-openSuggestionDialog1() {
+  openSuggestionDialog1() {
   const dialogRef = this.dialog.open(MvpSuggestionComponent, {
     data: {
      
@@ -329,11 +329,24 @@ openSuggestionDialog4() {
 
   dialogRef.afterClosed().subscribe(result => {
     if (result) {
-    
+
      this.mvp.answer_questions=result
     }
   });
 
+}
+
+fillDemoData() {
+  this.mvp = {
+    big_solution: 'Easy meal planning app',
+    entry_strategy: 'Start with a small beta launch',
+    things_have: 'Cooking skills',
+    things_need: 'Mobile developer',
+    questions: 'What features do users need?',
+    answer_questions: 'Survey a sample of users',
+    future_plan: 'Expand to subscription model',
+    notes: 'Keep the interface simple'
+  };
 }
 
 }

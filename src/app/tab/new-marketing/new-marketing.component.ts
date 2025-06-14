@@ -214,7 +214,7 @@ updateProgress(){
     }
   });  
 }
-getnewmarketing() {
+  getnewmarketing() {
   this.apisService.getNewmarketing().subscribe({
     next: (res) => {
     //  console.log('Response:', res);
@@ -234,6 +234,27 @@ localStorage.setItem("marid",res.data.productFeature.id)
      // console.error('Error:', error);
     }
   });
+}
+
+fillDemoData() {
+  this.product_feature = {
+    options: [
+      'Feature one that stands out',
+      'Another unique feature',
+      'Third compelling feature'
+    ],
+    notes: 'These features address customer pain points.'
+  };
+
+  this.marketing_campaigns = [
+    {
+      goal: 'Create awareness',
+      audience: 'Young professionals',
+      format: 'Video ads',
+      channels: 'Social media',
+      notes: 'Focus on benefits'
+    }
+  ];
 }
 
 

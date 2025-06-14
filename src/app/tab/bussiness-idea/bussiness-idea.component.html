@@ -1,6 +1,6 @@
 <div class="business-idea-container">
   <section class="video-section">
-    <h2><i class="fas fa-video"></i> Introduction Video</h2>
+    <h2><i class="fas fa-video"></i> {{ 'introductionVideo' | translate }}</h2>
     <div class="vedio">
       <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" ></video>
 
@@ -11,11 +11,14 @@
       <button (click)="generatePDF()" class="btn btn-primary">
         <i class="fas fa-file-download"></i> PDF
       </button>
+      <button (click)="fillDemoData()" class="btn btn-secondary ml-2">
+        {{ 'showDemoData' | translate }}
+      </button>
     </div>
   </section>
   <!-- Skills & Experience Section -->
   <section class="form-section">
-    <h2><i class="fas fa-tools"></i> Skills & Experience</h2>
+    <h2><i class="fas fa-tools"></i> {{ 'skillsExperience' | translate }}</h2>
     <!-- List your relevant skills and experience that could contribute to your business. -->
     <p class="section-description">list the skills and expertise you have<br>
       -jobs you have done in the past<br>
@@ -36,7 +39,7 @@
 
   <!-- Passions & Interests Section -->
   <section class="form-section">
-    <h2><i class="fas fa-heart"></i> Passions & Interests</h2>
+    <h2><i class="fas fa-heart"></i> {{ 'passionsInterests' | translate }}</h2>
     <!-- What are you passionate about? This could inspire your business direction. -->
     <p class="section-description">list top of: <br>
       - your hobbies and passions? <br>
@@ -56,7 +59,7 @@
 
   <!-- Values & Goals Section -->
   <section class="form-section">
-    <h2><i class="fas fa-star"></i> Values & Goals</h2>
+    <h2><i class="fas fa-star"></i> {{ 'valuesGoals' | translate }}</h2>
     <!-- Define your core values and business goals. -->
     <p class="section-description">List topics or issues you care about
       <i class="fas fa-question-circle" (click)="openDialog3()" style="color: #007bff; font-size: 24px; cursor: pointer;"></i></p>
@@ -75,7 +78,7 @@
 
   <!-- Business Ideas Section -->
   <section class="form-section">
-    <h2><i class="fas fa-lightbulb"></i> Business Ideas</h2>
+    <h2><i class="fas fa-lightbulb"></i> {{ 'businessIdeas' | translate }}</h2>
     <p class="section-description">List your potential business ideas, considering your skills, passions, and values.</p>
     <div class="business-ideas-container">
       <!-- Idea 1 -->
@@ -161,7 +164,7 @@
   </section>
 
   <section class="form-section">
-    <h2><i class="fas fa-heart"></i> Personal Notes</h2>
+    <h2><i class="fas fa-heart"></i> {{ 'personalNotes' | translate }}</h2>
    
     <div class="form-group">
       <textarea
@@ -177,16 +180,16 @@
   <!-- Save Progress Button -->
   <div class="save-section">
     <button class="btn btn-primary save-progress" *ngIf="isSaved" (click)="saveProgress()">
-      <i class="fas fa-save"></i> Save Progress
+      <i class="fas fa-save"></i> {{ 'saveProgress' | translate }}
     </button>
      
   </div>
   <div class="update-section">
     <button class="btn btn-primary save-progress" *ngIf="!isSaved" (click)="updateProgress()">
-      <i class="fas fa-save"></i> Update Progress
+      <i class="fas fa-save"></i> {{ 'updateProgress' | translate }}
     </button>
     <button class="btn btn-primary save-progress" *ngIf="!isSaved" routerLink="/test-your-idea">
-      Next
+      {{ 'next' | translate }}
     </button>
   </div>
 </div>

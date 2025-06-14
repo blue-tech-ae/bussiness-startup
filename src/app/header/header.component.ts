@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApisService } from '../services/apis.service';
 import { GetAllDataService } from '../services/get-all-data.service';
+import { TranslationService, LangCode } from '../services/translation.service';
 import { jsPDF } from 'jspdf';
 import 'jspdf-autotable';
 import { Document, Packer, Paragraph, TextRun, HeadingLevel, Table, TableRow, TableCell, BorderStyle } from 'docx';
@@ -101,13 +102,17 @@ export class HeaderComponent implements OnInit {
   dropdownOpen = false;
   isLoading = false;
   businessIdeas: any = [];
+  currentLang: LangCode;
 
 
   constructor(
     private apisService: ApisService,
     private router: Router,
-    private getAllData: GetAllDataService
-  ) {}
+    private getAllData: GetAllDataService,
+    private translation: TranslationService
+  ) {
+    this.currentLang = this.translation.getCurrentLang();
+  }
 
   ngOnInit(): void {
     // Initial data load not needed since we load on demand
@@ -147,6 +152,11 @@ export class HeaderComponent implements OnInit {
         console.log(`Export to ${format} not implemented yet`);
         break;
     }
+  }
+
+  changeLang(lang: string) {
+    this.translation.loadLanguage(lang as LangCode);
+    this.currentLang = this.translation.getCurrentLang();
   }
 
 

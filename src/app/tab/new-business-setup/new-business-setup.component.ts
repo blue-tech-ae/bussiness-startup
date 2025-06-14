@@ -66,6 +66,12 @@ notes :string =""
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
+
+  fillDemoData() {
+    this.legalStructure.businessType = "Company";
+    this.legalStructure.requirements = [{ description: "Register business name", status: "Pending", deadline: "" }];
+    this.notes = "Consider hiring an accountant.";
+  }
   trackByIndex(index: number, item: any): number {
     return index;
   }
