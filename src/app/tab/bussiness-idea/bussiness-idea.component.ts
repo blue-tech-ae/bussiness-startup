@@ -330,6 +330,23 @@ console.log(formData)
       }
     });
   }
+
+  fillDemoData() {
+    this.businessData = {
+      Skills_Experience: 'Web development\nProject management\nGraphic design',
+      Passions_Interests: 'Technology\nArt\nEducation',
+      Values_Goals: 'Innovation\nCreativity\nCommunity support',
+      Personal_notes: 'Remember to validate ideas\nResearch competitors'
+    };
+
+    this.businessIdeas = {
+      idea1: 'Online coding bootcamp',
+      idea2: 'Graphic design studio',
+      idea3: 'Project management tool',
+      idea4: 'Tech blog',
+      idea5: 'Educational app'
+    };
+  }
 //   getBussinesIdea() {
 //     this.apisService.getBussinessIdea().subscribe((res) => {
 //       if (res) {

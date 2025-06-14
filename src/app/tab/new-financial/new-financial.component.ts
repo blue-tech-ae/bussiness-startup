@@ -52,7 +52,7 @@ export class NewFinancialComponent implements OnInit {
      })  
     }
     getfinnacial(){
-      this.apisService.getfinnancial().subscribe((res)=>{
+    this.apisService.getfinnancial().subscribe((res)=>{
      
        // console.log(res);
         if (res && Object.keys(res).length > 0){
@@ -63,6 +63,10 @@ export class NewFinancialComponent implements OnInit {
 }else{
   this.isSaved=true
 }
-       }) 
+       })
     }
+
+  fillDemoData() {
+    this.notes = 'Estimate startup costs and monthly expenses.';
+  }
 }
