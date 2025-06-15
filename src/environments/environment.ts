@@ -1,6 +1,6 @@
-declare const process: { env: { [key: string]: string | undefined } };
+declare const process: { env: { [key: string]: string | undefined } } | undefined;
 
 export const environment = {
   production: false,
-  OPENAI_API_KEY: process.env['OPENAI_API_KEY'] || ''
+  OPENAI_API_KEY: typeof process !== 'undefined' ? process.env['OPENAI_API_KEY'] ?? '' : ''
 };
