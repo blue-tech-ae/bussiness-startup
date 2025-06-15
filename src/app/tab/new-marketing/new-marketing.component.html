@@ -12,7 +12,7 @@
   
     <div class="business bg-white p-4 rounded-lg shadow space-y-4">
       <section class="form-section">
-        <h2 class="mb-3"><i class="fas fa-lightbulb text-primary"></i>  Your Solution Features!</h2>
+        <h2 class="mb-3"><i class="fas fa-lightbulb text-primary"></i>  {{ 'yourSolutionFeatures' | translate }}</h2>
         <div class="form-group mb-4">
           <label><strong>Considering the discussion we had, list three features that 
             can make your solution unique in the market?</strong>
@@ -150,7 +150,7 @@
       </div>
       <div class="update-section d-flex justify-content-around">
         <button class="btn btn-primary save-progress"*ngIf="!isSaved" (click)="updateProgress()">
-          <i class="fas fa-save"></i> update Progress
+          <i class="fas fa-save"></i> {{ 'updateProgress' | translate }}
         </button>
         <button class="btn btn-primary save-progress"*ngIf="!isSaved" routerLink="/sales-strategy">
           {{ 'next' | translate }}

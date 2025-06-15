@@ -16,7 +16,7 @@
           <textarea [(ngModel)]="your_idea" class="w-full p-2 border rounded" placeholder="Insert your choice of a business idea"></textarea>
           
         </div>
-        <h2 class="text-xl font-semibold">Desirability (Things to Consider)</h2>
+        <h2 class="text-xl font-semibold">{{ 'desirabilityTitle' | translate }}</h2>
         
         <label class="block">Do you think your solution is solving a real problem?</label>
         <div class="flex space-x-4">
@@ -52,7 +52,7 @@
       </div>
       
       <div class="bg-white p-4 rounded-lg shadow space-y-4">
-        <h2 class="text-xl font-semibold">Feasibility (Things to Consider)</h2>
+        <h2 class="text-xl font-semibold">{{ 'feasibilityTitle' | translate }}</h2>
         
         <label class="block">Do you think you (or your team) have the required skills for this business?</label>
         <textarea [(ngModel)]="feasibility.required_skills" class="w-full p-2 border rounded" placeholder="What skills are needed for this business?"></textarea>
@@ -65,7 +65,7 @@
       </div>
       
       <div class="bg-white p-4 rounded-lg shadow space-y-4">
-        <h2 class="text-xl font-semibold">Viability (Things to Consider)</h2>
+        <h2 class="text-xl font-semibold">{{ 'viabilityTitle' | translate }}</h2>
         
         <label class="block">Do you think people will pay for it?</label>
         <textarea [(ngModel)]="viability.payment_possible" class="w-full p-2 border rounded" placeholder="Are they paying for other solutions? How much?"></textarea>
@@ -88,15 +88,15 @@
 
       <div class="save-section text-center mt-2">
         <button class="btn btn-primary save-progress" *ngIf="isSaved" (click)="save()">
-          <i class="fas fa-save"></i> Save Progress
+          <i class="fas fa-save"></i> {{ 'saveProgress' | translate }}
         </button>
       </div>
       <div class="update-section d-flex justify-content-around">
         <button class="btn btn-primary save-progress"*ngIf="!isSaved" (click)="update()">
-          <i class="fas fa-save"></i> update Progress
+          <i class="fas fa-save"></i> {{ 'updateProgress' | translate }}
         </button>
         <button class="btn btn-primary save-progress"*ngIf="!isSaved" routerLink="/market-research">
-          Next
+          {{ 'next' | translate }}
         </button>
       </div>
 
