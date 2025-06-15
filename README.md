@@ -6,6 +6,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
+## Environment variables
+
+Create a `.env` file in the project root with the following variable:
+
+```bash
+OPENAI_API_KEY=your-openai-api-key
+```
+
+This key is used by `OpenAIService` to authenticate requests.
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
