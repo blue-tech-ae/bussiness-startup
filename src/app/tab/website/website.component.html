@@ -189,7 +189,7 @@
   </div>
   <div class="update-section d-flex justify-content-around">
     <button class="btn btn-primary save-progress"*ngIf="!isSaved" (click)="updateProgress()">
-      <i class="fas fa-save"></i> update Progress
+      <i class="fas fa-save"></i> {{ 'updateProgress' | translate }}
     </button>
     <!-- <button class="btn btn-primary save-progress"*ngIf="!isSaved" routerLink="/business-setup">
       {{ 'next' | translate }}

@@ -19,7 +19,7 @@
         </p>
       
         <!-- عنوان الصفحة -->
-        <h1 class="text-xl font-bold text-gray-800">Financial Planning</h1>
+        <h1 class="text-xl font-bold text-gray-800">{{ 'financialPlanningTitle' | translate }}</h1>
       
         <!-- شرح المستخدم -->
         <p class="text-gray-700">
@@ -32,7 +32,7 @@
   <a 
     href="https://docs.google.com/spreadsheets/d/1EvrjUWERw0QiXeobhJQ59AjuBWhvXVO3gKaZD1rnQDE/export?format=xlsx" 
     class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-xl hover:bg-blue-700 transition">
-    Download Excel Financial Planner
+    {{ 'downloadFinancialPlanner' | translate }}
   </a>
 </div>
 
@@ -67,7 +67,7 @@
           <button 
             (click)="saveProgress()"
             class="bg-blue-600 text-white font-semibold py-2 px-8 rounded-lg hover:bg-blue-700 transition">
-            Save Progress
+            {{ 'saveProgress' | translate }}
           </button>
         </div> -->
       

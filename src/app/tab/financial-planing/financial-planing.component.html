@@ -372,7 +372,7 @@
   </div>
   <div class="update-section">
     <button class="btn btn-primary save-progress"*ngIf="!isSaved" (click)="updateProgress()">
-      <i class="fas fa-save"></i> update Progress
+      <i class="fas fa-save"></i> {{ 'updateProgress' | translate }}
     </button>
     <button class="btn btn-primary save-progress"*ngIf="!isSaved" routerLink="/launch-preparation">
       Next

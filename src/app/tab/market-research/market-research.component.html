@@ -109,7 +109,7 @@
       </div>
       
     </div>
-    <h2> Other</h2>
+    <h2>{{ 'other' | translate }}</h2>
    
     <div class="form-group">
       <label for=""> Add more Persona Information (Eduvation, interests, social media favorite etc.)</label>
@@ -254,7 +254,7 @@
   </div>
   <div class="update-section">
     <button class="btn btn-primary save-progress" *ngIf="!isSaved" (click)="updateProgress()">
-      <i class="fas fa-save"></i> update Progress
+      <i class="fas fa-save"></i> {{ 'updateProgress' | translate }}
     </button>
     <button class="btn btn-primary save-progress" *ngIf="!isSaved" routerLink="/start-simple">
        {{ 'next' | translate }}

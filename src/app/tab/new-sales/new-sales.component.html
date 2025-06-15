@@ -11,7 +11,7 @@
       </div>
     </section>
     <div class="p-6 max-w-4xl mx-auto">
-        <h1 class="text-2xl font-bold mb-4">Sales Funnel Calculator</h1>
+        <h1 class="text-2xl font-bold mb-4">{{ 'salesFunnelCalculator' | translate }}</h1>
     
        
       
@@ -112,7 +112,7 @@
         </div>
         <div class="update-section d-flex justify-content-around">
           <button class="btn btn-primary save-progress"*ngIf="!isSaved" (click)="updateProgress()">
-            <i class="fas fa-save"></i> update Progress
+            <i class="fas fa-save"></i> {{ 'updateProgress' | translate }}
           </button>
           <button class="btn btn-primary save-progress"*ngIf="!isSaved" routerLink="/business-setup">
             {{ 'next' | translate }}
