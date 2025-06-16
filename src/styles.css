@@ -25,4 +25,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .card {
     @apply bg-white rounded-xl shadow-md p-6;
   }
+
+  .video-section {
+    @apply bg-white rounded-lg shadow p-4 mt-6 max-w-3xl mx-auto text-center;
+  }
+
+  .video-section video {
+    @apply w-full rounded-md border border-gray-200;
+  }
 }

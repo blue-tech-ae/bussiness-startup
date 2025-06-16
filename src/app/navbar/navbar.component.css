@@ -3,5 +3,9 @@
 }
 
 .nav-link-active {
-  @apply text-primary font-medium;
+  @apply text-primary font-semibold;
+}
+
+.nav-links a {
+  @apply md:mx-1;
 }

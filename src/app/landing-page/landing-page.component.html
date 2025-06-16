@@ -41,3 +41,8 @@
     </div>
   </div>
 </div>
+
+<app-modal [title]="editingPlan ? 'Edit Plan' : 'Add Plan'"
+           [show]="showPlanModal" (onClose)="closePlanModal()">
+  <app-add-plans [plan]="editingPlan" (saved)="onPlanSaved()" (close)="closePlanModal()"></app-add-plans>
+</app-modal>

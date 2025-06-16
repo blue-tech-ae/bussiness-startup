@@ -16,7 +16,7 @@
 }
 
 .motivation-banner {
-  @apply bg-blue-50 text-blue-700 mx-4 p-3 rounded text-center font-semibold;
+  @apply bg-blue-100 text-blue-700 mx-4 p-3 rounded text-center font-semibold;
 }
 
 .section-title {

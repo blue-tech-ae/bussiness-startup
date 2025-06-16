@@ -13,6 +13,8 @@ import { ConfirmDeleteComponent } from '../confirm-delete/confirm-delete.compone
 })
 export class LandingPageComponent implements OnInit {
   businessPlans: any[] = [];
+  showPlanModal = false;
+  editingPlan: any | null = null;
  
 
   constructor(public dialog: MatDialog, private snackBar: MatSnackBar,private serv:ApisService,private router: Router
@@ -27,48 +29,14 @@ ngOnInit(): void {
   this.getbusinnis()
  
 }
-firstName: string = '';
-isMigrant: boolean = false;
-yearsInCountry!: number ;
-englishLevels: string[] = [
-  'No English',
-  'Low level',
-  'Intermediate',
-  'Great',
-  'Academic'
-];
-  selectedEnglishLevel!: string;
-hasBusiness: boolean = false;
-businessDescription: string='';
-aboutme:string=""
-isSaved : boolean =false
- 
-toggleMigrantStatus(status: boolean): void {
-  this.isMigrant = status;
-  if (!status) this.yearsInCountry = 0;
-}
-
-toggleBusinessOwnership(status: boolean): void {
-  this.hasBusiness = status;
-  if (!status) this.businessDescription = '';
-}
 
 
 
 
 
   addBusinessPlan() {
-    const dialogRef = this.dialog.open(AddPlansComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      this.getbusinnis()
-
-      if (result) {
-        this.getbusinnis()
-      //  this.businessPlans.push(result);
-        this.snackBar.open('Plan added successfully!', 'Close', { duration: 2000 });
-      }
-    });
+    this.editingPlan = null;
+    this.showPlanModal = true;
   }
 
   openPlan(id: any) {
@@ -88,18 +56,19 @@ toggleBusinessOwnership(status: boolean): void {
   }
 
   editPlan(index: number) {
-    const dialogRef = this.dialog.open(AddPlansComponent, {
-      data:{bussinesPlan: this.businessPlans[index]} 
-    });
+    this.editingPlan = this.businessPlans[index];
+    this.showPlanModal = true;
+  }
 
-    dialogRef.afterClosed().subscribe(result => {
-      
-      if (result) {
-        this.getbusinnis()
-       // this.businessPlans[index] = result;getbusinnes()
-        this.snackBar.open('Plan updated successfully!', 'Close', { duration: 2000 });
-      } 
-    });
+  closePlanModal() {
+    this.showPlanModal = false;
+    this.editingPlan = null;
+  }
+
+  onPlanSaved() {
+    this.getbusinnis();
+    this.snackBar.open('Plan saved successfully!', 'Close', { duration: 2000 });
+    this.closePlanModal();
   }
   getbusinnis(){
 return this.serv.getbussinesform().subscribe((res)=>{
