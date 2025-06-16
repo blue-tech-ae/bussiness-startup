@@ -187,6 +187,7 @@
   "example2": "Example 2:",
   "example3": "Example 3:",
   "personalNotesPlaceholder": "Empty space for users to add any personal notes."
+
   ,"uniqueSolutionFeaturesQuestion": "Considering the discussion we had, list three features that can make your solution unique in the market?"
   ,"option1AiSuggestions": "Option 1 (AI Suggestions)"
   ,"option2AiSuggestions": "Option 2 (AI Suggestions)"
@@ -199,4 +200,27 @@
   ,"audiencePlaceholder": "new customers, young, partners etc."
   ,"formatPlaceholder": "Audio, written, Images, video, physical, graphs"
   ,"channelsPlaceholder": "SM, Letters, phones, emails, events"
+
+  ,"thingsToConsider": "Things to consider",
+  "bigSolutionQuestion": "What is my business big Solution?",
+  "enterMarketSimpleQuestion": "How can I enter the market in the most simple way?",
+  "featuresLabel": "Features:",
+  "featureLowestCost": "Lowest cost",
+  "featureFastestDelivery": "Fastest delivery",
+  "featureMostReward": "Most reward (profitable)",
+  "featureLowestRisk": "Lowest risk",
+  "featureMostFeedback": "Most feedback generating",
+  "featureEnhanceSolution": "Ability to enhance, change the solution",
+  "useWhatIHave": "To create this simple solution I will use what I have:",
+  "getWhatINeed": "...and I will get what I need:",
+  "questionsProveWorks": "Questions you need to be answered to prove your solution works?",
+  "exampleLabel": "Example:",
+  "questionWouldPay": "Would people pay for it?",
+  "questionHowMuchPay": "How much are people willing to pay?",
+  "questionFeatureMattersMost": "What feature, size, color, format matters most?",
+  "questionWhenNeedMost": "When do they need it most (day/week/month/year)?",
+  "questionWherePreferBuy": "Where would they prefer to buy it?",
+  "questionBiggestFrustrations": "What are their biggest frustrations with current options?",
+  "findAnswersQuestion": "How will you find answers to those questions?",
+  "planMoveForwardQuestion": "What is your plan to move forward towards the (Big Solution) using the same framework above?"
 }
