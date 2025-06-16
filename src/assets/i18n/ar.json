@@ -187,8 +187,21 @@
   "example2": "المثال 2:",
   "example3": "المثال 3:",
   "personalNotesPlaceholder": "مساحة فارغة ليضيف المستخدم أي ملاحظات شخصية."
-,
-  "thingsToConsider": "أمور يجب مراعاتها",
+
+  ,"uniqueSolutionFeaturesQuestion": "بالنظر إلى المناقشة التي أجريناها، عدّد ثلاث ميزات يمكن أن تجعل حلك فريداً في السوق؟"
+  ,"option1AiSuggestions": "الخيار 1 (اقتراحات الذكاء الاصطناعي)"
+  ,"option2AiSuggestions": "الخيار 2 (اقتراحات الذكاء الاصطناعي)"
+  ,"option3AiSuggestions": "الخيار 3 (اقتراحات الذكاء الاصطناعي)"
+  ,"marketingCampaign": "حملة تسويقية"
+  ,"goalMessageQuestion": "1. ما الهدف/الرسالة التي أريد إيصالها؟"
+  ,"audienceQuestion": "2. من هو جمهوري المستهدف في هذه الحملة؟"
+  ,"formatQuestion": "3. ما التنسيق الذي ستستخدمه؟"
+  ,"goalPlaceholder": "منتج جديد، مبيعات، فعاليات، إلخ."
+  ,"audiencePlaceholder": "عملاء جدد، شباب، شركاء، إلخ."
+  ,"formatPlaceholder": "صوتي، مكتوب، صور، فيديو، مطبوع، رسوم بيانية"
+  ,"channelsPlaceholder": "التواصل الاجتماعي، رسائل، هواتف، بريد إلكتروني، فعاليات"
+
+  ,"thingsToConsider": "أمور يجب مراعاتها",
   "bigSolutionQuestion": "ما هو الحل الكبير لأعمالي؟",
   "enterMarketSimpleQuestion": "كيف يمكنني دخول السوق بأبسط طريقة؟",
   "featuresLabel": "الميزات:",
@@ -210,4 +223,5 @@
   "questionBiggestFrustrations": "ما أكبر إحباطاتهم من الخيارات الحالية؟",
   "findAnswersQuestion": "كيف ستجد إجابات لتلك الأسئلة؟",
   "planMoveForwardQuestion": "ما خطتك للتقدم نحو (الحل الكبير) باستخدام الإطار نفسه أعلاه؟"
+
 }

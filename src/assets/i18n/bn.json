@@ -187,8 +187,21 @@
   "example2": "Example 2:",
   "example3": "Example 3:",
   "personalNotesPlaceholder": "Empty space for users to add any personal notes."
-,
-  "thingsToConsider": "Things to consider",
+
+  ,"uniqueSolutionFeaturesQuestion": "Considering the discussion we had, list three features that can make your solution unique in the market?"
+  ,"option1AiSuggestions": "Option 1 (AI Suggestions)"
+  ,"option2AiSuggestions": "Option 2 (AI Suggestions)"
+  ,"option3AiSuggestions": "Option 3 (AI Suggestions)"
+  ,"marketingCampaign": "Marketing Campaign"
+  ,"goalMessageQuestion": "1. What is the Goal/Message I want to deliver?"
+  ,"audienceQuestion": "2. Who is my Audience for this campaign?"
+  ,"formatQuestion": "3. What format do you use?"
+  ,"goalPlaceholder": "new product, sales, events etc."
+  ,"audiencePlaceholder": "new customers, young, partners etc."
+  ,"formatPlaceholder": "Audio, written, Images, video, physical, graphs"
+  ,"channelsPlaceholder": "SM, Letters, phones, emails, events"
+
+  ,"thingsToConsider": "Things to consider",
   "bigSolutionQuestion": "What is my business big Solution?",
   "enterMarketSimpleQuestion": "How can I enter the market in the most simple way?",
   "featuresLabel": "Features:",
