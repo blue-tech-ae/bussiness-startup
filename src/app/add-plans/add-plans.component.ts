@@ -33,7 +33,7 @@ constructor(
   private snackBar: MatSnackBar,
   private serv: ApisService,
   @Inject(MAT_DIALOG_DATA) public data: { bussinesPlan: any },
-  private dialogRef: MatDialogRef<AddPlansComponent>
+  public dialogRef: MatDialogRef<AddPlansComponent>
 ) {
   if (data && data.bussinesPlan) {
     this.isSaved = true;
