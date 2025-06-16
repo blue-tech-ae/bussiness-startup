@@ -32,8 +32,15 @@ export class TranslationService {
     return this.currentLang;
   }
 
-  translate(key: string): string {
-    return this.translations[key] || key;
+  translate(key: string, params?: Record<string, unknown>): string {
+    let result = this.translations[key] || key;
+    if (params) {
+      Object.keys(params).forEach(param => {
+        const value = String(params[param]);
+        result = result.replace(new RegExp(`{{\\s*${param}\\s*}}`, 'g'), value);
+      });
+    }
+    return result;
   }
 
   private updateDocumentDirection() {
