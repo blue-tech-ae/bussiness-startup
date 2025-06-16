@@ -3,16 +3,16 @@
   <img src="assets/images/VN Logo Secondary Web.png" alt="Value Nation Logo" class="logo">
 </div>
 <div class="motivation-banner" role="alert">
-  🚀 <strong>Turn Your Ideas into Reality:</strong> Let us help you craft marketing strategies and build a business that truly grows!
+  {{ 'landingPageMotivation' | translate }}
 </div>
 
 <div class="landing-page-container py-6">
   <div class="plans-section">
     <div class="tip-banner" role="alert">
-      <span class="font-semibold">📝 Tip:</span> Start by creating a business plan. Click the plan card to enter its workspace and begin building your vision.
+      {{ 'landingPageTip' | translate }}
     </div>
 
-    <h1 class="section-title text-center mb-6">Business Plans</h1>
+    <h1 class="section-title text-center mb-6">{{ 'businessPlans' | translate }}</h1>
 
     <div class="plan-grid">
       <ng-container *ngFor="let plan of businessPlans; let i = index">
@@ -36,13 +36,13 @@
         <svg class="w-6 h-6 mb-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
         </svg>
-        <span class="font-medium">Add New Plan</span>
+        <span class="font-medium">{{ 'addNewPlan' | translate }}</span>
       </button>
     </div>
   </div>
 </div>
 
-<app-modal [title]="editingPlan ? 'Edit Plan' : 'Add Plan'"
+<app-modal [title]="editingPlan ? ('editPlan' | translate) : ('addPlan' | translate)"
            [show]="showPlanModal" (onClose)="closePlanModal()">
   <app-add-plans [plan]="editingPlan" (saved)="onPlanSaved()" (close)="closePlanModal()"></app-add-plans>
 </app-modal>

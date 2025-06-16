@@ -3,7 +3,7 @@
     <img src="assets/images/VN Logo Secondary Web.png" alt="Value Nation Logo" class="w-40 mx-auto mb-6">
     <!-- Sign In -->
     <div *ngIf="isSignIn" class="text-left">
-      <h2 class="text-2xl font-bold text-primary mb-4">Sign In</h2>
+      <h2 class="text-2xl font-bold text-primary mb-4">{{ 'signIn' | translate }}</h2>
       <form (ngSubmit)="onSignIn()" class="space-y-4">
         <div>
           <label class="block mb-1 text-sm font-medium" for="signin-email">Email</label>
@@ -14,23 +14,23 @@
           <input id="signin-password" type="password" class="input-field" [(ngModel)]="signInForm.password" name="password" required>
         </div>
         <div class="text-right">
-          <a class="text-sm text-primary cursor-pointer" (click)="openResetPopup()">reset password</a>
+          <a class="text-sm text-primary cursor-pointer" (click)="openResetPopup()">{{ 'resetPassword' | translate }}</a>
         </div>
         <div *ngIf="errorMessage" class="bg-red-100 text-red-700 p-2 rounded text-sm">
           {{ errorMessage }}
         </div>
         <button type="submit" class="w-full btn-primary" [disabled]="isLoading">
-          <span *ngIf="!isLoading">SIGN IN</span>
-          <span *ngIf="isLoading">LOADING...</span>
-        </button>
+          <span *ngIf="!isLoading">{{ 'signIn' | translate }}</span>
+          <span *ngIf="isLoading">{{ 'loading' | translate }}</span>
+      </button>
       </form>
-      <p class="mt-4 text-sm text-gray-600">Don't have an account?
-        <button class="text-primary font-semibold" (click)="toggleForm()">Create New Account</button>
+      <p class="mt-4 text-sm text-gray-600">{{ 'dontHaveAccount' | translate }}
+        <button class="text-primary font-semibold" (click)="toggleForm()">{{ 'createAccount' | translate }}</button>
       </p>
     </div>
     <!-- Sign Up -->
     <div *ngIf="!isSignIn" class="text-left">
-      <h2 class="text-2xl font-bold text-primary mb-4">Create New Account</h2>
+      <h2 class="text-2xl font-bold text-primary mb-4">{{ 'createAccount' | translate }}</h2>
       <form (ngSubmit)="onSignUp()" class="space-y-4">
         <div>
           <label class="block mb-1 text-sm font-medium" for="signup-name">Name</label>
@@ -52,23 +52,23 @@
           {{ errorMessage }}
         </div>
         <button type="submit" class="w-full btn-primary" [disabled]="isLoading">
-          <span *ngIf="!isLoading">CREATE ACCOUNT</span>
-          <span *ngIf="isLoading">LOADING...</span>
-        </button>
+          <span *ngIf="!isLoading">{{ 'createAccount' | translate }}</span>
+          <span *ngIf="isLoading">{{ 'loading' | translate }}</span>
+      </button>
       </form>
-      <p class="mt-4 text-sm text-gray-600">Already have an account?
-        <button class="text-primary font-semibold" (click)="toggleForm()">Sign In</button>
+      <p class="mt-4 text-sm text-gray-600">{{ 'alreadyAccount' | translate }}
+        <button class="text-primary font-semibold" (click)="toggleForm()">{{ 'signIn' | translate }}</button>
       </p>
     </div>
     <!-- Reset Popup -->
     <div *ngIf="showResetPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
       <div class="card w-80 space-y-4">
-        <h2 class="text-lg font-semibold">Reset Password</h2>
-        <p class="text-sm text-gray-600">Enter your email to receive reset instructions</p>
-        <input type="email" [(ngModel)]="resetEmail" placeholder="Enter your email" class="input-field" required>
+        <h2 class="text-lg font-semibold">{{ 'resetPassword' | translate }}</h2>
+        <p class="text-sm text-gray-600">{{ 'resetInstructions' | translate }}</p>
+        <input type="email" [(ngModel)]="resetEmail" [placeholder]="'emailPlaceholder' | translate" class="input-field" required>
         <div class="flex justify-end gap-2">
-          <button class="btn-primary" (click)="sendResetEmail()">Send</button>
-          <button class="btn-secondary" (click)="closeResetPopup()">Cancel</button>
+          <button class="btn-primary" (click)="sendResetEmail()">{{ 'send' | translate }}</button>
+          <button class="btn-secondary" (click)="closeResetPopup()">{{ 'cancel' | translate }}</button>
         </div>
       </div>
     </div>
