@@ -130,4 +130,8 @@
   "businessUpdated": "Business updated successfully!",
   "planDeleted": "Plan deleted!",
   "planSaved": "Plan saved successfully!"
+  ,"describeBusinessIdea": "Describe your business idea"
+  ,"channelsYouUse": "What channels you will use?"
+  ,"addCampaign": "Add Campaign"
+  ,"addTask": "Add Task"
 }

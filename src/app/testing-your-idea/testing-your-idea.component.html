@@ -19,7 +19,7 @@
         <h2 class="text-xl font-semibold">{{ 'desirabilityTitle' | translate }}</h2>
         
         <label class="block">Do you think your solution is solving a real problem?</label>
-        <div class="flex space-x-4">
+        <div class="flex items-center gap-4">
           <label class="flex items-center">
             <input type="radio" name="problem" [(ngModel)]="desirability.solves_problem" value="No"> No - Go back and think of a different idea!
           </label>
@@ -32,7 +32,7 @@
         <textarea [(ngModel)]="desirability.problem_statement" class="w-full p-2 border rounded" placeholder="Define the exact problem you are trying to solve..."></textarea>
         
         <label class="block">Are your target customers currently using any other solutions?</label>
-        <div class="flex space-x-4">
+        <div class="flex items-center gap-4">
           <label class="flex items-center">
             <input type="radio" name="current_solutions" [(ngModel)]="desirability.existing_solutions_used" value="No"> No - Find out why they are not using any solutions?
           </label>
@@ -47,7 +47,7 @@
         <label class="block">Why do you think your customers would switch to your solution?</label>
         <textarea [(ngModel)]="desirability.switch_reason" class="w-full p-2 custom-textarea" placeholder="Why would they choose your solution over others?"></textarea>
         
-        <label class="block">Notes</label>
+        <label class="block">{{ 'notes' | translate }}</label>
         <textarea [(ngModel)]="desirability.notes" class="w-full p-2 border rounded" placeholder="Add any personal notes..."></textarea>
       </div>
       
@@ -60,7 +60,7 @@
         <label class="block">Does this business require any qualifications/permits?</label>
         <textarea [(ngModel)]="feasibility.qualifications_permits" class="w-full p-2 border rounded" placeholder="What qualifications/permits do we need? Can I get them?"></textarea>
         
-        <label class="block">Notes</label>
+        <label class="block">{{ 'notes' | translate }}</label>
         <textarea [(ngModel)]="feasibility.notes" class="w-full p-2 border rounded" placeholder="Add any personal notes..."></textarea>
       </div>
       
@@ -76,7 +76,7 @@
         <label class="block">Do you think you have the finances to establish this business/ or start in a small way?</label>
         <textarea [(ngModel)]="viability.finances_details" class="w-full p-2 border rounded" placeholder="Provide financial details..."></textarea>
         
-        <label class="block">Notes</label>
+        <label class="block">{{ 'notes' | translate }}</label>
         <textarea [(ngModel)]="viability.notes" class="w-full p-2 border rounded" placeholder="Add any personal notes..."></textarea>
       </div>
       
