@@ -40,6 +40,7 @@ import { NewMarketingComponent } from './tab/new-marketing/new-marketing.compone
 import { NewSalesComponent } from './tab/new-sales/new-sales.component';
 import { NewBusinessSetupComponent } from './tab/new-business-setup/new-business-setup.component';
 import { AddPlansComponent } from './add-plans/add-plans.component';
+import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component';
 import { NewFinancialComponent } from './tab/new-financial/new-financial.component';
 import { WebsiteComponent } from './tab/website/website.component';
 import { FooterComponent } from './footer/footer.component';
@@ -73,6 +74,7 @@ import { FooterComponent } from './footer/footer.component';
     NewSalesComponent,
     NewBusinessSetupComponent,
     AddPlansComponent,
+    ConfirmDeleteComponent,
     NewFinancialComponent,
     WebsiteComponent,
     FooterComponent
