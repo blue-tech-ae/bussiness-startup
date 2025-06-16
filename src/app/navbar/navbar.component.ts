@@ -10,14 +10,14 @@ export class NavbarComponent {
   isNavbarCollapsed = true;
 
   navLinks = [
-    { path: "/bussiness-idea", label: "Business Idea" },
-    { path: "/market-research", label: "Market Research" },
-    { path: "/mvp-development", label: "MVP Development" },
-    { path: "/marketing", label: "Marketing" },
-    { path: "/sales-strategy", label: "Sales Strategy" },
-    { path: "/business-setup", label: "Business Setup" },
-    { path: "/financial-planning", label: "Financial Planning" },
-    { path: "/launch-preparation", label: "Launch Preparation" }
+    { path: "/bussiness-idea", label: "businessIdea" },
+    { path: "/market-research", label: "marketResearch" },
+    { path: "/start-simple", label: "startSimple" },
+    { path: "/marketing", label: "marketing" },
+    { path: "/sales-strategy", label: "salesStrategy" },
+    { path: "/business-setup", label: "businessSetup" },
+    { path: "/financial-planning", label: "financialPlanning" },
+    { path: "/launch-preparation", label: "launchMilestones" }
   ];
 
   constructor(private router: Router) {

@@ -1,10 +1,10 @@
 <nav class="bg-blue-600 text-white py-4 shadow">
   <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
-    <div class="font-bold uppercase">Value Nation Business Startup Tool</div>
+    <div class="font-bold uppercase">{{ 'valueNationTool' | translate }}</div>
     <div class="flex items-center gap-4">
       <div class="relative">
         <button class="flex items-center gap-1 font-semibold" (click)="toggleDropdown($event)">
-          <i class="fas fa-download"></i> Export Business Plan
+          <i class="fas fa-download"></i> {{ 'exportBusinessPlan' | translate }}
         </button>
         <div class="dropdown-menu absolute right-0 mt-2 bg-white text-gray-700 rounded shadow-lg w-44 z-10" [class.show]="dropdownOpen">
           <!-- <a class="dropdown-item" href="#" (click)="exportBusinessPlan('md', $event)">
@@ -12,8 +12,8 @@
           </a> -->
           <a class="dropdown-item" href="#" (click)="exportBusinessPlan('pdf', $event)" [class.disabled]="isLoading">
             <i class="fas fa-file-pdf"></i>
-            <span *ngIf="!isLoading">PDF</span>
-            <span *ngIf="isLoading">Generating PDF...</span>
+            <span *ngIf="!isLoading">{{ 'pdf' | translate }}</span>
+            <span *ngIf="isLoading">{{ 'generatingPdf' | translate }}</span>
           </a>
           <!-- <a class="dropdown-item" href="#" (click)="exportBusinessPlan('docx', $event)">
             <i class="fas fa-file-word"></i> Word
@@ -25,8 +25,8 @@
       </div>
       <button class="sign-out text-sm font-semibold" (click)="logout()" [disabled]="isLoading">
         <i class="fas fa-sign-out-alt mr-1"></i>
-        <span *ngIf="!isLoading">SIGN OUT</span>
-        <span *ngIf="isLoading">LOADING...</span>
+        <span *ngIf="!isLoading">{{ 'signOut' | translate }}</span>
+        <span *ngIf="isLoading">{{ 'loading' | translate }}</span>
       </button>
       <select (change)="changeLang($any($event.target).value)" [value]="currentLang" class="lang-select bg-transparent text-white text-sm uppercase font-semibold">
         <option value="en">EN</option>
