@@ -2,7 +2,7 @@
  
    <div class="p-6 space-y-6 bg-gray-100 min-h-screen business">
     <section class="video-section">
-        <h2><i class="fas fa-video"></i> Introduction Video</h2>
+        <h2 class="flex items-center gap-2"><i class="fas fa-video"></i><span>{{ 'introductionVideo' | translate }}</span></h2>
         <div class="vedio">
           <video controls src="https://businesstools-admin.valuenationapp.com{{videoUrl}}" ></video>
     
@@ -12,8 +12,8 @@
   
       <div class="bg-white p-4 rounded-lg shadow space-y-4">
         <div>
-          <label class="block">What is your chosen Business Idea?</label>
-          <textarea [(ngModel)]="your_idea" class="w-full p-2 border rounded" placeholder="Insert your choice of a business idea"></textarea>
+          <label class="block">{{ 'chosenBusinessIdeaQuestion' | translate }}</label>
+          <textarea [(ngModel)]="your_idea" class="w-full p-2 border rounded" placeholder="{{ 'businessIdeaPlaceholder' | translate }}"></textarea>
           
         </div>
         <h2 class="text-xl font-semibold">{{ 'desirabilityTitle' | translate }}</h2>
@@ -87,15 +87,17 @@
 
 
       <div class="save-section text-center mt-2">
-        <button class="btn btn-primary save-progress" *ngIf="isSaved" (click)="save()">
-          <i class="fas fa-save"></i> {{ 'saveProgress' | translate }}
+        <button class="btn btn-primary save-progress inline-flex items-center gap-2" *ngIf="isSaved" (click)="save()">
+          <i class="fas fa-save"></i>
+          <span>{{ 'saveProgress' | translate }}</span>
         </button>
       </div>
-      <div class="update-section d-flex justify-content-around">
-        <button class="btn btn-primary save-progress"*ngIf="!isSaved" (click)="update()">
-          <i class="fas fa-save"></i> {{ 'updateProgress' | translate }}
+      <div class="update-section flex justify-around">
+        <button class="btn btn-primary save-progress inline-flex items-center gap-2" *ngIf="!isSaved" (click)="update()">
+          <i class="fas fa-save"></i>
+          <span>{{ 'updateProgress' | translate }}</span>
         </button>
-        <button class="btn btn-primary save-progress"*ngIf="!isSaved" routerLink="/market-research">
+        <button class="btn btn-primary save-progress" *ngIf="!isSaved" routerLink="/market-research">
           {{ 'next' | translate }}
         </button>
       </div>

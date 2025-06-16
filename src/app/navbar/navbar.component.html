@@ -1,8 +1,7 @@
 <nav class="bg-white shadow-sm">
   <div class="max-w-7xl mx-auto px-4 flex items-center justify-between py-3">
-    <a routerLink="/landing-page" class="text-primary font-semibold flex items-center space-x-2">
-      <i class="fas fa-desktop"></i>
-      <span>Landing Page</span>
+    <a routerLink="/landing-page" role="link" aria-label="Home" class="text-primary font-semibold flex items-center cursor-pointer">
+      <i class="fas fa-desktop text-xl"></i>
     </a>
     <button class="menu-toggle md:hidden text-gray-600" (click)="toggleNavbar()" aria-label="Toggle navigation">
       <i class="fas fa-bars"></i>

@@ -86,4 +86,6 @@
   "signIn": "Sign In"
   ,"resetInstructions": "Enter your email to receive reset instructions",
   "emailPlaceholder": "Enter your email"
+  ,"chosenBusinessIdeaQuestion": "What is your chosen Business Idea?"
+  ,"businessIdeaPlaceholder": "Insert your choice of a business idea"
 }
