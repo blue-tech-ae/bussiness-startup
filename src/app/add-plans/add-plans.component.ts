@@ -1,8 +1,6 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ApisService } from '../services/apis.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-plans',
@@ -10,6 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-plans.component.css']
 })
 export class AddPlansComponent implements OnInit{
+
+  @Input() plan: any | null = null;
+  @Output() saved = new EventEmitter<any>();
+  @Output() close = new EventEmitter<void>();
 
   firstName: string = '';
 isMigrant: boolean = false;
@@ -29,35 +31,22 @@ isSaved : boolean =false
 
 
 constructor(
-  public dialog: MatDialog,
   private snackBar: MatSnackBar,
-  private serv: ApisService,
-  @Inject(MAT_DIALOG_DATA) public data: { bussinesPlan: any },
-  public dialogRef: MatDialogRef<AddPlansComponent>
-) {
-  if (data && data.bussinesPlan) {
+  private serv: ApisService
+) {}
+
+ngOnInit(): void {
+  if (this.plan) {
     this.isSaved = true;
-    const plan = data.bussinesPlan;  // 👈 مباشرة بدون .data[]
-console.log(plan)
+    const plan = this.plan;
     this.firstName = plan.name || '';
-    //this.isMigrant = plan.is_migrant === 1;
     this.yearsInCountry = plan.years_here || 0;
     this.selectedEnglishLevel = plan.english_level ? plan.english_level[0] : '';
-   // this.hasBusiness = plan.is_business_old === 1;
     this.businessDescription = plan.products_services ? plan.products_services[0] : '';
     this.aboutme = plan.about_me ? plan.about_me[0] : '';
     this.isMigrant = plan.is_migrant === 1 ? true : false;
     this.hasBusiness = plan.is_business_old === 1 ? true : false;
   }
-}
-ngOnInit(): void {
-  // const id = this.route.snapshot.paramMap.get('id');
-  // if (id) {
-  //   localStorage.setItem("businnes-id", id);
-    
-  // }
-  //this.getbusinesform()
- 
 }
 toggleMigrantStatus(status: boolean): void {
   this.isMigrant = status;
@@ -82,14 +71,12 @@ toggleBusinessOwnership(status: boolean): void {
       english_level: [this.selectedEnglishLevel],
       is_business_old: this.hasBusiness
     };
-  
+
     this.serv.saveNewbusines(formdata).subscribe((res) => {
-      localStorage.setItem("bid",res.data.id)
-     // this.getbusinesform() 
-  
+      localStorage.setItem('bid', res.data.id);
       this.snackBar.open('Business saved successfully!', 'Close', { duration: 2000 });
-      this.dialogRef.close(res.data); 
-      
+      this.saved.emit(res.data);
+      this.close.emit();
     });
   }
   updateForm(): void {
@@ -108,11 +95,9 @@ toggleBusinessOwnership(status: boolean): void {
     };
   
     this.serv.updatenewbusiness(formdata).subscribe((res) => {
-      //this.getbusinesform()
-   // console.log(  res) 
       this.snackBar.open('Business updated successfully!', 'Close', { duration: 2000 });
-      this.dialogRef.close(res.data); 
-      
+      this.saved.emit(res.data);
+      this.close.emit();
     });
   }
   getbusinesform() {

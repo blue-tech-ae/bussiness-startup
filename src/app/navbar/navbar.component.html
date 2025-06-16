@@ -7,12 +7,13 @@
     <button class="menu-toggle md:hidden text-gray-600" (click)="toggleNavbar()" aria-label="Toggle navigation">
       <i class="fas fa-bars"></i>
     </button>
-    <div class="nav-links w-full md:flex md:items-center md:space-x-4" [ngClass]="{ 'hidden': isNavbarCollapsed, 'block': !isNavbarCollapsed, 'mt-2': !isNavbarCollapsed }">
+    <div class="nav-links w-full md:flex md:items-center md:space-x-6" [ngClass]="{ 'hidden': isNavbarCollapsed, 'block': !isNavbarCollapsed, 'mt-2': !isNavbarCollapsed }">
       <a *ngFor="let link of navLinks"
          routerLink="{{link.path}}"
          routerLinkActive="nav-link-active"
          [routerLinkActiveOptions]="{ exact: true }"
-         class="block px-3 py-2 text-sm text-gray-700 hover:text-primary transition-colors md:inline-block">
+         class="block px-3 py-2 text-sm text-gray-700 hover:text-primary transition-colors md:inline-block flex items-center gap-1">
+        <i class="fas fa-circle text-[6px] md:text-xs"></i>
         {{ link.label | translate }}
       </a>
     </div>

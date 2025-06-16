@@ -44,6 +44,7 @@ import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.componen
 import { NewFinancialComponent } from './tab/new-financial/new-financial.component';
 import { WebsiteComponent } from './tab/website/website.component';
 import { FooterComponent } from './footer/footer.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { FooterComponent } from './footer/footer.component';
     ConfirmDeleteComponent,
     NewFinancialComponent,
     WebsiteComponent,
-    FooterComponent
+    FooterComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,4 @@
 /* add-plans.component.css */
-:host ::ng-deep .mat-dialog-container {
-  padding: 0;
-  overflow: auto;
-  max-height: 90vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 16px;
+:host {
+  @apply block;
 }
