@@ -1,10 +1,10 @@
 <div class="suggestion-dialog">
-    <h2>AI Suggestion</h2>
+    <h2>{{ 'aiSuggestion' | translate }}</h2>
     
     <div class="content">
       <div *ngIf="loading" class="loading">
         <mat-spinner diameter="40"></mat-spinner>
-        <p>Generating suggestion...</p>
+        <p>{{ 'generatingSuggestion' | translate }}</p>
       </div>
   
       <div *ngIf="error" class="error">
@@ -18,10 +18,10 @@
   
     <div class="actions">
       <button mat-button (click)="generateSuggestion()">
-        ANOTHER SUGGESTION
+        {{ 'anotherSuggestion' | translate }}
       </button>
       <button mat-raised-button color="primary" (click)="useThisIdea()">
-        USE THIS SUGGESTION
+        {{ 'useThisSuggestion' | translate }}
       </button>
     </div>
   </div> 

@@ -1,10 +1,10 @@
 <div class="p-6">
-    <h2 class="text-2xl font-bold mb-4">🚀 {{ data ? 'Edit' : 'Add' }} Business Plan</h2>
-    <input [(ngModel)]="businessName" placeholder="Enter plan name" class="input-field mb-4" />
+    <h2 class="text-2xl font-bold mb-4">🚀 {{ data ? ('editBusinessPlan' | translate) : ('addBusinessPlan' | translate) }}</h2>
+    <input [(ngModel)]="businessName" [placeholder]="'enterPlanName' | translate" class="input-field mb-4" />
     <div class="flex justify-end gap-2">
-      <button (click)="dialogRef.close()" class="btn-secondary">Cancel</button>
-      <button (click)="save()" class="btn-primary" *ngIf="issave" >Save</button>
-      <button (click)="update()" class="btn-primary" *ngIf="!issave" >Update</button>
+      <button (click)="dialogRef.close()" class="btn-secondary">{{ 'cancel' | translate }}</button>
+      <button (click)="save()" class="btn-primary" *ngIf="issave" >{{ 'save' | translate }}</button>
+      <button (click)="update()" class="btn-primary" *ngIf="!issave" >{{ 'update' | translate }}</button>
     </div>
   </div>
 

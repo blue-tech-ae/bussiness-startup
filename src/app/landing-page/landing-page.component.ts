@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { TranslationService } from '../services/translation.service';
 import { AddBusinessComponent } from '../add-business/add-business.component';
 import { ApisService } from '../services/apis.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -17,7 +18,8 @@ export class LandingPageComponent implements OnInit {
   editingPlan: any | null = null;
  
 
-  constructor(public dialog: MatDialog, private snackBar: MatSnackBar,private serv:ApisService,private router: Router
+  constructor(public dialog: MatDialog, private snackBar: MatSnackBar,private serv:ApisService,private router: Router,
+    private translation: TranslationService
    ) {}
 ngOnInit(): void {
   // const id = this.route.snapshot.paramMap.get('id');
@@ -49,7 +51,11 @@ ngOnInit(): void {
       if (result) {
         this.serv.deletebusinnes(id).subscribe(() => {
           this.getbusinnis();
-          this.snackBar.open('Plan deleted!', 'Close', { duration: 2000 });
+          this.snackBar.open(
+            this.translation.translate('planDeleted'),
+            this.translation.translate('close'),
+            { duration: 2000 }
+          );
         });
       }
     });
@@ -67,7 +73,11 @@ ngOnInit(): void {
 
   onPlanSaved() {
     this.getbusinnis();
-    this.snackBar.open('Plan saved successfully!', 'Close', { duration: 2000 });
+    this.snackBar.open(
+      this.translation.translate('planSaved'),
+      this.translation.translate('close'),
+      { duration: 2000 }
+    );
     this.closePlanModal();
   }
   getbusinnis(){

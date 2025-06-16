@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ApisService } from '../services/apis.service';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-add-plans',
@@ -32,7 +33,8 @@ isSaved : boolean =false
 
 constructor(
   private snackBar: MatSnackBar,
-  private serv: ApisService
+  private serv: ApisService,
+  private translation: TranslationService
 ) {}
 
 ngOnInit(): void {
@@ -59,7 +61,11 @@ toggleBusinessOwnership(status: boolean): void {
 }
   submitForm(): void {
     if (!this.firstName.trim()) {
-      this.snackBar.open('Plan name is required', 'Close', { duration: 2000 });
+      this.snackBar.open(
+        this.translation.translate('planNameRequired'),
+        this.translation.translate('close'),
+        { duration: 2000 }
+      );
       return;
     }
     const formdata = {
@@ -74,14 +80,22 @@ toggleBusinessOwnership(status: boolean): void {
 
     this.serv.saveNewbusines(formdata).subscribe((res) => {
       localStorage.setItem('bid', res.data.id);
-      this.snackBar.open('Business saved successfully!', 'Close', { duration: 2000 });
+      this.snackBar.open(
+        this.translation.translate('businessSaved'),
+        this.translation.translate('close'),
+        { duration: 2000 }
+      );
       this.saved.emit(res.data);
       this.close.emit();
     });
   }
   updateForm(): void {
     if (!this.firstName.trim()) {
-      this.snackBar.open('Plan name is required', 'Close', { duration: 2000 });
+      this.snackBar.open(
+        this.translation.translate('planNameRequired'),
+        this.translation.translate('close'),
+        { duration: 2000 }
+      );
       return;
     }
     const formdata = {
@@ -95,7 +109,11 @@ toggleBusinessOwnership(status: boolean): void {
     };
   
     this.serv.updatenewbusiness(formdata).subscribe((res) => {
-      this.snackBar.open('Business updated successfully!', 'Close', { duration: 2000 });
+      this.snackBar.open(
+        this.translation.translate('businessUpdated'),
+        this.translation.translate('close'),
+        { duration: 2000 }
+      );
       this.saved.emit(res.data);
       this.close.emit();
     });

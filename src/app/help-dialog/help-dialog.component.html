@@ -1,8 +1,8 @@
 <div mat-dialog-content>
-    <h2>Help Information</h2>
+    <h2>{{ 'helpInformation' | translate }}</h2>
     <div [innerHTML]="data.skills"></div>
   </div>
-  
+
   <div mat-dialog-actions align="end">
-    <button mat-button (click)="dialogRef.close()">Close</button>
+    <button mat-button (click)="dialogRef.close()">{{ 'close' | translate }}</button>
   </div>
