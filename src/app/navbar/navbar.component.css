@@ -3,5 +3,5 @@
 }
 
 .nav-link-active {
-  @apply text-blue-600 font-medium;
+  @apply text-primary font-medium;
 }

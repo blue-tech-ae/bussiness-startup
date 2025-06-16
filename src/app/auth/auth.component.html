@@ -1,129 +1,74 @@
-<div class="auth-container">
-  <div class="auth-card">
-    <img src="assets/images/VN Logo Secondary Web.png" alt="Value Nation Logo" class="logo">
-    
+<div class="min-h-screen flex items-center justify-center bg-gray-100 p-6">
+  <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md text-center">
+    <img src="assets/images/VN Logo Secondary Web.png" alt="Value Nation Logo" class="w-40 mx-auto mb-6">
     <!-- Sign In -->
-    <div *ngIf="isSignIn" class="form-container">
-      <h2>Sign In</h2>
-      <form (ngSubmit)="onSignIn()">
-        <div class="form-group">
-          <label for="signin-email">Email</label>
-          <input 
-            type="email" 
-            id="signin-email"
-            class="form-control" 
-            [(ngModel)]="signInForm.email"
-            name="email"
-            required
-          >
+    <div *ngIf="isSignIn" class="text-left">
+      <h2 class="text-2xl font-bold text-primary mb-4">Sign In</h2>
+      <form (ngSubmit)="onSignIn()" class="space-y-4">
+        <div>
+          <label class="block mb-1 text-sm font-medium" for="signin-email">Email</label>
+          <input id="signin-email" type="email" class="w-full border rounded-lg p-2" [(ngModel)]="signInForm.email" name="email" required>
         </div>
-
-        <div class="form-group">
-          <label for="signin-password">Password</label>
-          <input 
-            type="password" 
-            id="signin-password"
-            class="form-control" 
-            [(ngModel)]="signInForm.password"
-            name="password"
-            required
-          >
+        <div>
+          <label class="block mb-1 text-sm font-medium" for="signin-password">Password</label>
+          <input id="signin-password" type="password" class="w-full border rounded-lg p-2" [(ngModel)]="signInForm.password" name="password" required>
         </div>
-        <div class="form-group">
-          <a class="reset" (click)="openResetPopup()">reset password</a>
+        <div class="text-right">
+          <a class="text-sm text-primary cursor-pointer" (click)="openResetPopup()">reset password</a>
         </div>
-
-        <div *ngIf="errorMessage" class="error-message">
+        <div *ngIf="errorMessage" class="bg-red-100 text-red-700 p-2 rounded text-sm">
           {{ errorMessage }}
         </div>
-
-        <button type="submit" class="submit-btn" [disabled]="isLoading">
+        <button type="submit" class="w-full bg-primary text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition" [disabled]="isLoading">
           <span *ngIf="!isLoading">SIGN IN</span>
           <span *ngIf="isLoading">LOADING...</span>
         </button>
       </form>
-
-      <p class="toggle-text">
-        Don't have an account?
-        <button class="toggle-btn" (click)="toggleForm()">Create New Account</button>
+      <p class="mt-4 text-sm text-gray-600">Don't have an account?
+        <button class="text-primary font-semibold" (click)="toggleForm()">Create New Account</button>
       </p>
     </div>
-
     <!-- Sign Up -->
-    <div *ngIf="!isSignIn" class="form-container">
-      <h2>Create New Account</h2>
-      <form (ngSubmit)="onSignUp()">
-        <div class="form-group">
-          <label for="signup-name">Name</label>
-          <input 
-            type="text" 
-            id="signup-name"
-            class="form-control" 
-            [(ngModel)]="signUpForm.name"
-            name="name"
-            required 
-          >
+    <div *ngIf="!isSignIn" class="text-left">
+      <h2 class="text-2xl font-bold text-primary mb-4">Create New Account</h2>
+      <form (ngSubmit)="onSignUp()" class="space-y-4">
+        <div>
+          <label class="block mb-1 text-sm font-medium" for="signup-name">Name</label>
+          <input id="signup-name" type="text" class="w-full border rounded-lg p-2" [(ngModel)]="signUpForm.name" name="name" required>
         </div>
-
-        <div class="form-group">
-          <label for="signup-email">Email</label>
-          <input 
-            type="email" 
-            id="signup-email"
-            class="form-control" 
-            [(ngModel)]="signUpForm.email"
-            name="email"
-            required
-          >
+        <div>
+          <label class="block mb-1 text-sm font-medium" for="signup-email">Email</label>
+          <input id="signup-email" type="email" class="w-full border rounded-lg p-2" [(ngModel)]="signUpForm.email" name="email" required>
         </div>
-
-        <div class="form-group">
-          <label for="signup-password">Password</label>
-          <input 
-            type="password" 
-            id="signup-password"
-            class="form-control" 
-            [(ngModel)]="signUpForm.password"
-            name="password"
-            required
-          >
+        <div>
+          <label class="block mb-1 text-sm font-medium" for="signup-password">Password</label>
+          <input id="signup-password" type="password" class="w-full border rounded-lg p-2" [(ngModel)]="signUpForm.password" name="password" required>
         </div>
-       
-        <div class="form-group">
-          <label for="signup-password-confirm">Confirm Password</label>
-          <input 
-            type="password" 
-            id="signup-password-confirm"
-            class="form-control" 
-            [(ngModel)]="signUpForm.password_confirmation"
-            name="password_confirmation"
-            required
-          >
+        <div>
+          <label class="block mb-1 text-sm font-medium" for="signup-password-confirm">Confirm Password</label>
+          <input id="signup-password-confirm" type="password" class="w-full border rounded-lg p-2" [(ngModel)]="signUpForm.password_confirmation" name="password_confirmation" required>
         </div>
-
-        <div *ngIf="errorMessage" class="error-message">
+        <div *ngIf="errorMessage" class="bg-red-100 text-red-700 p-2 rounded text-sm">
           {{ errorMessage }}
         </div>
-
-        <button type="submit" class="submit-btn" [disabled]="isLoading">
+        <button type="submit" class="w-full bg-primary text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition" [disabled]="isLoading">
           <span *ngIf="!isLoading">CREATE ACCOUNT</span>
           <span *ngIf="isLoading">LOADING...</span>
         </button>
       </form>
-
-      <p class="toggle-text">
-        Already have an account?
-        <button class="toggle-btn" (click)="toggleForm()">Sign In</button>
+      <p class="mt-4 text-sm text-gray-600">Already have an account?
+        <button class="text-primary font-semibold" (click)="toggleForm()">Sign In</button>
       </p>
     </div>
-    <div *ngIf="showResetPopup" class="popup-overlay">
-      <div class="popup">
-        <h2>Reset Password</h2>
-        <p>Enter your email to receive reset instructions</p>
-        <input type="email" [(ngModel)]="resetEmail" placeholder="Enter your email" required>
-        <div class="popup-actions">
-          <button (click)="sendResetEmail()">Send</button>
-          <button (click)="closeResetPopup()">Cancel</button>
+    <!-- Reset Popup -->
+    <div *ngIf="showResetPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <div class="bg-white p-6 rounded-lg w-80 space-y-4">
+        <h2 class="text-lg font-semibold">Reset Password</h2>
+        <p class="text-sm text-gray-600">Enter your email to receive reset instructions</p>
+        <input type="email" [(ngModel)]="resetEmail" placeholder="Enter your email" class="w-full border rounded-lg p-2" required>
+        <div class="flex justify-end gap-2">
+          <button class="bg-primary text-white px-4 py-2 rounded" (click)="sendResetEmail()">Send</button>
+          <button class="bg-gray-300 px-4 py-2 rounded" (click)="closeResetPopup()">Cancel</button>
         </div>
       </div>
     </div>
