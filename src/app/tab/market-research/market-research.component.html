@@ -13,44 +13,44 @@
   <!-- Target Customer Persona Section -->
   <section class="form-section">
     <h2><i class="fas fa-user-circle"></i> {{ 'targetCustomerPersona' | translate }}</h2>
-    <p class="section-description">Define your ideal customer profile</p>
+    <p class="section-description">{{ 'defineIdealCustomerProfile' | translate }}</p>
     
     <div class="persona-grid">
       <div class="form-group">
-        <label for="name">Name</label>
+        <label for="name">{{ 'name' | translate }}</label>
         <input 
           type="text" 
           id="name"
           class="form-control" 
           [(ngModel)]="customerPersona.name"
-          placeholder="Customer name"
+          placeholder="{{ 'customerNamePlaceholder' | translate }}"
         >
       </div>
 
     
       <div class="form-group">
-        <label for="ageGroup">Age Group</label>
+        <label for="ageGroup">{{ 'ageGroup' | translate }}</label>
         <select 
           id="ageGroup" 
           class="form-control" 
           [(ngModel)]="customerPersona.age"
         >
-          <option value="">Select Age Group</option> 
-          <option value="Young">Young</option>
-          <option value="Middle age">Middle age</option>
-          <option value="Old">Old</option>
+          <option value="">{{ 'selectAgeGroup' | translate }}</option>
+          <option value="Young">{{ 'ageYoung' | translate }}</option>
+          <option value="Middle age">{{ 'ageMiddle' | translate }}</option>
+          <option value="Old">{{ 'ageOld' | translate }}</option>
         </select>
       </div>
       <div class="form-group">
-        <label for="gender">Gender</label>
+        <label for="gender">{{ 'gender' | translate }}</label>
         <select 
           id="gender" 
           class="form-control" 
           [(ngModel)]="customerPersona.gender"
         >
-          <option value="">Select Gender</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
+          <option value="">{{ 'selectGender' | translate }}</option>
+          <option value="male">{{ 'male' | translate }}</option>
+          <option value="female">{{ 'female' | translate }}</option>
         </select>
       </div>
       <!-- <div class="form-group">
@@ -69,16 +69,16 @@
       
 
       <div class="form-group">
-        <label for="income">Income</label>
+        <label for="income">{{ 'income' | translate }}</label>
         <select 
           id="income" 
           class="form-control" 
           [(ngModel)]="customerPersona.income"
         >
-          <option value="">Select Income Level</option>
-          <option value="low">Low</option>
-          <option value="medium">Medium</option>
-          <option value="high">High</option>
+          <option value="">{{ 'selectIncomeLevel' | translate }}</option>
+          <option value="low">{{ 'incomeLow' | translate }}</option>
+          <option value="medium">{{ 'incomeMedium' | translate }}</option>
+          <option value="high">{{ 'incomeHigh' | translate }}</option>
         </select>
       </div>
 
@@ -93,18 +93,18 @@
         >
       </div> -->
       <div class="form-group">
-        <label for="employment">Employment</label>
+        <label for="employment">{{ 'employment' | translate }}</label>
         <select 
           id="employment" 
           class="form-control" 
           [(ngModel)]="customerPersona.employment"
         >
-          <option value="">Select Employment Status</option>
-          <option value="Unemployed">Unemployed</option>
-          <option value="Full-time">Full-time</option>
-          <option value="Part-time">Part-time</option>
-          <option value="Self-employed">Self-employed</option>
-          <option value="Casual">Casual</option>
+          <option value="">{{ 'selectEmploymentStatus' | translate }}</option>
+          <option value="Unemployed">{{ 'employmentUnemployed' | translate }}</option>
+          <option value="Full-time">{{ 'employmentFullTime' | translate }}</option>
+          <option value="Part-time">{{ 'employmentPartTime' | translate }}</option>
+          <option value="Self-employed">{{ 'employmentSelfEmployed' | translate }}</option>
+          <option value="Casual">{{ 'employmentCasual' | translate }}</option>
         </select>
       </div>
       
@@ -112,81 +112,81 @@
     <h2>{{ 'other' | translate }}</h2>
    
     <div class="form-group">
-      <label for=""> Add more Persona Information (Eduvation, interests, social media favorite etc.)</label>
+      <label for="">{{ 'addMorePersonaInfoLabel' | translate }}</label>
       <textarea
         class="form-control custom-textarea"
         [(ngModel)]="customerPersona.other"
         placeholder=" "				
          rows="4"
       ></textarea>
-      <small class="form-text text-muted">Enter each note on a new line</small>
+      <small class="form-text text-muted">{{ 'enterNoteNewLine' | translate }}</small>
     </div>
   </section>
 
   <!-- Customer Challenges Section -->
   <section class="form-section">
     <h2><i class="fas fa-tasks"></i> {{ 'customerChallenges' | translate }}</h2>
-    <p class="section-description">Identify and prioritize customer pain points</p>
+    <p class="section-description">{{ 'identifyCustomerPainPoints' | translate }}</p>
 
     <!-- Must-Have Solutions -->
     <div class="challenges-section">
-      <h3><i class="fas fa-exclamation-circle"></i> Must-Have Solutions</h3>
+      <h3><i class="fas fa-exclamation-circle"></i> {{ 'mustHaveSolutions' | translate }}</h3>
       <div class="challenges-list">
         <div class="challenge-item" *ngFor="let solution of customerChallenges.MustHaveSolutions; let i = index">
           <input 
             type="text" 
             class="form-control" 
             [(ngModel)]="solution.text"
-            placeholder="Enter must-have solution"
+            placeholder="{{ 'enterMustHaveSolutionPlaceholder' | translate }}"
           >
           <button class="btn btn-danger remove-btn" (click)="removeChallenge('must', i)">
             <i class="fas fa-times"></i>
           </button>
         </div>
         <button class="btn btn-outline-primary add-btn" (click)="addChallenge('must')">
-          <i class="fas fa-plus"></i> Add Must-Have Challenge
+          <i class="fas fa-plus"></i> {{ 'addMustHaveChallenge' | translate }}
         </button>
       </div>
     </div>
 
     <!-- Should-Have Solutions -->
     <div class="challenges-section">
-      <h3><i class="fas fa-star-half-alt"></i> Should-Have Solutions</h3>
+      <h3><i class="fas fa-star-half-alt"></i> {{ 'shouldHaveSolutions' | translate }}</h3>
       <div class="challenges-list">
         <div class="challenge-item" *ngFor="let solution of customerChallenges.ShouldHaveSolutions; let i = index">
           <input 
             type="text" 
             class="form-control" 
             [(ngModel)]="solution.text"
-            placeholder="Enter should-have solution"
+            placeholder="{{ 'enterShouldHaveSolutionPlaceholder' | translate }}"
           >
           <button class="btn btn-danger remove-btn" (click)="removeChallenge('should', i)">
             <i class="fas fa-times"></i>
           </button>
         </div>
         <button class="btn btn-outline-primary add-btn" (click)="addChallenge('should')">
-          <i class="fas fa-plus"></i> Add Should-Have Challenge
+          <i class="fas fa-plus"></i> {{ 'addShouldHaveChallenge' | translate }}
         </button>
       </div>
     </div>
 
     <!-- Nice-to-Have Solutions -->
     <div class="challenges-section">
-      <h3><i class="fas fa-star"></i> Nice-to-Have Solutions</h3>
+      <h3><i class="fas fa-star"></i> {{ 'niceToHaveSolutions' | translate }}</h3>
       <div class="challenges-list">
         <div class="challenge-item" *ngFor="let solution of customerChallenges.NiceToHaveSolutions; let i = index">
           <input 
             type="text" 
             class="form-control" 
             [(ngModel)]="solution.text"
-            placeholder="Enter nice-to-have solution"
+            placeholder="{{ 'enterNiceToHaveSolutionPlaceholder' | translate }}"
           >
           <button class="btn btn-danger remove-btn" (click)="removeChallenge('nice', i)">
             <i class="fas fa-times"></i>
           </button>
         </div>
         <button class="btn btn-outline-primary add-btn" (click)="addChallenge('nice')">
-          <i class="fas fa-plus"></i> Add Nice-to-Have Challenge
+          <i class="fas fa-plus"></i> {{ 'addNiceToHaveChallenge' | translate }}
         </button>
       </div>
     </div>
@@ -195,38 +195,38 @@
     <h2><i class="fas fa-heart"></i> {{ 'describeBusiness' | translate }}</h2>
   
     <div class="form-group">
-      <label for="businessDescription">I help 
+      <label for="businessDescription">{{ 'iHelp' | translate }}
         <input 
           type="text" 
           class="form-control mt-2" 
           id="defineClients" 
-          placeholder="Define your clients/persona" 
+          placeholder="{{ 'defineClientsPlaceholder' | translate }}"
           [(ngModel)]="customerPersona.defineClients"
         > 
-        who has 
+        {{ 'whoHas' | translate }}
         <input 
           type="text" 
           class="form-control mt-2" 
           id="defineProblem" 
-          placeholder="Define their problem" 
+          placeholder="{{ 'defineProblemPlaceholder' | translate }}"
           [(ngModel)]="customerPersona.defineProblem"
         > 
-        by providing them with 
+        {{ 'byProviding' | translate }}
         <input 
           type="text" 
           class="form-control mt-2" 
           id="defineSolution" 
-          placeholder="Define your solution" 
+          placeholder="{{ 'defineSolutionPlaceholder' | translate }}"
           [(ngModel)]="customerPersona.defineSolution"
         >.
       </label>
     </div>
     <div class="mt-4">
-      <h4 class="text-muted">Examples:</h4>
+      <h4 class="text-muted">{{ 'examples' | translate }}</h4>
       <ul class="list-disc ml-6 text-sm text-gray-700">
-        <li><strong>Example 1:</strong> I help <strong>working mothers</strong> who <strong>do not have time to cook cupcakes</strong> by <strong>creating fast, nicely designed, and healthy cupcakes</strong>.</li>
-        <li><strong>Example 2:</strong> I help <strong>students with low English level</strong> who <strong>are struggling to learn the language fast</strong> by <strong>providing personalised practical lessons in a flexible manner</strong>.</li>
-        <li><strong>Example 3:</strong> I help <strong>business owners</strong> who <strong>need logo designs</strong> by <strong>offering fast logo design services that suit their budget</strong>.</li>
+        <li><strong>{{ 'example1' | translate }}</strong> I help <strong>working mothers</strong> who <strong>do not have time to cook cupcakes</strong> by <strong>creating fast, nicely designed, and healthy cupcakes</strong>.</li>
+        <li><strong>{{ 'example2' | translate }}</strong> I help <strong>students with low English level</strong> who <strong>are struggling to learn the language fast</strong> by <strong>providing personalised practical lessons in a flexible manner</strong>.</li>
+        <li><strong>{{ 'example3' | translate }}</strong> I help <strong>business owners</strong> who <strong>need logo designs</strong> by <strong>offering fast logo design services that suit their budget</strong>.</li>
       </ul>
     </div>
   </section>
@@ -238,10 +238,10 @@
       <textarea
         class="form-control custom-textarea"
         [(ngModel)]="customerPersona.Personal_notes"
-        placeholder="Empty space for users to add any personal notes."				
+        placeholder="{{ 'personalNotesPlaceholder' | translate }}"
         rows="4"
       ></textarea>
-      <small class="form-text text-muted">Enter each note on a new line</small>
+      <small class="form-text text-muted">{{ 'enterNoteNewLine' | translate }}</small>
     </div>
   </section>
   
