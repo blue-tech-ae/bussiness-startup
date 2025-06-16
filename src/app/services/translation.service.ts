@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 export type LangCode = 'en' | 'ar' | 'es' | 'de' | 'fr' | 'zh' | 'hi' | 'pt' | 'ru' | 'bn';
@@ -9,6 +9,8 @@ export type LangCode = 'en' | 'ar' | 'es' | 'de' | 'fr' | 'zh' | 'hi' | 'pt' | '
 export class TranslationService {
   private currentLang: LangCode = 'en';
   private translations: Record<string, string> = {};
+  private langChangeSubject = new BehaviorSubject<LangCode>(this.currentLang);
+  langChange$ = this.langChangeSubject.asObservable();
 
   constructor(private http: HttpClient) {
     this.loadLanguage(this.currentLang);
@@ -21,6 +23,8 @@ export class TranslationService {
       .subscribe(data => {
         this.currentLang = lang;
         this.translations = data || {};
+        this.langChangeSubject.next(lang);
+        this.updateDocumentDirection();
       });
   }
 
@@ -30,5 +34,10 @@ export class TranslationService {
 
   translate(key: string): string {
     return this.translations[key] || key;
+  }
+
+  private updateDocumentDirection() {
+    const rtlLangs: LangCode[] = ['ar'];
+    document.documentElement.dir = rtlLangs.includes(this.currentLang) ? 'rtl' : 'ltr';
   }
 }
