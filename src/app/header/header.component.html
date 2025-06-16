@@ -1,45 +1,46 @@
-<nav class="navbar">
-  <div class="navbar-brand">Value Nation Business Startup Tool</div>
-  <div class="navbar-menu"> 
-    <div class="dropdown">
-      <button class="dropdown-toggle" (click)="toggleDropdown($event)">
-        <i class="fas fa-download"></i> Export Business Plan
-      </button>
-      <div class="dropdown-menu" [class.show]="dropdownOpen">
-        <!-- <a class="dropdown-item" href="#" (click)="exportBusinessPlan('md', $event)">
-          <i class="fas fa-file-code"></i> Markdown
-        </a> -->
-        <a class="dropdown-item" href="#" (click)="exportBusinessPlan('pdf', $event)" [class.disabled]="isLoading">
-          <i class="fas fa-file-pdf"></i> 
-          <span *ngIf="!isLoading">PDF</span>
-          <span *ngIf="isLoading">Generating PDF...</span>
-        </a>
-        <!-- <a class="dropdown-item" href="#" (click)="exportBusinessPlan('docx', $event)">
-          <i class="fas fa-file-word"></i> Word
-        </a>  -->
-        <!-- <a class="dropdown-item" href="#" (click)="exportBusinessPlan('html', $event)">
-          <i class="fas fa-file-code"></i> HTML
-        </a> -->
+<nav class="bg-primary text-white py-4 shadow">
+  <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
+    <div class="font-bold uppercase">Value Nation Business Startup Tool</div>
+    <div class="flex items-center gap-4">
+      <div class="relative">
+        <button class="flex items-center gap-1 font-semibold" (click)="toggleDropdown($event)">
+          <i class="fas fa-download"></i> Export Business Plan
+        </button>
+        <div class="dropdown-menu absolute right-0 mt-2 bg-white text-gray-700 rounded shadow-lg w-44 z-10" [class.show]="dropdownOpen">
+          <!-- <a class="dropdown-item" href="#" (click)="exportBusinessPlan('md', $event)">
+            <i class="fas fa-file-code"></i> Markdown
+          </a> -->
+          <a class="dropdown-item" href="#" (click)="exportBusinessPlan('pdf', $event)" [class.disabled]="isLoading">
+            <i class="fas fa-file-pdf"></i>
+            <span *ngIf="!isLoading">PDF</span>
+            <span *ngIf="isLoading">Generating PDF...</span>
+          </a>
+          <!-- <a class="dropdown-item" href="#" (click)="exportBusinessPlan('docx', $event)">
+            <i class="fas fa-file-word"></i> Word
+          </a>  -->
+          <!-- <a class="dropdown-item" href="#" (click)="exportBusinessPlan('html', $event)">
+            <i class="fas fa-file-code"></i> HTML
+          </a> -->
+        </div>
       </div>
+      <button class="sign-out text-sm font-semibold" (click)="logout()" [disabled]="isLoading">
+        <i class="fas fa-sign-out-alt mr-1"></i>
+        <span *ngIf="!isLoading">SIGN OUT</span>
+        <span *ngIf="isLoading">LOADING...</span>
+      </button>
+      <select (change)="changeLang($any($event.target).value)" [value]="currentLang" class="lang-select bg-transparent text-white text-sm uppercase font-semibold">
+        <option value="en">EN</option>
+        <option value="ar">AR</option>
+        <option value="es">ES</option>
+        <option value="de">DE</option>
+        <option value="fr">FR</option>
+        <option value="zh">ZH</option>
+        <option value="hi">HI</option>
+        <option value="pt">PT</option>
+        <option value="ru">RU</option>
+        <option value="bn">BN</option>
+      </select>
     </div>
-    <button class="sign-out" (click)="logout()" [disabled]="isLoading">
-      <i class="fas fa-sign-out-alt"></i>
-      <span *ngIf="!isLoading">SIGN OUT</span>
-      <span *ngIf="isLoading">LOADING...</span>
-    </button>
-      <select (change)="changeLang($any($event.target).value)" [value]="currentLang" class="lang-select">
-      <option value="en">EN</option>
-      <option value="ar">AR</option>
-      <option value="es">ES</option>
-      <option value="de">DE</option>
-      <option value="fr">FR</option>
-      <option value="zh">ZH</option>
-      <option value="hi">HI</option>
-      <option value="pt">PT</option>
-      <option value="ru">RU</option>
-      <option value="bn">BN</option>
-    </select>
-
   </div>
 </nav>
 

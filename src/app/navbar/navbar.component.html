@@ -1,10 +1,10 @@
-<mat-toolbar class="bg-white shadow-sm">
-  <div class="max-w-7xl mx-auto px-4 flex items-center justify-between w-full">
-    <a routerLink="/landing-page" class="text-blue-600 font-semibold flex items-center space-x-2">
+<nav class="bg-white shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 flex items-center justify-between py-3">
+    <a routerLink="/landing-page" class="text-primary font-semibold flex items-center space-x-2">
       <i class="fas fa-desktop"></i>
       <span>Landing Page</span>
     </a>
-    <button mat-icon-button class="menu-toggle md:hidden" (click)="toggleNavbar()" aria-label="Toggle navigation">
+    <button class="menu-toggle md:hidden text-gray-600" (click)="toggleNavbar()" aria-label="Toggle navigation">
       <i class="fas fa-bars"></i>
     </button>
     <div class="nav-links w-full md:flex md:items-center md:space-x-4" [ngClass]="{ 'hidden': isNavbarCollapsed, 'block': !isNavbarCollapsed, 'mt-2': !isNavbarCollapsed }">
@@ -12,9 +12,9 @@
          routerLink="{{link.path}}"
          routerLinkActive="nav-link-active"
          [routerLinkActiveOptions]="{ exact: true }"
-         class="block px-3 py-2 text-sm text-gray-700 hover:text-blue-600 md:inline-block">
+         class="block px-3 py-2 text-sm text-gray-700 hover:text-primary transition-colors md:inline-block">
         {{ link.label | translate }}
       </a>
     </div>
   </div>
-</mat-toolbar>
+</nav>
