@@ -1,10 +1,10 @@
 <div class="p-6">
     <h2 class="text-2xl font-bold mb-4">🚀 {{ data ? 'Edit' : 'Add' }} Business Plan</h2>
-    <input [(ngModel)]="businessName" placeholder="Enter plan name" class="w-full p-2 border rounded-lg mb-4" />
-    <div class="flex justify-end">
-      <button (click)="dialogRef.close()" class="mr-2 bg-gray-400 text-white px-3 py-1 rounded-lg">Cancel</button>
-      <button (click)="save()" class="bg-green-500 text-white px-3 py-1 rounded-lg" *ngIf="issave" >Save</button>
-      <button (click)="update()" class="bg-green-500 text-white px-3 py-1 rounded-lg" *ngIf="!issave" >update</button>
+    <input [(ngModel)]="businessName" placeholder="Enter plan name" class="input-field mb-4" />
+    <div class="flex justify-end gap-2">
+      <button (click)="dialogRef.close()" class="btn-secondary">Cancel</button>
+      <button (click)="save()" class="btn-primary" *ngIf="issave" >Save</button>
+      <button (click)="update()" class="btn-primary" *ngIf="!issave" >Update</button>
     </div>
   </div>
 
