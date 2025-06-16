@@ -21,10 +21,9 @@
   <section class="form-section">
     <h2><i class="fas fa-tools"></i> {{ 'skillsExperience' | translate }}</h2>
     <!-- List your relevant skills and experience that could contribute to your business. -->
-    <p class="section-description">list the skills and expertise you have<br>
-      -jobs you have done in the past<br>
-      - things you are really good at  
-      <i class="fas fa-question-circle" (click)="openDialog1()" style="color: #007bff; font-size: 24px; cursor: pointer;"></i></p>
+    <p class="section-description" [innerHTML]="'listSkillsExpertise' | translate">
+      <i class="fas fa-question-circle" (click)="openDialog1()" style="color: #007bff; font-size: 24px; cursor: pointer;"></i>
+    </p>
     
 
     <div class="form-group">
@@ -34,7 +33,7 @@
         placeholder=" "				
         rows="4"
       ></textarea>
-      <small class="form-text text-muted">Enter each skill on a new line</small>
+      <small class="form-text text-muted">{{ 'enterSkillNewLine' | translate }}</small>
     </div>
   </section>
 
@@ -42,10 +41,9 @@
   <section class="form-section">
     <h2><i class="fas fa-heart"></i> {{ 'passionsInterests' | translate }}</h2>
     <!-- What are you passionate about? This could inspire your business direction. -->
-    <p class="section-description">list top of: <br>
-      - your hobbies and passions? <br>
-      - things you enjoy doing the most?
-      <i class="fas fa-question-circle" (click)="openDialog2()" style="color: #007bff; font-size: 24px; cursor: pointer;"></i></p>
+    <p class="section-description" [innerHTML]="'listHobbiesPassions' | translate">
+      <i class="fas fa-question-circle" (click)="openDialog2()" style="color: #007bff; font-size: 24px; cursor: pointer;"></i>
+    </p>
     
     <div class="form-group">
       <textarea
@@ -54,7 +52,7 @@
         placeholder=""				
          rows="4"
       ></textarea>
-      <small class="form-text text-muted">Enter each passion/interest on a new line</small>
+      <small class="form-text text-muted">{{ 'enterPassionNewLine' | translate }}</small>
     </div>
   </section>
 
@@ -62,7 +60,7 @@
   <section class="form-section">
     <h2><i class="fas fa-star"></i> {{ 'valuesGoals' | translate }}</h2>
     <!-- Define your core values and business goals. -->
-    <p class="section-description">List topics or issues you care about
+    <p class="section-description">{{ 'listTopicsCare' | translate }}
       <i class="fas fa-question-circle" (click)="openDialog3()" style="color: #007bff; font-size: 24px; cursor: pointer;"></i></p>
     
    
@@ -73,14 +71,14 @@
         placeholder=""
         rows="4"
       ></textarea>
-      <small class="form-text text-muted">Enter each value/goal on a new line</small>
+      <small class="form-text text-muted">{{ 'enterValueGoalNewLine' | translate }}</small>
     </div>
   </section>
 
   <!-- Business Ideas Section -->
   <section class="form-section">
     <h2><i class="fas fa-lightbulb"></i> {{ 'businessIdeas' | translate }}</h2>
-    <p class="section-description">List your potential business ideas, considering your skills, passions, and values.</p>
+    <p class="section-description">{{ 'listPotentialBusinessIdeas' | translate }}</p>
     <div class="business-ideas-container">
       <!-- Idea 1 -->
       <div class="form-group">
@@ -174,7 +172,7 @@
         placeholder=""				
          rows="4"
       ></textarea>
-      <small class="form-text text-muted">Enter each note on a new line</small>
+      <small class="form-text text-muted">{{ 'enterNoteNewLine' | translate }}</small>
     </div>
   </section>
 

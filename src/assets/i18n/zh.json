@@ -134,4 +134,12 @@
   "channelsYouUse": "您将使用哪些渠道？",
   "addCampaign": "添加活动",
   "addTask": "添加任务"
+  ,"listSkillsExpertise": "列出你拥有的技能和专长<br>- 你曾经做过的工作<br>- 你非常擅长的事情",
+  "enterSkillNewLine": "每项技能单独一行输入",
+  "listHobbiesPassions": "列出以下内容：<br>- 你的爱好和激情<br>- 你最喜欢做的事情",
+  "enterPassionNewLine": "每个兴趣/爱好单独一行输入",
+  "listTopicsCare": "列出你关心的主题或问题",
+  "enterValueGoalNewLine": "每个价值观/目标单独一行输入",
+  "listPotentialBusinessIdeas": "结合你的技能、激情和价值观，列出潜在的商业创意。",
+  "enterNoteNewLine": "每条备注单独一行输入"
 }
