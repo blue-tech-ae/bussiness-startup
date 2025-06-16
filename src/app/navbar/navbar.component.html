@@ -1,50 +1,20 @@
-<nav class="navbar">
-  <div class="container">
-    <a class="navbar-brand" routerLink="/landing-page">
+<mat-toolbar class="bg-white shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 flex items-center justify-between w-full">
+    <a routerLink="/landing-page" class="text-blue-600 font-semibold flex items-center space-x-2">
       <i class="fas fa-desktop"></i>
-
-Landing Page
+      <span>Landing Page</span>
     </a>
-
-    <button class="menu-toggle" (click)="toggleNavbar()" aria-label="Toggle navigation">
+    <button mat-icon-button class="menu-toggle md:hidden" (click)="toggleNavbar()" aria-label="Toggle navigation">
       <i class="fas fa-bars"></i>
     </button>
-
-    <div class="nav-links" [class.active]="!isNavbarCollapsed">  
-      <ul>
-        <li class="nav-link">
-          <a routerLink="/bussiness-idea" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">{{ 'businessIdea' | translate }}</a>
-        </li>
-        <li class="nav-link">
-          <a routerLink="/test-your-idea" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">{{ 'testYourIdea' | translate }}</a>
-        </li>
-        <li class="nav-link">
-          <a routerLink="/market-research" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">{{ 'marketResearch' | translate }}</a>
-        </li>
-        <li class="nav-link">
-          <a routerLink="/start-simple" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">{{ 'startSimple' | translate }}</a>
-        </li>
-        <li class="nav-link">
-          <a  routerLink="/marketing" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">{{ 'marketing' | translate }}</a> 
-        </li>
-        <li class="nav-link">
-          <a routerLink="/sales-strategy" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">{{ 'salesStrategy' | translate }}</a>
-        </li>
-        <li class="nav-link">
-          <a routerLink="/business-setup" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">{{ 'businessSetup' | translate }}</a>
-        </li>
-        <li class="nav-link">
-          <a routerLink="/financial-planning" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">{{ 'financialPlanning' | translate }}</a>
-        </li>
-        <li class="nav-link">
-          <a routerLink="/website-requirements"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">{{ 'websiteRequirements' | translate }}</a>
-        </li>
-      </ul>
+    <div class="nav-links w-full md:flex md:items-center md:space-x-4" [ngClass]="{ 'hidden': isNavbarCollapsed, 'block': !isNavbarCollapsed, 'mt-2': !isNavbarCollapsed }">
+      <a *ngFor="let link of navLinks"
+         routerLink="{{link.path}}"
+         routerLinkActive="nav-link-active"
+         [routerLinkActiveOptions]="{ exact: true }"
+         class="block px-3 py-2 text-sm text-gray-700 hover:text-blue-600 md:inline-block">
+        {{ link.label | translate }}
+      </a>
     </div>
   </div>
-</nav>
-
-<!-- 
-
- 
-routerLink="/launch-preparation" -->
+</mat-toolbar>

@@ -1,73 +1,39 @@
 <!-- landing-page.component.html -->
- <div class="d-flex justify-content-center ">
-  <img src="assets/images/VN Logo Secondary Web.png" 
-           alt="Value Nation Logo" 
-           class="logo mt-3">
- </div>
- <!-- User Alert -->
- <div class="alert alert-info mt-3 mx-4 text-center" role="alert">
+<div class="flex justify-center">
+  <img src="assets/images/VN Logo Secondary Web.png" alt="Value Nation Logo" class="logo mt-3">
+</div>
+<div class="bg-blue-50 text-blue-700 mt-3 mx-4 p-3 rounded text-center" role="alert">
   🚀 <strong>Turn Ideas into Success:</strong> With our guidance, create winning marketing strategies and build the thriving business you've always envisioned!
 </div>
 
-
 <div class="landing-page-container">
-  <!-- قسم الاستبيان -->
- <!-- landing-page.component.html -->
-
-  <!-- قسم خطط الأعمال -->
   <div class="plans-section">
-    <!-- Instruction inside Business Plans -->
-<div class="alert alert-warning mb-3 text-center" role="alert">
-  📝 <strong>Tip:</strong> Add a new business plan, then click on the plan name to open its workspace.
-</div>
+    <div class="mb-3 text-center bg-yellow-50 text-yellow-800 p-2 rounded" role="alert">
+      📝 <strong>Tip:</strong> Add a new business plan, then click on the plan name to open its workspace.
+    </div>
 
     <div class="plan-header">
-      
       <h1 class="section-title">📌 Business Plans</h1>
     </div>
 
     <div class="plan-content">
-      <div class="plans-list"  >
+      <div class="plans-list">
         <ul>
-          <li *ngFor="let plan of businessPlans; let i=index" 
-              class="plan-item">
-            <span class=" clickable-plan" 
-                  (click)="  saveBussinesId(plan.id)">
+          <li *ngFor="let plan of businessPlans; let i = index" class="plan-item">
+            <span class="clickable-plan" (click)="saveBussinesId(plan.id)">
               {{ plan.name }}
             </span>
             <div class="action-buttons">
-              <button (click)="editPlan(i)" 
-                      class="edit-btn">
-                ✏ Edit
-              </button>
-              <button (click)="deletePlan(plan.id)" 
-                      class="delete-btn">
-                🗑 Delete
-              </button>
+              <button (click)="editPlan(i)" class="edit-btn">✏ Edit</button>
+              <button (click)="deletePlan(plan.id)" class="delete-btn">🗑 Delete</button>
             </div>
           </li>
         </ul>
       </div>
 
       <div class="text-center">
-        <button  (click)="addBusinessPlan()" 
-        class="add-plan-btn" 
-        
-  >
-  ➕ Add New Plan
-</button> 
+        <button (click)="addBusinessPlan()" class="add-plan-btn">➕ Add New Plan</button>
       </div>
-   
-
-      <!-- <button 
-  (click)="addBusinessPlan()" 
-  class="add-plan-btn" 
-  [disabled]="!isSaved"
-  [attr.title]="!isSaved ? 'Please complete the onboarding form and click &quot;Save&quot; before adding a new business plan.' : null">
-  ➕ Add New Plan
-</button> -->
-
     </div>
   </div>
-  
 </div>
