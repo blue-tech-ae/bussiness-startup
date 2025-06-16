@@ -8,13 +8,14 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Environment variables
 
-Create a `.env` file in the project root with the following variable:
+Create a `.env` file in the project root or export `OPENAI_API_KEY` in your
+environment before running the application:
 
 ```bash
-OPENAI_API_KEY=your-openai-api-key
+export OPENAI_API_KEY=your-openai-api-key
 ```
 
-This key is used by `OpenAIService` to authenticate requests.
+`OpenAIService` will read this variable at runtime to authenticate requests.
 
 ## Code scaffolding
 
