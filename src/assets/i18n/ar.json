@@ -86,4 +86,6 @@
   "signIn": "تسجيل الدخول"
   ,"resetInstructions": "أدخل بريدك الإلكتروني لتصلك تعليمات إعادة التعيين",
   "emailPlaceholder": "أدخل بريدك الإلكتروني"
+  ,"chosenBusinessIdeaQuestion": "ما هي فكرة العمل التي اخترتها؟"
+  ,"businessIdeaPlaceholder": "اكتب فكرتك في العمل هنا"
 }

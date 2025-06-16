@@ -51,13 +51,15 @@
         <!-- زر حفظ -->
 
         <div class="save-section d-flex justify-content-center mt-3">
-          <button class="btn btn-primary save-progress" *ngIf="isSaved"  (click)="saveProgress()">
-            <i class="fas fa-save"></i> {{ 'saveProgress' | translate }}
+          <button class="btn btn-primary save-progress inline-flex items-center gap-2" *ngIf="isSaved"  (click)="saveProgress()">
+            <i class="fas fa-save"></i>
+            <span>{{ 'saveProgress' | translate }}</span>
           </button>
         </div>
-        <div class="update-section d-flex justify-content-around mt-3">
-          <button class="btn btn-primary save-progress" *ngIf="!isSaved" (click)="updateProgress()">
-            <i class="fas fa-save"></i> {{ 'updateProgress' | translate }}
+        <div class="update-section flex justify-around mt-3">
+          <button class="btn btn-primary save-progress inline-flex items-center gap-2" *ngIf="!isSaved" (click)="updateProgress()">
+            <i class="fas fa-save"></i>
+            <span>{{ 'updateProgress' | translate }}</span>
           </button>
           <button routerLink="/website-requirements" class="btn btn-primary save-progress"  *ngIf="!isSaved" >
              {{ 'next' | translate }}
