@@ -1,46 +1,46 @@
 /* landing-page.component.css */
 .landing-page-container {
-  @apply grid gap-8 max-w-7xl mx-auto my-8 px-4;
+  @apply max-w-6xl mx-auto space-y-6 px-4;
 }
 
 .plans-section {
   @apply bg-white rounded-xl shadow-md p-6;
 }
 
-.plan-header {
-  @apply text-center mb-8;
-}
-
 .logo {
-  @apply w-44 mb-6;
+  @apply w-44 mx-auto mb-6;
 }
 
-.plans-list {
-  @apply bg-gray-100 rounded-lg p-4 space-y-4;
+.tip-banner {
+  @apply bg-yellow-50 text-yellow-800 p-2 text-center rounded mb-4;
 }
 
-.plan-item {
-  @apply flex justify-between items-center p-4 bg-white rounded-md shadow-sm;
+.section-title {
+  @apply text-3xl font-bold text-gray-800;
 }
 
-.action-buttons {
-  @apply flex gap-2;
+.plan-grid {
+  @apply grid gap-6 sm:grid-cols-2 lg:grid-cols-3;
 }
 
-.edit-btn {
-  @apply bg-gray-600 text-white font-semibold px-4 py-2 rounded-md transition-colors hover:bg-gray-700;
+.plan-card {
+  @apply card flex flex-col justify-between;
+}
+
+.plan-name {
+  @apply text-lg font-semibold text-gray-800 cursor-pointer hover:text-primary transition;
+}
+
+.icon-btn {
+  @apply inline-flex items-center justify-center p-2 rounded-md bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition;
 }
 
 .delete-btn {
-  @apply bg-red-600 text-white font-semibold px-4 py-2 rounded-md transition-colors hover:bg-red-700;
+  @apply bg-gray-100 text-gray-600 hover:bg-red-600 hover:text-white;
 }
 
-.add-plan-btn {
-  @apply w-1/2 mt-6 bg-primary text-white font-semibold px-4 py-2 rounded-md transition-colors hover:bg-blue-600;
-}
-
-.clickable-plan {
-  @apply text-blue-700 font-semibold cursor-pointer px-2 rounded transition transform hover:bg-indigo-100 hover:text-blue-800 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-indigo-500;
+.add-card {
+  @apply border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center py-8 text-gray-500 hover:border-primary hover:text-primary transition;
 }
 
 @media (max-width: 768px) {
@@ -49,8 +49,5 @@
   }
   .section-title {
     @apply text-xl;
-  }
-  .disabled-btn {
-    @apply opacity-60 cursor-not-allowed;
   }
 }

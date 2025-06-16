@@ -8,32 +8,36 @@
 
 <div class="landing-page-container py-6">
   <div class="plans-section">
-    <div class="mb-3 text-center bg-yellow-50 text-yellow-800 p-2 rounded" role="alert">
-      📝 <strong>Tip:</strong> Add a new business plan, then click on the plan name to open its workspace.
+    <div class="tip-banner" role="alert">
+      <span class="font-semibold">📝 Tip:</span> Add a new business plan, then click on the plan name to open its workspace.
     </div>
 
-    <div class="plan-header">
-      <h1 class="section-title">📌 Business Plans</h1>
-    </div>
+    <h1 class="section-title text-center mb-6">Business Plans</h1>
 
-    <div class="plan-content">
-      <div class="plans-list">
-        <ul>
-          <li *ngFor="let plan of businessPlans; let i = index" class="plan-item">
-            <span class="clickable-plan" (click)="saveBussinesId(plan.id)">
-              {{ plan.name }}
-            </span>
-            <div class="action-buttons">
-              <button (click)="editPlan(i)" class="edit-btn">✏ Edit</button>
-              <button (click)="deletePlan(plan.id)" class="delete-btn">🗑 Delete</button>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="text-center">
-        <button (click)="addBusinessPlan()" class="add-plan-btn">➕ Add New Plan</button>
-      </div>
+    <div class="plan-grid">
+      <ng-container *ngFor="let plan of businessPlans; let i = index">
+        <div class="plan-card">
+          <span class="plan-name" (click)="saveBussinesId(plan.id)">{{ plan.name }}</span>
+          <div class="flex justify-end gap-2 mt-4">
+            <button (click)="editPlan(i)" class="icon-btn" aria-label="Edit">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M4.5 19.5L5.75 14.75 14.768 5.732a2.25 2.25 0 013.182 3.182L8.932 17.932 4.5 19.5z" />
+              </svg>
+            </button>
+            <button (click)="deletePlan(plan.id)" class="icon-btn delete-btn" aria-label="Delete">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3m5 0H6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </ng-container>
+      <button (click)="addBusinessPlan()" class="add-card">
+        <svg class="w-6 h-6 mb-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+        </svg>
+        <span class="font-medium">Add New Plan</span>
+      </button>
     </div>
   </div>
 </div>
