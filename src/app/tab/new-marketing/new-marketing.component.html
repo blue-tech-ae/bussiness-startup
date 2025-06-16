@@ -20,7 +20,7 @@
   
           <div class="flex flex-col mb-4 mt-3 space-y-1">
             <label for="">Option 1 (AI Suggestions)</label>
-            <div class="flex items-start space-x-2">
+            <div class="flex items-start gap-2">
               <textarea [(ngModel)]="product_feature.options[0]" name="entry_strategy_0"
                 class="form-control custom-textarea flex-1" rows="3"
                 placeholder=""></textarea>
@@ -32,7 +32,7 @@
           
           <div class="flex flex-col mb-4 space-y-1">
             <label for="">Option 2 (AI Suggestions)</label>
-            <div class="flex items-start space-x-2">
+            <div class="flex items-start gap-2">
               <textarea [(ngModel)]="product_feature.options[1]" name="entry_strategy_1"
                 class="form-control custom-textarea flex-1" rows="3"
                 placeholder=""></textarea>
@@ -44,7 +44,7 @@
           
           <div class="flex flex-col mb-4 space-y-1">
             <label for="">Option 3 (AI Suggestions)</label>
-            <div class="flex items-start space-x-2">
+            <div class="flex items-start gap-2">
               <textarea [(ngModel)]="product_feature.options[2]" name="entry_strategy_2"
                 class="form-control custom-textarea flex-1" rows="3"
                 placeholder=""></textarea>
@@ -57,8 +57,8 @@
         </div>
   
         <div class="form-group mb-4">
-          <label><strong>Notes</strong></label>
-          <textarea [(ngModel)]="product_feature.notes" name="notes" class="form-control custom-textarea" rows="3" placeholder="Any extra notes"></textarea>
+          <label><strong>{{ 'notes' | translate }}</strong></label>
+          <textarea [(ngModel)]="product_feature.notes" name="notes" class="form-control custom-textarea" rows="3" [placeholder]="'extraNotesPlaceholder' | translate"></textarea>
         </div>
         
       </section> <!-- نهاية الفورم سيكشن -->
@@ -93,7 +93,7 @@
             <!-- الحقول -->
             <div class="form-group mb-4">
               <label><strong>1. What is the Goal/Message I want to deliver?</strong></label>
-              <div class="flex items-start space-x-2 mb-4 mt-3">
+              <div class="flex items-start gap-2 mb-4 mt-3">
                 <textarea [(ngModel)]="marketing_campaign.goal" name="goal_{{i}}"
                   class="form-control custom-textarea mt-0 flex-1" rows="3"
                   placeholder="new product, sales, events etc."></textarea>
@@ -102,7 +102,7 @@
       
             <div class="form-group mb-4">
               <label><strong>2. Who is my Audience for this campaign?</strong></label>
-              <div class="flex items-start space-x-2 mb-4 mt-3">
+              <div class="flex items-start gap-2 mb-4 mt-3">
                 <textarea [(ngModel)]="marketing_campaign.audience" name="audience_{{i}}"
                   class="form-control custom-textarea mt-0 flex-1" rows="3"
                   placeholder="new customers, young, partners etc."></textarea>
@@ -111,7 +111,7 @@
       
             <div class="form-group mb-4">
               <label><strong>3. What format do you use?</strong></label>
-              <div class="flex items-start space-x-2 mb-4 mt-3">
+              <div class="flex items-start gap-2 mb-4 mt-3">
                 <textarea [(ngModel)]="marketing_campaign.format" name="format_{{i}}"
                   class="form-control custom-textarea mt-0 flex-1" rows="3"
                   placeholder="Audio, written, Images, video, physical, graphs"></textarea>
@@ -119,8 +119,8 @@
             </div>
       
             <div class="form-group mb-4">
-              <label><strong>4. What channels you will use?</strong></label>
-              <div class="flex items-start space-x-2 mb-4 mt-3">
+              <label><strong>{{ 'channelsYouUse' | translate }}</strong></label>
+              <div class="flex items-start gap-2 mb-4 mt-3">
                 <textarea [(ngModel)]="marketing_campaign.channels" name="channels_{{i}}"
                   class="form-control custom-textarea mt-0 flex-1" rows="3"
                   placeholder="SM, Letters, phones, emails, events"></textarea>
@@ -128,17 +128,17 @@
             </div>
       
             <div class="form-group mb-4">
-              <label><strong>Notes</strong></label>
+              <label><strong>{{ 'notes' | translate }}</strong></label>
               <textarea [(ngModel)]="marketing_campaign.notes" name="notes_{{i}}"
-                class="form-control custom-textarea" rows="3" placeholder="Any extra notes"></textarea>
+                class="form-control custom-textarea" rows="3" [placeholder]="'extraNotesPlaceholder' | translate"></textarea>
             </div>
       
             <hr class="my-6">
           </section>
         </div>
       
-        <button (click)="addCampaign()" class="btn btn-primary mt-6">
-          <i class="fas fa-plus-circle"></i> Add Campaign
+        <button (click)="addCampaign()" class="btn btn-primary mt-6 inline-flex items-center gap-2">
+          <i class="fas fa-plus-circle"></i> {{ 'addCampaign' | translate }}
         </button>
       
       </div>

@@ -58,12 +58,12 @@
           </div>
         </div>
         <div class="input-group">
-          <label class="field-label">Notes</label>
-          <textarea 
+          <label class="field-label">{{ 'notes' | translate }}</label>
+          <textarea
             class="form-control notes-input"
             rows="2"
             [(ngModel)]="cost.notes"
-            placeholder="Additional notes"
+            [placeholder]="'extraNotesPlaceholder' | translate"
           ></textarea>
         </div>
       </div>
@@ -349,12 +349,12 @@
           </button>
         </div>
         <div class="input-group">
-          <label class="field-label">Notes</label>
-          <textarea 
+          <label class="field-label">{{ 'notes' | translate }}</label>
+          <textarea
             class="form-control notes-input"
             rows="2"
             [(ngModel)]="entry.notes"
-            placeholder="Additional notes"
+            [placeholder]="'extraNotesPlaceholder' | translate"
           ></textarea>
         </div>
       </div>

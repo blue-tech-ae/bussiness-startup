@@ -130,4 +130,8 @@
   "businessUpdated": "تم تحديث العمل بنجاح!",
   "planDeleted": "تم حذف الخطة!",
   "planSaved": "تم حفظ الخطة بنجاح!"
+  ,"describeBusinessIdea": "وصف فكرة عملك"
+  ,"channelsYouUse": "ما القنوات التي ستستخدمها؟"
+  ,"addCampaign": "إضافة حملة"
+  ,"addTask": "إضافة مهمة"
 }

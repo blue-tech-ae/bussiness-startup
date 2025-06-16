@@ -39,11 +39,11 @@
       
         <!-- قسم الملاحظات -->
         <div>
-          <label class="block font-semibold mb-2">Notes</label>
-          <textarea 
+          <label class="block font-semibold mb-2">{{ 'notes' | translate }}</label>
+          <textarea
             [(ngModel)]="notes"
-            rows="6" 
-            placeholder="Add notes here"
+            rows="6"
+            [placeholder]="'extraNotesPlaceholder' | translate"
             class="w-full p-3 border border-blue-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300 resize-none">
           </textarea>
         </div>

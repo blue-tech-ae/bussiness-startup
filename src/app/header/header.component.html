@@ -23,8 +23,8 @@
           </a> -->
         </div>
       </div>
-      <button class="sign-out text-sm font-semibold" (click)="logout()" [disabled]="isLoading">
-        <i class="fas fa-sign-out-alt mr-1"></i>
+      <button class="sign-out text-sm font-semibold flex items-center gap-1" (click)="logout()" [disabled]="isLoading">
+        <i class="fas fa-sign-out-alt"></i>
         <span *ngIf="!isLoading">{{ 'signOut' | translate }}</span>
         <span *ngIf="isLoading">{{ 'loading' | translate }}</span>
       </button>
