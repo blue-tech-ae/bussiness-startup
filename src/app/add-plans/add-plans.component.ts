@@ -69,6 +69,10 @@ toggleBusinessOwnership(status: boolean): void {
   if (!status) this.businessDescription = '';
 }
   submitForm(): void {
+    if (!this.firstName.trim()) {
+      this.snackBar.open('Plan name is required', 'Close', { duration: 2000 });
+      return;
+    }
     const formdata = {
       name: this.firstName,
       products_services: [this.businessDescription || ''],
@@ -89,6 +93,10 @@ toggleBusinessOwnership(status: boolean): void {
     });
   }
   updateForm(): void {
+    if (!this.firstName.trim()) {
+      this.snackBar.open('Plan name is required', 'Close', { duration: 2000 });
+      return;
+    }
     const formdata = {
       name: this.firstName,
       products_services: [this.businessDescription || ''],

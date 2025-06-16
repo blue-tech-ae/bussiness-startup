@@ -1,5 +1,5 @@
 <!-- حاوية الديالوج -->
-<div class="p-4 sm:p-6 bg-gray-50 rounded-xl shadow-lg w-full max-w-lg mx-auto overflow-auto max-h-[80vh]">
+<div class="p-6 bg-gray-50 rounded-xl shadow-lg w-full max-w-lg mx-auto overflow-auto max-h-[80vh]" (keydown.escape)="dialogRef.close()">
   <h1 class="text-2xl sm:text-3xl font-bold mb-6 text-center text-blue-700">
     Business Onboarding Questionnaire
   </h1>
@@ -7,9 +7,10 @@
   <!-- Full Name Section -->
   <div class="mb-6">
     <label class="block text-base sm:text-lg font-semibold mb-2">Plan Name</label>
-    <input type="text" [(ngModel)]="firstName" 
-           placeholder="Enter Bussines Plan Name " 
+    <input type="text" [(ngModel)]="firstName" #name="ngModel" required autofocus
+           placeholder="Enter Business Plan Name"
            class="w-full p-3 border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none">
+    <p *ngIf="name.invalid && name.touched" class="text-red-600 text-sm mt-1">Plan name is required.</p>
   </div>
 
   <!-- Migrant/Refugee Question -->
@@ -98,15 +99,15 @@
 
   <!-- Save / Update Buttons -->
   <div class="flex justify-center gap-4 mt-8 flex-wrap">
-    <button *ngIf="!isSaved" 
-            (click)="submitForm()" 
+    <button *ngIf="!isSaved"
+            (click)="submitForm()"
             class="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition w-full sm:w-auto">
-      <i class="fas fa-save"></i> Save
+      Save Plan
     </button>
-    <button *ngIf="isSaved" 
-            (click)="updateForm()" 
+    <button *ngIf="isSaved"
+            (click)="updateForm()"
             class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition w-full sm:w-auto">
-      <i class="fas fa-save"></i> Update
+      Update Plan
     </button>
   </div>
 </div>

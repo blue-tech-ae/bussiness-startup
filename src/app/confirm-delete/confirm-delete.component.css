@@ -1,0 +1,4 @@
+/* confirm-delete.component.css */
+:host {
+  @apply block;
+}

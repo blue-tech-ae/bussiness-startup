@@ -5,6 +5,7 @@ import { AddBusinessComponent } from '../add-business/add-business.component';
 import { ApisService } from '../services/apis.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AddPlansComponent } from '../add-plans/add-plans.component';
+import { ConfirmDeleteComponent } from '../confirm-delete/confirm-delete.component';
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
@@ -70,13 +71,20 @@ toggleBusinessOwnership(status: boolean): void {
     });
   }
 
+  openPlan(id: any) {
+    this.saveBussinesId(id);
+  }
+
   deletePlan(id: number) {
-    //this.businessPlans.splice(index, 1);
-    return this.serv.deletebusinnes(id).subscribe((res)=>{
-      this.getbusinnis()
-      this.snackBar.open('Plan deleted!', 'Close', { duration: 2000 });
-    })
-   
+    const dialogRef = this.dialog.open(ConfirmDeleteComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.serv.deletebusinnes(id).subscribe(() => {
+          this.getbusinnis();
+          this.snackBar.open('Plan deleted!', 'Close', { duration: 2000 });
+        });
+      }
+    });
   }
 
   editPlan(index: number) {
