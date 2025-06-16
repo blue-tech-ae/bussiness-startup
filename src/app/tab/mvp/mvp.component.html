@@ -23,7 +23,7 @@
         </div>
     
         <div class="form-group mb-4">
-          <label><strong>How can I enter the market in the most simple way?</strong>
+          <label><strong>{{ 'enterMarketSimpleQuestion' | translate }}</strong>
             <button class="btn btn-link edit-btn" (click)="openSuggestionDialog1()">
               <i class="fas fa-robot"></i>
             </button></label>
@@ -50,7 +50,7 @@
         </div>
     
         <div class="form-group mb-4">
-          <label><strong>Notes</strong></label>
+          <label><strong>{{ 'notes' | translate }}</strong></label>
           <textarea [(ngModel)]="mvp.notes" name="notes" class="form-control custom-textarea" rows="3" placeholder="Any extra notes"></textarea>
         </div>
     
@@ -78,12 +78,12 @@
         <h2 class="mb-3">
           <i class="fas fa-lightbulb text-primary"></i>
           {{ 'startSimpleTitle' | translate }}
-          <small class="d-block text-muted">(things to consider)</small>
+          <small class="d-block text-muted">({{ 'thingsToConsider' | translate }})</small>
         </h2>
     
         <!-- Big Solution -->
         <div class="form-group mb-4">
-          <label><strong>What is my business big Solution?</strong></label>
+          <label><strong>{{ 'bigSolutionQuestion' | translate }}</strong></label>
           <textarea [(ngModel)]="mvp.big_solution" name="big_solution" class="form-control custom-textarea" rows="3" placeholder="Describe the big vision of your future business!"></textarea>
         </div>
     
@@ -95,13 +95,13 @@
             </button>
          </label>
          <div>
-          <label for="">Features:<br>
-            - Lowest cost<br>
-            - Fastest delivery<br>
-            - Most reward (profitable)<br>
-            - Lowest risk<br>
-            - Most feedback generating<br>
-            - Ability to enhance, change the solution</label>
+          <label for="">{{ 'featuresLabel' | translate }}<br>
+            - {{ 'featureLowestCost' | translate }}<br>
+            - {{ 'featureFastestDelivery' | translate }}<br>
+            - {{ 'featureMostReward' | translate }}<br>
+            - {{ 'featureLowestRisk' | translate }}<br>
+            - {{ 'featureMostFeedback' | translate }}<br>
+            - {{ 'featureEnhanceSolution' | translate }}</label>
          </div>
           
           <textarea [(ngModel)]="mvp.entry_strategy" name="entry_strategy" class="form-control custom-textarea"
@@ -110,7 +110,7 @@
     
         <!-- Things to Use/Get -->
         <div class="form-group mb-4">
-          <label><strong>To create this simple solution I will use what I have:</strong>
+          <label><strong>{{ 'useWhatIHave' | translate }}</strong>
             <button class="btn btn-link edit-btn" (click)="openSuggestionDialog2()">
               <i class="fas fa-robot"></i>
             </button>
@@ -119,7 +119,7 @@
         </div>
     
         <div class="form-group mb-4">
-          <label><strong>...and I will get what I need:</strong>
+          <label><strong>{{ 'getWhatINeed' | translate }}</strong>
             <button class="btn btn-link edit-btn" (click)="openSuggestionDialog3()">
               <i class="fas fa-robot"></i>
             </button></label>
@@ -128,20 +128,19 @@
     
         <!-- Validation Questions -->
         <div class="form-group mb-4">
-          <label><strong>Questions you need to be answered to prove your solution works?</strong>
+          <label><strong>{{ 'questionsProveWorks' | translate }}</strong>
             <button class="btn btn-link edit-btn" (click)="openValidationSuggestions()">
               <i class="fas fa-robot"></i>
             </button>
           </label>
           <div>
-            <label for="">
-Example:<br>
-    - Would people pay for it?<br>
-    - How much are people willing to pay?<br>
-    - What feature, size, color, format matters most?<br>
-    - When do they need it most (day/week/month/year)?<br>
-    - Where would they prefer to buy it?<br>
-    - What are their biggest frustrations with current options?
+            <label for="">{{ 'exampleLabel' | translate }}<br>
+    - {{ 'questionWouldPay' | translate }}<br>
+    - {{ 'questionHowMuchPay' | translate }}<br>
+    - {{ 'questionFeatureMattersMost' | translate }}<br>
+    - {{ 'questionWhenNeedMost' | translate }}<br>
+    - {{ 'questionWherePreferBuy' | translate }}<br>
+    - {{ 'questionBiggestFrustrations' | translate }}
             </label>
           </div>
           <textarea [(ngModel)]="mvp.questions" name="validation_questions" class="form-control custom-textarea"
@@ -149,7 +148,7 @@ Example:<br>
     
           <!-- Top 3 Questions + Notes -->
           <div class="mt-3">
-            <label><strong> how will you find answers to those questions?</strong>
+            <label><strong>{{ 'findAnswersQuestion' | translate }}</strong>
               <button class="btn btn-link edit-btn" (click)="openSuggestionDialog4()">
                 <i class="fas fa-robot"></i>
               </button></label>
@@ -160,13 +159,13 @@ Example:<br>
     
         <!-- Future Plan -->
         <div class="form-group mb-4">
-          <label><strong>What is your plan to move forward towards the (Big Solution) using the same framework above?</strong></label>
+          <label><strong>{{ 'planMoveForwardQuestion' | translate }}</strong></label>
           <textarea [(ngModel)]="mvp.future_plan" name="future_plan" class="form-control custom-textarea" rows="3" placeholder="How would you imagine your business next few steps to grow and reach the bigger plan?"></textarea>
         </div>
     
         <!-- Notes -->
         <div class="form-group mb-4">
-          <label><strong>Notes</strong></label>
+          <label><strong>{{ 'notes' | translate }}</strong></label>
           <textarea [(ngModel)]="mvp.notes" name="notes" class="form-control custom-textarea" rows="3" placeholder="Any extra notes"></textarea>
         </div>
       </section>
