@@ -24,7 +24,7 @@
 }
 
 .plan-card {
-  @apply card flex flex-col justify-between;
+  @apply bg-white p-4 rounded-lg shadow flex flex-col justify-between;
 }
 
 .plan-name {
