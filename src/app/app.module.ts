@@ -9,6 +9,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,6 +42,7 @@ import { NewBusinessSetupComponent } from './tab/new-business-setup/new-business
 import { AddPlansComponent } from './add-plans/add-plans.component';
 import { NewFinancialComponent } from './tab/new-financial/new-financial.component';
 import { WebsiteComponent } from './tab/website/website.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +74,8 @@ import { WebsiteComponent } from './tab/website/website.component';
     NewBusinessSetupComponent,
     AddPlansComponent,
     NewFinancialComponent,
-    WebsiteComponent
+    WebsiteComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -84,7 +87,8 @@ import { WebsiteComponent } from './tab/website/website.component';
     MatDialogModule,
     MatProgressSpinnerModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatToolbarModule
   ],
   providers: [ApisService],
   bootstrap: [AppComponent],
