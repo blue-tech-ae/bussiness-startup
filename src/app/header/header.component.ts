@@ -119,8 +119,10 @@ export class HeaderComponent implements OnInit {
      // this.getAllData.getAllDataForPDF().subscribe((res)=>{
      // console.log(res)
      // })
-    
-   }
+    this.translation.langChange$.subscribe(lang => {
+      this.currentLang = lang;
+    });
+  }
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) {
@@ -156,7 +158,6 @@ export class HeaderComponent implements OnInit {
 
   changeLang(lang: string) {
     this.translation.loadLanguage(lang as LangCode);
-    this.currentLang = this.translation.getCurrentLang();
   }
 
 
