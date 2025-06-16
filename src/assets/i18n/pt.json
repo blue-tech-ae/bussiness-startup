@@ -134,4 +134,12 @@
   "channelsYouUse": "Quais canais você usará?",
   "addCampaign": "Adicionar campanha",
   "addTask": "Adicionar tarefa"
+  ,"listSkillsExpertise": "Liste as habilidades e experiências que você possui<br>- empregos que já realizou<br>- coisas em que você é realmente bom",
+  "enterSkillNewLine": "Digite cada habilidade em uma nova linha",
+  "listHobbiesPassions": "Liste o seguinte no topo:<br>- seus hobbies e paixões<br>- coisas que você mais gosta de fazer",
+  "enterPassionNewLine": "Digite cada paixão/interesse em uma nova linha",
+  "listTopicsCare": "Liste os tópicos ou questões que você valoriza",
+  "enterValueGoalNewLine": "Digite cada valor/meta em uma nova linha",
+  "listPotentialBusinessIdeas": "Liste suas ideias de negócio potenciais considerando suas habilidades, paixões e valores.",
+  "enterNoteNewLine": "Digite cada nota em uma nova linha"
 }

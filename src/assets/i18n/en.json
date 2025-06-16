@@ -134,4 +134,12 @@
   ,"channelsYouUse": "What channels you will use?"
   ,"addCampaign": "Add Campaign"
   ,"addTask": "Add Task"
+  ,"listSkillsExpertise": "list the skills and expertise you have<br>-jobs you have done in the past<br>- things you are really good at",
+  "enterSkillNewLine": "Enter each skill on a new line",
+  "listHobbiesPassions": "list top of:<br>- your hobbies and passions?<br>- things you enjoy doing the most?",
+  "enterPassionNewLine": "Enter each passion/interest on a new line",
+  "listTopicsCare": "List topics or issues you care about",
+  "enterValueGoalNewLine": "Enter each value/goal on a new line",
+  "listPotentialBusinessIdeas": "List your potential business ideas, considering your skills, passions, and values.",
+  "enterNoteNewLine": "Enter each note on a new line"
 }

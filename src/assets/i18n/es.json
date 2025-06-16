@@ -134,4 +134,12 @@
   "channelsYouUse": "¿Qué canales usarás?",
   "addCampaign": "Agregar campaña",
   "addTask": "Agregar tarea"
+  ,"listSkillsExpertise": "Enumera las habilidades y experiencia que tienes<br>- trabajos que has realizado en el pasado<br>- cosas en las que eres realmente bueno",
+  "enterSkillNewLine": "Ingresa cada habilidad en una línea nueva",
+  "listHobbiesPassions": "Lista lo siguiente:<br>- tus pasatiempos y pasiones<br>- las cosas que más disfrutas hacer",
+  "enterPassionNewLine": "Ingresa cada pasión/interés en una línea nueva",
+  "listTopicsCare": "Enumera los temas o asuntos que te importan",
+  "enterValueGoalNewLine": "Ingresa cada valor/objetivo en una línea nueva",
+  "listPotentialBusinessIdeas": "Enumera tus posibles ideas de negocio considerando tus habilidades, pasiones y valores.",
+  "enterNoteNewLine": "Ingresa cada nota en una línea nueva"
 }
