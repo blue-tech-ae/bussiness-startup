@@ -222,6 +222,10 @@
   "questionWherePreferBuy": "أين يفضلون شراءه؟",
   "questionBiggestFrustrations": "ما أكبر إحباطاتهم من الخيارات الحالية؟",
   "findAnswersQuestion": "كيف ستجد إجابات لتلك الأسئلة؟",
-  "planMoveForwardQuestion": "ما خطتك للتقدم نحو (الحل الكبير) باستخدام الإطار نفسه أعلاه؟"
+  "planMoveForwardQuestion": "ما خطتك للتقدم نحو (الحل الكبير) باستخدام الإطار نفسه أعلاه؟",
+  "bigSolutionPlaceholder": "صف رؤيتك الكبيرة لمستقبل عملك!",
+  "thingsHavePlaceholder": "قم بسرد الأشياء التي تملكها بالفعل",
+  "thingsNeedPlaceholder": "قم بسرد الأشياء التي يجب الحصول عليها للبدء",
+  "planMoveForwardPlaceholder": "كيف تتخيل الخطوات القادمة لعملك للوصول إلى الخطة الأكبر؟"
 
 }
