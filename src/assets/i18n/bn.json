@@ -226,5 +226,13 @@
   "bigSolutionPlaceholder": "আপনার ভবিষ্যৎ ব্যবসার বড় স্বপ্নটি বর্ণনা করুন!",
   "thingsHavePlaceholder": "আপনার কাছে যা রয়েছে তা তালিকাভুক্ত করুন",
   "thingsNeedPlaceholder": "শুরু করতে যা দরকার তা তালিকাভুক্ত করুন",
-  "planMoveForwardPlaceholder": "বড় পরিকল্পনা বাস্তবায়নে আগামী ধাপগুলো আপনি কেমন কল্পনা করেন?"
+  "planMoveForwardPlaceholder": "বড় পরিকল্পনা বাস্তবায়নে আগামী ধাপগুলো আপনি কেমন কল্পনা করেন?",
+  "targetMonthlyRevenue": "লক্ষ্য মাসিক আয় ($)",
+  "revenueGoalPlaceholder": "আয়ের লক্ষ্য লিখুন",
+  "unitSalePrice": "একক বিক্রয় মূল্য ($)",
+  "salePricePlaceholder": "বিক্রয় মূল্য লিখুন",
+  "interactionsNeededPerSale": "প্রতি বিক্রয়ে প্রয়োজনীয় ইন্টারঅ্যাকশন",
+  "engagementsPerSalePlaceholder": "বিক্রি করতে কত এনগেজমেন্ট",
+  "reachNeededPerInteraction": "প্রতি ইন্টারঅ্যাকশনে প্রয়োজনীয় রিচ",
+  "reachesPerEngagementPlaceholder": "প্রতি এনগেজমেন্টে কত রিচ"
 }

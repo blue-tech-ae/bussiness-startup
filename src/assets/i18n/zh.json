@@ -224,5 +224,13 @@
   "bigSolutionPlaceholder": "描述您未来业务的宏伟愿景！",
   "thingsHavePlaceholder": "列出你已经拥有的东西",
   "thingsNeedPlaceholder": "列出启动所需获取的东西",
-  "planMoveForwardPlaceholder": "您认为业务接下来应如何发展以实现更大的计划？"
+  "planMoveForwardPlaceholder": "您认为业务接下来应如何发展以实现更大的计划？",
+  "targetMonthlyRevenue": "目标月收入 ($)",
+  "revenueGoalPlaceholder": "输入收入目标",
+  "unitSalePrice": "单件销售价格 ($)",
+  "salePricePlaceholder": "输入销售价格",
+  "interactionsNeededPerSale": "每次销售所需互动数",
+  "engagementsPerSalePlaceholder": "完成销售需多少互动",
+  "reachNeededPerInteraction": "每次互动所需触及人数",
+  "reachesPerEngagementPlaceholder": "每次互动需多少触及"
 }

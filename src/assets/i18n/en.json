@@ -224,5 +224,13 @@
   "bigSolutionPlaceholder": "Describe the big vision of your future business!",
   "thingsHavePlaceholder": "List things you already have",
   "thingsNeedPlaceholder": "List things you must get to start",
-  "planMoveForwardPlaceholder": "How would you imagine your business next few steps to grow and reach the bigger plan?"
+  "planMoveForwardPlaceholder": "How would you imagine your business next few steps to grow and reach the bigger plan?",
+  "targetMonthlyRevenue": "Target Monthly Revenue ($)",
+  "revenueGoalPlaceholder": "Enter revenue goal",
+  "unitSalePrice": "Unit Sale Price ($)",
+  "salePricePlaceholder": "Enter sale price",
+  "interactionsNeededPerSale": "Interactions Needed per Sale",
+  "engagementsPerSalePlaceholder": "How many engagements to sell",
+  "reachNeededPerInteraction": "Reach Needed per Interaction",
+  "reachesPerEngagementPlaceholder": "How many reaches per engagement"
 }

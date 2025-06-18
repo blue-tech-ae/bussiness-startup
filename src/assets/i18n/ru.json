@@ -224,5 +224,13 @@
   "bigSolutionPlaceholder": "Опишите своё глобальное видение будущего бизнеса!",
   "thingsHavePlaceholder": "Перечислите то, что у вас уже есть",
   "thingsNeedPlaceholder": "Перечислите то, что нужно получить для старта",
-  "planMoveForwardPlaceholder": "Как вы видите дальнейшие шаги бизнеса на пути к большому плану?"
+  "planMoveForwardPlaceholder": "Как вы видите дальнейшие шаги бизнеса на пути к большому плану?",
+  "targetMonthlyRevenue": "Целевой месячный доход ($)",
+  "revenueGoalPlaceholder": "Введите цель по доходу",
+  "unitSalePrice": "Цена продажи за единицу ($)",
+  "salePricePlaceholder": "Введите цену продажи",
+  "interactionsNeededPerSale": "Необходимые взаимодействия на продажу",
+  "engagementsPerSalePlaceholder": "Сколько контактов для продажи",
+  "reachNeededPerInteraction": "Охват на одно взаимодействие",
+  "reachesPerEngagementPlaceholder": "Сколько охватов на контакт"
 }

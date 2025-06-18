@@ -226,6 +226,14 @@
   "bigSolutionPlaceholder": "صف رؤيتك الكبيرة لمستقبل عملك!",
   "thingsHavePlaceholder": "قم بسرد الأشياء التي تملكها بالفعل",
   "thingsNeedPlaceholder": "قم بسرد الأشياء التي يجب الحصول عليها للبدء",
-  "planMoveForwardPlaceholder": "كيف تتخيل الخطوات القادمة لعملك للوصول إلى الخطة الأكبر؟"
+  "planMoveForwardPlaceholder": "كيف تتخيل الخطوات القادمة لعملك للوصول إلى الخطة الأكبر؟",
+  "targetMonthlyRevenue": "الهدف الشهري للإيرادات ($)",
+  "revenueGoalPlaceholder": "أدخل هدف الإيرادات",
+  "unitSalePrice": "سعر بيع الوحدة ($)",
+  "salePricePlaceholder": "أدخل سعر البيع",
+  "interactionsNeededPerSale": "عدد التفاعلات المطلوبة لكل عملية بيع",
+  "engagementsPerSalePlaceholder": "كم تفاعل لإتمام البيع",
+  "reachNeededPerInteraction": "الوصول المطلوب لكل تفاعل",
+  "reachesPerEngagementPlaceholder": "كم وصول لكل تفاعل"
 
 }

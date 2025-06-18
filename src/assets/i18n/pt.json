@@ -224,5 +224,13 @@
   "bigSolutionPlaceholder": "Descreva a grande visão do seu futuro negócio!",
   "thingsHavePlaceholder": "Liste as coisas que você já tem",
   "thingsNeedPlaceholder": "Liste as coisas que você precisa obter para começar",
-  "planMoveForwardPlaceholder": "Como você imagina os próximos passos do seu negócio para alcançar o grande plano?"
+  "planMoveForwardPlaceholder": "Como você imagina os próximos passos do seu negócio para alcançar o grande plano?",
+  "targetMonthlyRevenue": "Receita mensal alvo ($)",
+  "revenueGoalPlaceholder": "Insira a meta de receita",
+  "unitSalePrice": "Preço de venda por unidade ($)",
+  "salePricePlaceholder": "Insira o preço de venda",
+  "interactionsNeededPerSale": "Interações necessárias por venda",
+  "engagementsPerSalePlaceholder": "Quantos engajamentos para vender",
+  "reachNeededPerInteraction": "Alcance necessário por interação",
+  "reachesPerEngagementPlaceholder": "Quantos alcances por engajamento"
 }
