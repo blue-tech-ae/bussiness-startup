@@ -57,7 +57,7 @@
                 [(ngModel)]="task.status"
               >
                 <option *ngFor="let status of statusOptions" [value]="status">
-                  {{status}}
+                  {{status | translate}}
                 </option>
               </select>
             </div>
@@ -90,13 +90,13 @@
 
   <!-- Marketing Activities Section -->
   <section class="form-section">
-    <h2><i class="fas fa-bullhorn"></i> Marketing Activities</h2>
-    <p class="section-description">Plan and track your launch marketing activities.</p>
+    <h2><i class="fas fa-bullhorn"></i> {{ 'marketingActivities' | translate }}</h2>
+    <p class="section-description">{{ 'marketingActivitiesDescription' | translate }}</p>
 
     <div class="activities-list">
       <div class="activity-item" *ngFor="let activity of marketingActivities; let i = index">
         <div class="activity-header">
-          <h3>Activity {{i + 1}}</h3>
+          <h3>{{ 'activityLabel' | translate }} {{i + 1}}</h3>
           <button class="btn btn-danger remove-btn" (click)="removeMarketingActivity(i)">
             <i class="fas fa-times"></i>
           </button>
@@ -104,27 +104,27 @@
         <div class="activity-inputs">
           <div class="field-row">
             <div class="input-group">
-              <label class="field-label">Activity</label>
+              <label class="field-label">{{ 'activityLabel' | translate }}</label>
               <input 
                 type="text" 
                 class="form-control"
                 [(ngModel)]="activity.activity"
-                placeholder="Enter activity description"
+                [placeholder]="'activityDescriptionPlaceholder' | translate"
               >
             </div>
             <div class="input-group">
-              <label class="field-label">Timeline</label>
+              <label class="field-label">{{ 'timelineLabel' | translate }}</label>
               <input 
                 type="text" 
                 class="form-control"
                 [(ngModel)]="activity.timeline"
-                placeholder="Activity timeline"
+                [placeholder]="'timelinePlaceholder' | translate"
               >
             </div>
           </div>
           <div class="field-row">
             <div class="input-group">
-              <label class="field-label">Budget</label>
+              <label class="field-label">{{ 'budgetLabel' | translate }}</label>
               <input 
                 type="number" 
                 class="form-control amount-input"
@@ -139,20 +139,20 @@
                 [(ngModel)]="activity.status"
               >
                 <option *ngFor="let status of marketingStatusOptions" [value]="status">
-                  {{status}}
+                  {{status | translate}}
                 </option>
               </select>
             </div>
           </div>
           <div class="metrics-section">
-            <label class="field-label">Success Metrics</label>
+            <label class="field-label">{{ 'successMetrics' | translate }}</label>
             <div class="metrics-list">
               <div class="metric-item" *ngFor="let metric of activity.metrics; let j = index ;trackBy: trackByIndex">
                 <input 
                   type="text" 
                   class="form-control"
                   [(ngModel)]="activity.metrics[j]"
-                  placeholder="Enter success metric"
+                  [placeholder]="'successMetricPlaceholder' | translate"
                 >
                 <button class="btn btn-danger remove-btn" (click)="removeMetric(i, j)">
                   <i class="fas fa-times"></i>
@@ -173,60 +173,60 @@
 
   <!-- Risk Assessment Section -->
   <section class="form-section">
-    <h2><i class="fas fa-exclamation-triangle"></i> Risk Assessment</h2>
-    <p class="section-description">Identify and plan for potential risks during launch.</p>
+    <h2><i class="fas fa-exclamation-triangle"></i> {{ 'riskAssessment' | translate }}</h2>
+    <p class="section-description">{{ 'riskAssessmentDescription' | translate }}</p>
 
     <div class="risks-list">
       <div class="risk-item" *ngFor="let risk of risks; let i = index">
         <div class="risk-header">
-          <h3>Risk {{i + 1}}</h3>
+          <h3>{{ 'riskLabel' | translate }} {{i + 1}}</h3>
           <button class="btn btn-danger remove-btn" (click)="removeRisk(i)">
             <i class="fas fa-times"></i>
           </button>
         </div>
         <div class="risk-inputs">
           <div class="input-group">
-            <label class="field-label">Description</label>
+            <label class="field-label">{{ 'descriptionLabel' | translate }}</label>
             <textarea 
               class="form-control"
               rows="2"
               [(ngModel)]="risk.description"
-              placeholder="Describe the potential risk"
+              [placeholder]="'riskDescriptionPlaceholder' | translate"
             ></textarea>
           </div>
           <div class="field-row">
             <div class="input-group">
-              <label class="field-label">Impact</label>
-              <select 
+              <label class="field-label">{{ 'impactLabel' | translate }}</label>
+              <select
                 class="form-control"
                 [(ngModel)]="risk.impact"
               >
                 <option *ngFor="let level of impactOptions" [value]="level">
-                  {{level}}
+                  {{level | translate}}
                 </option>
               </select>
             </div>
             <div class="input-group">
-              <label class="field-label">Probability</label>
-              <select 
+              <label class="field-label">{{ 'probabilityLabel' | translate }}</label>
+              <select
                 class="form-control"
                 [(ngModel)]="risk.probability"
               >
                 <option *ngFor="let level of probabilityOptions" [value]="level">
-                  {{level}}
+                  {{level | translate}}
                 </option>
               </select>
             </div>
           </div>
           <div class="mitigation-section">
-            <label class="field-label">Mitigation Strategies</label>
+            <label class="field-label">{{ 'mitigationStrategiesLabel' | translate }}</label>
             <div class="strategies-list">
               <div class="strategy-item" *ngFor="let strategy of risk.mitigationStrategies; let j = index; trackBy: trackByIndex">
                 <input 
                   type="text" 
                   class="form-control"
                   [(ngModel)]="risk.mitigationStrategies[j]"
-                  placeholder="Enter mitigation strategy"
+                  [placeholder]="'mitigationStrategyPlaceholder' | translate"
                 >
                 <button class="btn btn-danger remove-btn" (click)="removeMitigationStrategy(i, j)">
                   <i class="fas fa-times"></i>
@@ -238,12 +238,12 @@
             </div>
           </div>
           <div class="input-group">
-            <label class="field-label">Contingency Plan</label>
+            <label class="field-label">{{ 'contingencyPlanLabel' | translate }}</label>
             <textarea 
               class="form-control"
               rows="2"
               [(ngModel)]="risk.contingencyPlan"
-              placeholder="Describe the backup plan"
+              [placeholder]="'contingencyPlanPlaceholder' | translate"
             ></textarea>
           </div>
         </div>
@@ -256,13 +256,13 @@
 
   <!-- Launch Milestones Section -->
   <section class="form-section">
-    <h2><i class="fas fa-flag-checkered"></i> Launch Milestones</h2>
-    <p class="section-description">Define key milestones for your launch plan.</p>
+    <h2><i class="fas fa-flag-checkered"></i> {{ 'launchMilestones' | translate }}</h2>
+    <p class="section-description">{{ 'launchMilestonesDescription' | translate }}</p>
 
     <div class="milestones-list">
       <div class="milestone-item" *ngFor="let milestone of milestones; let i = index ">
         <div class="milestone-header">
-          <h3>Milestone {{i + 1}}</h3>
+          <h3>{{ 'milestoneLabel' | translate }} {{i + 1}}</h3>
           <button class="btn btn-danger remove-btn" (click)="removeMilestone(i)">
             <i class="fas fa-times"></i>
           </button>
@@ -270,12 +270,12 @@
         <div class="milestone-inputs">
           <div class="field-row">
             <div class="input-group">
-              <label class="field-label">Description</label>
+              <label class="field-label">{{ 'descriptionLabel' | translate }}</label>
               <input 
                 type="text" 
                 class="form-control"
                 [(ngModel)]="milestone.description"
-                placeholder="Describe the milestone"
+                [placeholder]="'milestoneDescriptionPlaceholder' | translate"
               >
             </div>
             <div class="input-group">
@@ -294,19 +294,19 @@
               [(ngModel)]="milestone.status"
             >
               <option *ngFor="let status of statusOptions" [value]="status">
-                {{status}}
+                {{status | translate}}
               </option>
             </select>
           </div>
           <div class="dependencies-section">
-            <label class="field-label">Dependencies</label>
+            <label class="field-label">{{ 'dependenciesLabel' | translate }}</label>
             <div class="dependencies-list">
               <div class="dependency-item" *ngFor="let dependency of milestone.dependencies; let j = index; trackBy: trackByIndex">
                 <input 
                   type="text" 
                   class="form-control"
                   [(ngModel)]="milestone.dependencies[j]"
-                  placeholder="Enter dependency"
+                  [placeholder]="'dependencyPlaceholder' | translate"
                 >
                 <button class="btn btn-danger remove-btn" (click)="removeDependency(i, j)">
                   <i class="fas fa-times"></i>
