@@ -28,7 +28,7 @@
         <span *ngIf="!isLoading">{{ 'signOut' | translate }}</span>
         <span *ngIf="isLoading">{{ 'loading' | translate }}</span>
       </button>
-      <select (change)="changeLang($any($event.target).value)" [value]="currentLang" class="lang-select bg-white text-black text-sm uppercase font-semibold">
+      <select (change)="changeLang($any($event.target).value)" [value]="currentLang" class="lang-select text-sm uppercase font-semibold">
         <option value="en">EN</option>
         <option value="ar">AR</option>
         <option value="es">ES</option>

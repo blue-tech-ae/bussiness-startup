@@ -7,3 +7,11 @@
 .sign-out:disabled {
   @apply opacity-70 cursor-not-allowed;
 }
+
+.lang-select {
+  @apply bg-blue-500 text-white border border-white rounded px-2 py-1;
+}
+
+.lang-select option {
+  @apply text-black bg-white;
+}
