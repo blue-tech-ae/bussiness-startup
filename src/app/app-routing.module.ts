@@ -48,6 +48,7 @@ const routes: Routes = [
   { path: 'sales-strategy', component: NewSalesComponent, canActivate: [authGuard] },
   { path: 'business-setup', component: NewBusinessSetupComponent, canActivate: [authGuard] },
   { path: 'financial-planning', component: NewFinancialComponent, canActivate: [authGuard] },
+  { path: 'launch-preparation', component: LaunchPreprationComponent, canActivate: [authGuard] },
   { path: 'website-requirements', component: WebsiteComponent, canActivate: [authGuard] },
   { path: "welcome", component: WelcomeComponent },
   { path: "test", component: BussinessSetupComponent },
