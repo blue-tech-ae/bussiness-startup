@@ -18,17 +18,17 @@
       <i class="fas fa-building"></i> <span>{{ 'legalStructure' | translate }}</span>
     </h2>
     <p class="section-description mb-4">
-      Define your business's legal structure and requirements.
+      {{ 'legalStructureDescription' | translate }}
     </p>
   
     <!-- Business Type Dropdown -->
     <div class="form-group mb-4">
-      <label class="block mb-1 font-medium">Business Type</label>
+      <label class="block mb-1 font-medium">{{ 'businessTypeLabel' | translate }}</label>
       <select 
         class="form-control w-full p-2 border rounded" 
         [(ngModel)]="legalStructure.businessType"
       >
-        <option value="">Select business type</option>
+        <option value="">{{ 'selectBusinessType' | translate }}</option>
         <option *ngFor="let type of businessTypes" [value]="type">
           {{ type }}
         </option>
@@ -105,23 +105,23 @@
         </button>
       
         <div class="form-group mb-3">
-          <label class="block mb-1">Requirement Description</label>
+          <label class="block mb-1">{{ 'requirementDescriptionLabel' | translate }}</label>
           <input 
             type="text" 
             class="form-control w-full p-2 border rounded" 
-            placeholder="Fill up the first requirement of your legal choice" 
+            [placeholder]="'requirementPlaceholder' | translate"
             [(ngModel)]="task.description"
           />
         </div>
       
         <div class="flex flex-wrap gap-4">
           <div class="form-group">
-            <label class="block mb-1">Status</label>
+            <label class="block mb-1">{{ 'statusLabel' | translate }}</label>
             <select 
               class="form-control p-2 border rounded" 
               [(ngModel)]="task.status"
             >
-              <option value="">Select status</option>
+              <option value="">{{ 'selectStatus' | translate }}</option>
               <option value="Not yet">Not yet</option>
               <option value="In progress">In progress</option>
               <option value="Completed">Completed</option>
@@ -129,7 +129,7 @@
           </div>
       
           <div class="form-group">
-            <label class="block mb-1">Deadline</label>
+            <label class="block mb-1">{{ 'deadlineLabel' | translate }}</label>
             <input 
               type="date" 
               class="form-control p-2 border rounded" 
