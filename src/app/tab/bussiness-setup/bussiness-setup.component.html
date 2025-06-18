@@ -9,16 +9,16 @@
   </section>
   <!-- Legal Structure Section -->
   <section class="form-section">
-    <h2><i class="fas fa-building"></i> Legal Structure</h2>
-    <p class="section-description">Define your business's legal structure and requirements.</p>
+    <h2><i class="fas fa-building"></i> {{ 'legalStructure' | translate }}</h2>
+    <p class="section-description">{{ 'legalStructureDescription' | translate }}</p>
 
     <div class="form-group">
-      <label>Business Type</label>
+      <label>{{ 'businessTypeLabel' | translate }}</label>
       <select 
         class="form-control" 
         [(ngModel)]="legalStructure.businessType"
       >
-        <option value="">Select business type</option>
+        <option value="">{{ 'selectBusinessType' | translate }}</option>
         <option *ngFor="let type of businessTypes" [value]="type">
           {{type}}
         </option>
@@ -117,20 +117,21 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label>Status</label>
+                <label>{{ 'statusLabel' | translate }}</label>
                 <select 
                   class="form-control"
                   [(ngModel)]="license.status"
                 >
-                  <option *ngFor="let status of statusOptions" [value]="status">
-                    {{status}}
-                  </option>
+                    <option value="">{{ 'selectStatus' | translate }}</option>
+                    <option *ngFor="let status of statusOptions" [value]="status">
+                      {{status}}
+                    </option>
                 </select>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label>Deadline</label>
+                <label>{{ 'deadlineLabel' | translate }}</label>
                 <input 
                   type="date" 
                   class="form-control"
