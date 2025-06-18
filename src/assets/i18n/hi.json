@@ -224,5 +224,13 @@
   "bigSolutionPlaceholder": "अपने भविष्य के व्यवसाय की बड़ी कल्पना का वर्णन करें!",
   "thingsHavePlaceholder": "वे चीजें सूचीबद्ध करें जो आपके पास पहले से हैं",
   "thingsNeedPlaceholder": "शुरू करने के लिए जिन चीजों की आवश्यकता है उन्हें सूचीबद्ध करें",
-  "planMoveForwardPlaceholder": "बड़ी योजना को पाने के लिए आप अपने व्यवसाय के अगले कदम कैसे कल्पना करते हैं?"
+  "planMoveForwardPlaceholder": "बड़ी योजना को पाने के लिए आप अपने व्यवसाय के अगले कदम कैसे कल्पना करते हैं?",
+  "targetMonthlyRevenue": "लक्षित मासिक राजस्व ($)",
+  "revenueGoalPlaceholder": "राजस्व लक्ष्य दर्ज करें",
+  "unitSalePrice": "यूनिट बिक्री मूल्य ($)",
+  "salePricePlaceholder": "बिक्री मूल्य दर्ज करें",
+  "interactionsNeededPerSale": "प्रति बिक्री आवश्यक इंटरैक्शन",
+  "engagementsPerSalePlaceholder": "बिक्री के लिए कितने एंगेजमेंट",
+  "reachNeededPerInteraction": "प्रति इंटरैक्शन आवश्यक पहुँच",
+  "reachesPerEngagementPlaceholder": "प्रति एंगेजमेंट कितनी पहुँच"
 }
