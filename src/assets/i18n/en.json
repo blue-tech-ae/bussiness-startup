@@ -220,5 +220,9 @@
   "questionWherePreferBuy": "Where would they prefer to buy it?",
   "questionBiggestFrustrations": "What are their biggest frustrations with current options?",
   "findAnswersQuestion": "How will you find answers to those questions?",
-  "planMoveForwardQuestion": "What is your plan to move forward towards the (Big Solution) using the same framework above?"
+  "planMoveForwardQuestion": "What is your plan to move forward towards the (Big Solution) using the same framework above?",
+  "bigSolutionPlaceholder": "Describe the big vision of your future business!",
+  "thingsHavePlaceholder": "List things you already have",
+  "thingsNeedPlaceholder": "List things you must get to start",
+  "planMoveForwardPlaceholder": "How would you imagine your business next few steps to grow and reach the bigger plan?"
 }

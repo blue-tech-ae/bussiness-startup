@@ -19,7 +19,7 @@
           <label><strong>What is my business big Solution?</strong><button class="btn btn-link edit-btn" (click)="openSuggestionDialog()">
             <i class="fas fa-robot"></i>
           </button></label>
-          <textarea [(ngModel)]="mvp.big_solution" name="big_solution" class="form-control custom-textarea" rows="3" placeholder="Describe the big vision of your future business!"></textarea>
+          <textarea [(ngModel)]="mvp.big_solution" name="big_solution" class="form-control custom-textarea" rows="3" placeholder="{{ 'bigSolutionPlaceholder' | translate }}"></textarea>
         </div>
     
         <div class="form-group mb-4">
@@ -84,12 +84,12 @@
         <!-- Big Solution -->
         <div class="form-group mb-4">
           <label><strong>{{ 'bigSolutionQuestion' | translate }}</strong></label>
-          <textarea [(ngModel)]="mvp.big_solution" name="big_solution" class="form-control custom-textarea" rows="3" placeholder="Describe the big vision of your future business!"></textarea>
+          <textarea [(ngModel)]="mvp.big_solution" name="big_solution" class="form-control custom-textarea" rows="3" placeholder="{{ 'bigSolutionPlaceholder' | translate }}"></textarea>
         </div>
     
         <!-- Entry Strategy -->
         <div class="form-group mb-4">
-          <label><strong>How can I enter the market in the most simple way?</strong>
+          <label><strong>{{ 'enterMarketSimpleQuestion' | translate }}</strong>
             <button class="btn btn-link edit-btn" (click)="openSuggestionDialog1()">
               <i class="fas fa-robot"></i>
             </button>
@@ -115,7 +115,7 @@
               <i class="fas fa-robot"></i>
             </button>
           </label>
-          <textarea [(ngModel)]="mvp.things_have" name="things_have" class="form-control custom-textarea" rows="3" placeholder="List things you already have"></textarea>
+          <textarea [(ngModel)]="mvp.things_have" name="things_have" class="form-control custom-textarea" rows="3" placeholder="{{ 'thingsHavePlaceholder' | translate }}"></textarea>
         </div>
     
         <div class="form-group mb-4">
@@ -123,7 +123,7 @@
             <button class="btn btn-link edit-btn" (click)="openSuggestionDialog3()">
               <i class="fas fa-robot"></i>
             </button></label>
-          <textarea [(ngModel)]="mvp.things_need" name="things_need" class="form-control custom-textarea" rows="3" placeholder="List things you must get to start"></textarea>
+          <textarea [(ngModel)]="mvp.things_need" name="things_need" class="form-control custom-textarea" rows="3" placeholder="{{ 'thingsNeedPlaceholder' | translate }}"></textarea>
         </div>
     
         <!-- Validation Questions -->
@@ -160,13 +160,13 @@
         <!-- Future Plan -->
         <div class="form-group mb-4">
           <label><strong>{{ 'planMoveForwardQuestion' | translate }}</strong></label>
-          <textarea [(ngModel)]="mvp.future_plan" name="future_plan" class="form-control custom-textarea" rows="3" placeholder="How would you imagine your business next few steps to grow and reach the bigger plan?"></textarea>
+          <textarea [(ngModel)]="mvp.future_plan" name="future_plan" class="form-control custom-textarea" rows="3" placeholder="{{ 'planMoveForwardPlaceholder' | translate }}"></textarea>
         </div>
     
         <!-- Notes -->
         <div class="form-group mb-4">
           <label><strong>{{ 'notes' | translate }}</strong></label>
-          <textarea [(ngModel)]="mvp.notes" name="notes" class="form-control custom-textarea" rows="3" placeholder="Any extra notes"></textarea>
+          <textarea [(ngModel)]="mvp.notes" name="notes" class="form-control custom-textarea" rows="3" placeholder="{{ 'extraNotesPlaceholder' | translate }}"></textarea>
         </div>
       </section>
     
