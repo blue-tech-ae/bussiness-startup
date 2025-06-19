@@ -894,7 +894,7 @@ console.log("from apis" + requestBody)
     return this.http.post(
       `${this.baseUrl}/launch-preparations`,
       requestBody,
-      this.getHttpOptions()
+      this.getHttpOptions2()
     );
   }
   updateLaunchPreparation(formData: any): Observable<any> {
@@ -935,17 +935,17 @@ console.log("from apis" + requestBody)
     
  
 const id= localStorage.getItem("idlaunch")
-    return this.http.put( 
+    return this.http.put(
       `${this.baseUrl}/launch-preparations/${id}`,
       requestBody,
-      this.getHttpOptions()
+      this.getHttpOptions2()
     );
   }
   getlaunchpreparation(): Observable<any>{
     return this.http.get(
-      `${this.baseUrl}/launch-preparations`, 
-       
-      this.getHttpOptions()
+      `${this.baseUrl}/launch-preparations`,
+
+      this.getHttpOptions2()
     );
   }
   // إضافة دالة تسجيل الدخول
